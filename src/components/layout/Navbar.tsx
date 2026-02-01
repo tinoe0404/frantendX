@@ -20,6 +20,7 @@ import {
     NavigationMenuList,
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 const navLinks = [
     { name: "Home", href: "/" },
@@ -71,12 +72,14 @@ export function Navbar() {
                 </div>
 
                 {/* Desktop Action Button */}
-                <div className="hidden md:flex">
+                <div className="hidden md:flex items-center gap-4">
+                    <ThemeToggle />
                     <Button>Get a Quote</Button>
                 </div>
 
                 {/* Mobile Menu (Sheet) */}
-                <div className="flex md:hidden">
+                <div className="flex md:hidden items-center gap-2">
+                    <ThemeToggle />
                     <Sheet open={isOpen} onOpenChange={setIsOpen}>
                         <SheetTrigger asChild>
                             <Button

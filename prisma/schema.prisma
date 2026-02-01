@@ -3,8 +3,8 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 model ContactInquiry {
@@ -46,3 +46,13 @@ model PricingPlan {
   highlighted Boolean  @default(false)
   order       Int      @default(1)
 }
+
+model Testimonial {
+  id        String   @id @default(cuid())
+  client    String
+  company   String
+  content   String
+  avatarUrl String?
+  approved  Boolean  @default(true)
+}
+

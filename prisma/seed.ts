@@ -62,6 +62,35 @@ async function main() {
         }
     }
 
+    // Seed Testimonials
+    const testimonials = [
+        {
+            client: "Sarah J.",
+            company: "CEO, TechStart",
+            content: "frantendX transformed our digital presence. The AI integration significantly boosted our efficiency.",
+            approved: true,
+        },
+        {
+            client: "Michael B.",
+            company: "Founder, GreenWave",
+            content: "Incredible attention to detail and performance. Our site loads instantly and looks stunning.",
+            approved: true,
+        },
+        {
+            client: "Jessica L.",
+            company: "CTO, FutureCorp",
+            content: "The best agency we've worked with. Professional, fast, and technically brilliant.",
+            approved: true,
+        }
+    ]
+
+    for (const t of testimonials) {
+        await prisma.testimonial.create({
+            data: t
+        })
+        console.log(`Created testimonial from: ${t.client}`)
+    }
+
     console.log('Seeding finished.')
 }
 
