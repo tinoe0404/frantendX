@@ -3,8 +3,8 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider = "sqlite"
+  url      = "file:./dev.db"
 }
 
 model ContactInquiry {
@@ -35,4 +35,14 @@ enum Status {
   READ
   CONTACTED
   ARCHIVED
+}
+
+model PricingPlan {
+  id          String   @id @default(cuid())
+  name        String
+  price       String
+  description String
+  features    String[]
+  highlighted Boolean  @default(false)
+  order       Int      @default(1)
 }

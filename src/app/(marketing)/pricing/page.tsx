@@ -10,49 +10,20 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card";
+import { prisma } from "@/lib/prisma";
 
 export const metadata: Metadata = {
     title: "Pricing | frantendX Digital Solutions",
     description: "Transparent pricing estimates for your digital projects. Choose the plan that fits your business needs.",
 };
 
-const plans = [
-    {
-        name: "Starter",
-        price: "$150+",
-        description: "Perfect for small businesses looking for a professional start.",
-        features: ["Custom Design", "SEO basic", "Contact Form", "Mobile Responsive", "1 Month Support"],
-    },
-    {
-        name: "Business",
-        price: "$400+",
-        description: "For growing companies needing more features and visibility.",
-        features: [
-            "Everything in Starter",
-            "CMS Integration",
-            "Blog Section",
-            "Advanced Analytics",
-            "3 Months Support",
-            "Fast Performance Opt."
-        ],
-        featured: true,
-    },
-    {
-        name: "Enterprise",
-        price: "Custom",
-        description: "Complex Web Apps tailored to unique business logic.",
-        features: [
-            "Everything in Business",
-            "User Authentication",
-            "Complex Databases",
-            "API Integrations",
-            "Ongoing Maintenance",
-            "SLA Guarantee"
-        ],
-    },
-];
+export default async function PricingPage() {
+    const plans = await prisma.pricingPlan.findMany({
+        orderBy: {
+            order: "asc",
+        },
+    });
 
-export default function PricingPage() {
     return (
         <div className="py-20 md:py-32 bg-background">
             <div className="container px-4 md:px-8 mx-auto">
@@ -66,12 +37,12 @@ export default function PricingPage() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {plans.map((plan) => (
+                    {plans.map((plan: any) => (
                         <Card
-                            key={plan.name}
-                            className={plan.featured ? "border-primary shadow-xl scale-105 relative" : "border-border shadow-md"}
+                            key={plan.id}
+                            className={plan.highlighted ? "border-primary shadow-xl scale-105 relative" : "border-border shadow-md"}
                         >
-                            {plan.featured && (
+                            {plan.highlighted && (
                                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">
                                     Most Popular
                                 </div>
@@ -86,7 +57,7 @@ export default function PricingPage() {
                             </CardHeader>
                             <CardContent>
                                 <ul className="space-y-4 pt-4">
-                                    {plan.features.map((feature) => (
+                                    {plan.features.map((feature: string) => (
                                         <li key={feature} className="flex items-start gap-3 text-sm">
                                             <Check className="h-4 w-4 text-primary mt-0.5" />
                                             <span>{feature}</span>
@@ -95,7 +66,7 @@ export default function PricingPage() {
                                 </ul>
                             </CardContent>
                             <CardFooter>
-                                <Button className="w-full" variant={plan.featured ? "default" : "outline"} asChild>
+                                <Button className="w-full" variant={plan.highlighted ? "default" : "outline"} asChild>
                                     <Link href="/contact">Choose Plan</Link>
                                 </Button>
                             </CardFooter>
