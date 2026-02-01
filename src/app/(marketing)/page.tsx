@@ -1,5 +1,15 @@
+import { Hero } from "@/components/sections/Hero";
+import { TechTicker } from "@/components/sections/TechTicker";
+import { ServicesPreview } from "@/components/sections/ServicesPreview";
+import { CallToAction } from "@/components/sections/CallToAction";
+
 export default function Home() {
   return (
-    <h1>frantendX Foundation Ready</h1>
+    <>
+      <Hero />
+      <TechTicker />
+      <ServicesPreview />
+      <CallToAction />
+    </>
   );
 }
