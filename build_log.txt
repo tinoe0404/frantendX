@@ -1,0 +1,101 @@
+
+> frantendx-temp@0.1.0 build
+> next build
+
+Γû▓ Next.js 16.1.6 (Turbopack)
+- Environments: .env
+
+  Creating an optimized production build ...
+
+> Build error occurred
+Error: Turbopack build failed with 3 errors:
+./src/components/ui/button.tsx:3:1
+Module not found: Can't resolve 'class-variance-authority'
+  1 | import * as React from "react"
+  2 | import { Slot } from "@radix-ui/react-slot"
+> 3 | import { cva, type VariantProps } from "class-variance-authority"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | import { cn } from "@/lib/utils"
+  6 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/button.tsx [Client Component Browser]
+    ./src/components/layout/Navbar.tsx [Client Component Browser]
+    ./src/components/layout/Navbar.tsx [Server Component]
+    ./src/app/(marketing)/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/button.tsx [Client Component SSR]
+    ./src/components/layout/Navbar.tsx [Client Component SSR]
+    ./src/components/layout/Navbar.tsx [Server Component]
+    ./src/app/(marketing)/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./src/components/ui/navigation-menu.tsx:3:1
+Module not found: Can't resolve 'class-variance-authority'
+  1 | import * as React from "react"
+  2 | import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu"
+> 3 | import { cva } from "class-variance-authority"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { ChevronDown } from "lucide-react"
+  5 |
+  6 | import { cn } from "@/lib/utils"
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/navigation-menu.tsx [Client Component Browser]
+    ./src/components/layout/Navbar.tsx [Client Component Browser]
+    ./src/components/layout/Navbar.tsx [Server Component]
+    ./src/app/(marketing)/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/navigation-menu.tsx [Client Component SSR]
+    ./src/components/layout/Navbar.tsx [Client Component SSR]
+    ./src/components/layout/Navbar.tsx [Server Component]
+    ./src/app/(marketing)/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./src/components/ui/sheet.tsx:5:1
+Module not found: Can't resolve 'class-variance-authority'
+  3 | import * as React from "react"
+  4 | import * as SheetPrimitive from "@radix-ui/react-dialog"
+> 5 | import { cva, type VariantProps } from "class-variance-authority"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { X } from "lucide-react"
+  7 |
+  8 | import { cn } from "@/lib/utils"
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/sheet.tsx [Client Component Browser]
+    ./src/components/layout/Navbar.tsx [Client Component Browser]
+    ./src/components/layout/Navbar.tsx [Server Component]
+    ./src/app/(marketing)/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/sheet.tsx [Client Component SSR]
+    ./src/components/layout/Navbar.tsx [Client Component SSR]
+    ./src/components/layout/Navbar.tsx [Server Component]
+    ./src/app/(marketing)/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (./src/components/ui/button.tsx:3:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./src/components/ui/navigation-menu.tsx:3:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./src/components/ui/sheet.tsx:5:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
