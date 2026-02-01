@@ -6,3 +6,33 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model ContactInquiry {
+  id          String   @id @default(cuid())
+  name        String
+  email       String
+  service     String   // e.g., "Web App", "SEO"
+  budget      String?  // Optional range
+  message     String   @db.Text
+  status      Status   @default(UNREAD)
+  createdAt   DateTime @default(now())
+}
+
+model Project {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  description String
+  imageUrl    String
+  tags        String[] // Stored as array in Postgres
+  liveLink    String?
+  featured    Boolean  @default(false)
+  createdAt   DateTime @default(now())
+}
+
+enum Status {
+  UNREAD
+  READ
+  CONTACTED
+  ARCHIVED
+}
