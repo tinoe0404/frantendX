@@ -16,7 +16,15 @@ export async function submitContactForm(data: ContactFormValues) {
             };
         }
 
-        const { name, email, service, message, budget } = validatedFields.data;
+        const { name, email, service, message, budget, website_url } = validatedFields.data;
+
+        // Honeypot check
+        if (website_url) {
+            return {
+                success: false,
+                message: "Invalid submission.",
+            };
+        }
 
         // 2. Save to database
         await prisma.contactInquiry.create({

@@ -38,6 +38,7 @@ export function ContactForm() {
             service: "",
             message: "",
             budget: "",
+            website_url: "",
         },
     });
 
@@ -155,6 +156,15 @@ export function ContactForm() {
                     )}
                 />
 
+                {/* Honeypot field - hidden from real users */}
+                <input
+                    type="text"
+                    style={{ display: "none" }}
+                    tabIndex={-1}
+                    autoComplete="off"
+                    {...form.register("website_url")}
+                />
+
                 <Button type="submit" className="w-full" disabled={isPending}>
                     {isPending ? (
                         <>
@@ -166,6 +176,7 @@ export function ContactForm() {
                     )}
                 </Button>
             </form>
+
         </Form>
     );
 }

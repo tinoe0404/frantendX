@@ -5,6 +5,7 @@ export const contactFormSchema = z.object({
     email: z.string().email({ message: "Please enter a valid email address." }),
     service: z.string().min(1, { message: "Please select a service." }),
     budget: z.string().optional(),
+    website_url: z.string().optional(), // Honeypot field
     message: z.string().min(10, { message: "Message must be at least 10 characters." }),
 })
 
