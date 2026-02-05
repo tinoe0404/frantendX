@@ -1,5 +1,5 @@
 import { Hero } from "@/components/sections/Hero";
-import { TechTicker } from "@/components/sections/TechTicker";
+import { TrustSection } from "@/components/sections/TrustSection";
 import { ServicesPreview } from "@/components/sections/ServicesPreview";
 import { CallToAction } from "@/components/sections/CallToAction";
 import { Testimonials } from "@/components/sections/Testimonials";
@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <TechTicker />
+      <TrustSection />
       <ServicesPreview />
 
       <Testimonials />
