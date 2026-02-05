@@ -27,13 +27,13 @@ export function Hero() {
 
                     {/* Heading */}
                     <h1 className="text-5xl font-bold tracking-tight text-foreground sm:text-6xl md:text-7xl">
-                        Building Digital Excellence with{" "}
-                        <span className="text-primary">Next.js & AI.</span>
+                        Digital Solutions Built to{" "}
+                        <span className="text-primary">Drive Real Business Growth</span>
                     </h1>
 
                     {/* Subtext */}
                     <p className="mx-auto max-w-2xl text-xl text-muted-foreground leading-relaxed">
-                        FrantendX Digital Solutions delivers scalable, high-performance web applications tailored for your business growth.
+                        Helping businesses solve operational challenges, attract more customers, and increase revenue through smart, reliable digital systems built for long-term success.
                     </p>
 
                     {/* Buttons */}
