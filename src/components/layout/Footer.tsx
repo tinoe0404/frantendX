@@ -27,9 +27,7 @@ export function Footer() {
                             <li>
                                 <Link href="/services" className="hover:text-primary transition-colors">Services</Link>
                             </li>
-                            <li>
-                                <Link href="/portfolio" className="hover:text-primary transition-colors">Portfolio</Link>
-                            </li>
+
                         </ul>
                     </div>
 

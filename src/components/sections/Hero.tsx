@@ -41,14 +41,7 @@ export function Hero() {
                         <Button size="lg" className="w-full sm:w-auto text-base h-12 px-8" asChild>
                             <Link href="/contact">Get a Free Quote</Link>
                         </Button>
-                        <Button
-                            variant="outline"
-                            size="lg"
-                            className="w-full sm:w-auto text-base h-12 px-8"
-                            asChild
-                        >
-                            <Link href="/portfolio">View Portfolio</Link>
-                        </Button>
+
                     </div>
                 </motion.div>
             </div>
