@@ -85,7 +85,7 @@ export default function AboutPage() {
                             </CardHeader>
                             <CardContent>
                                 <p className="text-muted-foreground">
-                                    We build fast, and our sites load faster. Performance is not an afterthought; it's a priority.
+                                    We build fast, and our sites load faster. Performance is not an afterthought; it&apos;s a priority.
                                 </p>
                             </CardContent>
                         </Card>

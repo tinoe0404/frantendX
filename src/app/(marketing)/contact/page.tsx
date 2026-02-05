@@ -18,7 +18,7 @@ export default function ContactPage() {
                     <div className="space-y-12">
                         <div className="space-y-6">
                             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-                                Let's Build Your <span className="text-primary">Next Project.</span>
+                                Let&apos;s Build Your <span className="text-primary">Next Project.</span>
                             </h1>
                             <p className="text-xl text-muted-foreground leading-relaxed">
                                 Ready to scale? Fill out the form and our team will get back to you within 24 hours.
@@ -60,7 +60,7 @@ export default function ContactPage() {
                         <Card className="bg-secondary/20 border-border">
                             <CardContent className="p-6">
                                 <p className="text-sm font-medium italic text-muted-foreground">
-                                    "FrantendX Digital Solutions delivered our SaaS dashboard 2 weeks ahead of schedule. The code quality is exceptional."
+                                    &quot;FrantendX Digital Solutions delivered our SaaS dashboard 2 weeks ahead of schedule. The code quality is exceptional.&quot;
                                 </p>
                                 <p className="text-xs font-bold mt-4 uppercase tracking-wider">— Happy Client</p>
                             </CardContent>

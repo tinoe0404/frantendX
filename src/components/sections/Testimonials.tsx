@@ -17,7 +17,7 @@ export async function Testimonials() {
                         Trusted by <span className="text-primary">Innovators.</span>
                     </h2>
                     <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-                        Don't just take our word for it. Here's what our partners say.
+                        Don&apos;t just take our word for it. Here&apos;s what our partners say.
                     </p>
                 </div>
 
