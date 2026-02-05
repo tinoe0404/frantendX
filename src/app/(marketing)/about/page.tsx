@@ -5,7 +5,7 @@ import { CheckCircle2, Zap, Scaling } from "lucide-react";
 
 export const metadata: Metadata = {
     title: "About Us | frantendX Digital Solutions",
-    description: "Learn about frantendX, a leading digital agency specializing in Next.js and high-performance web development.",
+    description: "Learn about FrantendX Digital Solutions, a leading digital agency specializing in Next.js and high-performance web development.",
 };
 
 export default function AboutPage() {
@@ -32,7 +32,7 @@ export default function AboutPage() {
                                 Our Mission
                             </h2>
                             <p className="text-lg text-muted-foreground leading-relaxed">
-                                frantendX was founded to bridge the gap between complex technology and business goals.
+                                FrantendX Digital Solutions was founded to bridge the gap between complex technology and business goals.
                                 We believe that every business deserves a digital presence that is not only beautiful but also
                                 fundamentally robust, secure, and scalable.
                             </p>

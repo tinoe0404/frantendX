@@ -40,7 +40,7 @@ export function Navbar() {
                 <div className="mr-4 hidden md:flex">
                     <Link href="/" className="mr-6 flex items-center space-x-2">
                         <span className="hidden font-bold text-primary sm:inline-block text-xl">
-                            frantendX
+                            FrantendX Digital Solutions
                         </span>
                     </Link>
                 </div>

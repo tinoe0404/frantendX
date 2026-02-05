@@ -33,7 +33,7 @@ export function Hero() {
 
                     {/* Subtext */}
                     <p className="mx-auto max-w-2xl text-xl text-muted-foreground leading-relaxed">
-                        frantendX delivers scalable, high-performance web applications tailored for your business growth.
+                        FrantendX Digital Solutions delivers scalable, high-performance web applications tailored for your business growth.
                     </p>
 
                     {/* Buttons */}

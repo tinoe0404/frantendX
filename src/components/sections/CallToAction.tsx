@@ -12,7 +12,7 @@ export function CallToAction() {
                         Ready to scale your business?
                     </h2>
                     <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-blue-100">
-                        Let's build something extraordinary together. Start your journey with frantendX today.
+                        Let's build something extraordinary together. Start your journey with FrantendX Digital Solutions today.
                     </p>
                     <div className="mt-10 flex items-center justify-center gap-x-6">
                         <Button

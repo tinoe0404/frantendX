@@ -8,7 +8,7 @@ export function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
                     {/* Brand Info */}
                     <div className="space-y-4">
-                        <h3 className="text-xl font-bold text-primary">frantendX</h3>
+                        <h3 className="text-xl font-bold text-primary">FrantendX Digital Solutions</h3>
                         <p className="text-muted-foreground text-sm leading-relaxed">
                             We build world-class digital experiences that drive growth and engagement. Your partner in digital transformation.
                         </p>

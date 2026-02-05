@@ -20,12 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'monthly',
             priority: 0.8,
         },
-        {
-            url: 'https://frantendx.com/pricing',
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
+
         {
             url: 'https://frantendx.com/contact',
             lastModified: new Date(),

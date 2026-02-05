@@ -15,7 +15,7 @@ import { Card, CardHeader, CardTitle, CardContent, CardDescription, CardFooter }
 import { Badge } from "@/components/ui/badge";
 
 export const metadata: Metadata = {
-    title: "Services & Pricing | frantendX Digital Solutions",
+    title: "Services & Pricing | FrantendX Digital Solutions",
     description: "Transparent pricing and detailed service packages for custom websites, web applications, and digital systems.",
 };
 

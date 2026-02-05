@@ -12,18 +12,18 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   metadataBase: new URL('https://frantendx.com'),
   title: {
-    default: 'frantendX Digital Solutions | Next.js & Full Stack Agency',
-    template: '%s | frantendX Digital Solutions',
+    default: 'FrantendX Digital Solutions | Next.js & Full Stack Agency',
+    template: '%s | FrantendX Digital Solutions',
   },
   description: 'We build high-performance, scalable web applications using Next.js, Neon, and AI. Transforming ideas into digital reality.',
   twitter: {
     card: 'summary_large_image',
   },
   openGraph: {
-    title: 'frantendX Digital Solutions',
+    title: 'FrantendX Digital Solutions',
     description: 'Next.js Full Stack Agency',
     url: 'https://frantendx.com',
-    siteName: 'frantendX',
+    siteName: 'FrantendX Digital Solutions',
     locale: 'en_US',
     type: 'website',
   },

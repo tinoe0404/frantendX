@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export const metadata: Metadata = {
     title: "Contact Us | frantendX Digital Solutions",
-    description: "Get in touch with frantendX for your next digital project. We're here to help you scale.",
+    description: "Get in touch with FrantendX Digital Solutions for your next digital project. We're here to help you scale.",
 };
 
 export default function ContactPage() {
@@ -60,7 +60,7 @@ export default function ContactPage() {
                         <Card className="bg-secondary/20 border-border">
                             <CardContent className="p-6">
                                 <p className="text-sm font-medium italic text-muted-foreground">
-                                    "frantendX delivered our SaaS dashboard 2 weeks ahead of schedule. The code quality is exceptional."
+                                    "FrantendX Digital Solutions delivered our SaaS dashboard 2 weeks ahead of schedule. The code quality is exceptional."
                                 </p>
                                 <p className="text-xs font-bold mt-4 uppercase tracking-wider">— Happy Client</p>
                             </CardContent>

@@ -2,7 +2,7 @@ export default function JsonLd() {
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
-        "name": "frantendX Digital Solutions",
+        "name": "FrantendX Digital Solutions",
         "url": "https://frantendx.com",
         "priceRange": "$$$",
         "address": {
