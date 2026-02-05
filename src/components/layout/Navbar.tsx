@@ -39,7 +39,7 @@ export function Navbar() {
                 {/* Logo */}
                 <div className="mr-4 hidden md:flex">
                     <Link href="/" className="mr-6 flex items-center space-x-2">
-                        <span className="hidden font-bold text-primary sm:inline-block text-xl">
+                        <span className="hidden font-bold sm:inline-block text-xl bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
                             FrantendX Digital Solutions
                         </span>
                     </Link>
@@ -48,8 +48,8 @@ export function Navbar() {
                 {/* Mobile Logo (Visible only on small screens) */}
                 <div className="flex md:hidden">
                     <Link href="/" className="flex items-center space-x-2">
-                        <span className="font-bold text-primary text-xl">
-                            frantendX
+                        <span className="font-bold text-lg bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
+                            FrantendX Digital Solutions
                         </span>
                     </Link>
                 </div>
@@ -92,7 +92,7 @@ export function Navbar() {
                         </SheetTrigger>
                         <SheetContent side="right" className="pr-0">
                             <SheetHeader className="px-7">
-                                <SheetTitle className="font-bold text-primary text-left">frantendX</SheetTitle>
+                                <SheetTitle className="font-bold text-left text-xl bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">FrantendX Digital Solutions</SheetTitle>
                             </SheetHeader>
                             <nav className="flex flex-col gap-4 mt-6 px-7">
                                 {navLinks.map((link) => (
