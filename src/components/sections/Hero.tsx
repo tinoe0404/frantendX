@@ -1,133 +1,26 @@
 "use client";
 
-import React, { useRef, useState } from "react";
 import Link from "next/link";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { ArrowRight, Eye } from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const headlineWords = [
-  "We",
-  "Build",
-  "Software",
-  "That",
-  "Drives",
-  "Growth.",
+const stats = [
+  { value: "20+", label: "Projects delivered" },
+  { value: "98%", label: "Client satisfaction" },
+  { value: "3x", label: "Average ROI" },
+  { value: "<12mo", label: "Time to payback" },
 ];
-
-const codeLines = [
-  { indent: 0, tokens: [{ text: "export", color: "text-primary" }, { text: " async ", color: "text-muted-foreground" }, { text: "function", color: "text-primary" }, { text: " buildSolution", color: "text-foreground" }, { text: "() {", color: "text-muted-foreground" }] },
-  { indent: 1, tokens: [{ text: "const", color: "text-primary" }, { text: " stack ", color: "text-foreground" }, { text: "= ", color: "text-muted-foreground" }, { text: "[", color: "text-muted-foreground" }] },
-  { indent: 2, tokens: [{ text: "'Next.js'", color: "text-emerald-400 dark:text-emerald-400" }, { text: ",", color: "text-muted-foreground" }] },
-  { indent: 2, tokens: [{ text: "'React'", color: "text-emerald-400 dark:text-emerald-400" }, { text: ",", color: "text-muted-foreground" }] },
-  { indent: 2, tokens: [{ text: "'TypeScript'", color: "text-emerald-400 dark:text-emerald-400" }] },
-  { indent: 1, tokens: [{ text: "];", color: "text-muted-foreground" }] },
-  { indent: 0, tokens: [] },
-  { indent: 1, tokens: [{ text: "return", color: "text-primary" }, { text: " deploy", color: "text-foreground" }, { text: "(stack);", color: "text-muted-foreground" }] },
-  { indent: 0, tokens: [{ text: "}", color: "text-muted-foreground" }] },
-];
-
-function MagneticButton({
-  children,
-  className,
-  ...props
-}: React.ComponentProps<typeof Button>) {
-  const ref = useRef<HTMLButtonElement>(null);
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-  const springX = useSpring(x, { stiffness: 300, damping: 20 });
-  const springY = useSpring(y, { stiffness: 300, damping: 20 });
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!ref.current) return;
-    const rect = ref.current.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-    x.set((e.clientX - centerX) * 0.15);
-    y.set((e.clientY - centerY) * 0.15);
-  };
-
-  const handleMouseLeave = () => {
-    x.set(0);
-    y.set(0);
-  };
-
-  return (
-    <motion.div
-      style={{ x: springX, y: springY }}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-    >
-      <Button ref={ref} className={className} {...props}>
-        {children}
-      </Button>
-    </motion.div>
-  );
-}
-
-function CodeWindow() {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, delay: 0.8 }}
-      className="mx-auto mt-16 max-w-2xl"
-    >
-      <div className="rounded-xl border border-border bg-card overflow-hidden shadow-2xl shadow-primary/5">
-        {/* Title bar */}
-        <div className="flex items-center gap-2 px-4 py-3 border-b border-border bg-muted/50">
-          <div className="flex gap-1.5">
-            <div className="h-3 w-3 rounded-full bg-destructive/60" />
-            <div className="h-3 w-3 rounded-full bg-chart-4/60" />
-            <div className="h-3 w-3 rounded-full bg-chart-2/60" />
-          </div>
-          <span className="ml-2 text-xs text-muted-foreground font-mono">
-            solution.ts
-          </span>
-        </div>
-        {/* Code content */}
-        <div className="p-5 font-mono text-sm leading-7 overflow-x-auto">
-          {codeLines.map((line, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.3, delay: 1 + i * 0.08 }}
-              style={{ paddingLeft: `${line.indent * 1.5}rem` }}
-              className="flex gap-0"
-            >
-              <span className="text-muted-foreground/40 w-6 select-none text-right mr-4 text-xs leading-7">
-                {i + 1}
-              </span>
-              {line.tokens.length === 0 ? (
-                <span>&nbsp;</span>
-              ) : (
-                line.tokens.map((token, j) => (
-                  <span key={j} className={token.color}>
-                    {token.text}
-                  </span>
-                ))
-              )}
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </motion.div>
-  );
-}
 
 const containerVariants = {
   hidden: {},
   visible: {
-    transition: {
-      staggerChildren: 0.08,
-      delayChildren: 0.2,
-    },
+    transition: { staggerChildren: 0.06, delayChildren: 0.1 },
   },
 };
 
 const wordVariants = {
-  hidden: { opacity: 0, y: 20, filter: "blur(4px)" },
+  hidden: { opacity: 0, y: 24, filter: "blur(6px)" },
   visible: {
     opacity: 1,
     y: 0,
@@ -137,99 +30,96 @@ const wordVariants = {
 };
 
 export function Hero() {
+  const headline = ["We build", "software that", "drives growth."];
+
   return (
-    <section className="relative overflow-hidden pt-20 pb-16 md:pt-28 md:pb-24 lg:pt-36 lg:pb-32">
-      {/* Glowing background orb */}
+    <section className="relative overflow-hidden">
+      {/* Subtle radial gradient background */}
       <div
-        className="pointer-events-none absolute left-1/2 top-1/3 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/20 blur-[120px] animate-glow"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute right-0 top-0 h-[400px] w-[400px] rounded-full bg-primary/10 blur-[100px]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-muted/50 via-background to-background"
         aria-hidden="true"
       />
 
-      <div className="container relative z-10 max-w-screen-xl px-4 md:px-8">
+      <div className="relative mx-auto max-w-6xl px-6 pt-24 pb-20 md:pt-36 md:pb-28 lg:pt-44 lg:pb-36">
         <div className="mx-auto max-w-4xl text-center">
           {/* Badge */}
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="mb-8 inline-flex items-center gap-2 rounded-full border border-border bg-card/80 px-4 py-1.5 text-sm font-medium text-muted-foreground backdrop-blur-sm"
+            transition={{ duration: 0.5, delay: 0 }}
+            className="mb-8 inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-sm text-muted-foreground"
           >
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
-            </span>
-            Now accepting projects for Q2 2026
+            <Sparkles className="h-3.5 w-3.5" />
+            <span>Now accepting projects for Q2 2026</span>
           </motion.div>
 
-          {/* Staggered Headline */}
+          {/* Headline */}
           <motion.h1
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="text-5xl font-extrabold tracking-tight text-foreground sm:text-6xl md:text-7xl lg:text-8xl text-balance"
+            className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl text-balance leading-[1.1]"
           >
-            {headlineWords.map((word, i) => (
-              <motion.span
-                key={i}
-                variants={wordVariants}
-                className={
-                  i >= 4 ? "text-primary" : undefined
-                }
-                style={{ display: "inline-block", marginRight: "0.3em" }}
-              >
-                {word}
-              </motion.span>
+            {headline.map((line, lineIdx) => (
+              <span key={lineIdx} className="block">
+                {line.split(" ").map((word, wordIdx) => (
+                  <motion.span
+                    key={`${lineIdx}-${wordIdx}`}
+                    variants={wordVariants}
+                    className="inline-block mr-[0.3em]"
+                  >
+                    {word}
+                  </motion.span>
+                ))}
+              </span>
             ))}
           </motion.h1>
 
           {/* Subtext */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="mx-auto mt-8 max-w-2xl text-lg text-muted-foreground leading-relaxed md:text-xl"
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="mx-auto mt-8 max-w-xl text-lg text-muted-foreground leading-relaxed"
           >
-            High-performance web applications and digital systems built to
-            solve real business problems, attract customers, and scale revenue.
+            High-performance web applications built to solve real business problems, attract customers, and scale revenue.
           </motion.p>
 
           {/* CTAs */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.7 }}
+            transition={{ duration: 0.5, delay: 0.65 }}
             className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <MagneticButton
-              size="lg"
-              className="h-12 min-w-[180px] gap-2 text-base font-semibold"
-              asChild
-            >
+            <Button size="lg" className="h-12 rounded-full px-8 text-base font-medium gap-2" asChild>
               <Link href="/contact">
-                Start Project
+                Start a project
                 <ArrowRight className="h-4 w-4" />
               </Link>
-            </MagneticButton>
-            <MagneticButton
-              size="lg"
-              variant="outline"
-              className="h-12 min-w-[180px] gap-2 text-base font-semibold"
-              asChild
-            >
+            </Button>
+            <Button size="lg" variant="outline" className="h-12 rounded-full px-8 text-base font-medium" asChild>
               <Link href="/services">
-                <Eye className="h-4 w-4" />
-                View Work
+                Explore services
               </Link>
-            </MagneticButton>
+            </Button>
           </motion.div>
         </div>
 
-        {/* Code Window Visual */}
-        <CodeWindow />
+        {/* Stats row */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.85 }}
+          className="mx-auto mt-20 grid max-w-3xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-4"
+        >
+          {stats.map((stat) => (
+            <div key={stat.label} className="flex flex-col items-center justify-center bg-card px-6 py-8">
+              <span className="text-2xl font-bold text-foreground md:text-3xl">{stat.value}</span>
+              <span className="mt-1.5 text-xs text-muted-foreground">{stat.label}</span>
+            </div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

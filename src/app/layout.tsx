@@ -6,24 +6,22 @@ import { Toaster } from "@/components/ui/sonner";
 import JsonLd from "@/components/seo/JsonLd";
 import { ThemeProvider } from "@/components/theme-provider";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://frantendx.com"),
   title: {
-    default: "FrantendX Digital Solutions | Next.js & Full Stack Agency",
-    template: "%s | FrantendX Digital Solutions",
+    default: "FrantendX Digital Solutions | Software Agency",
+    template: "%s | FrantendX",
   },
   description:
-    "We build high-performance, scalable web applications using Next.js, Neon, and AI. Transforming ideas into digital reality.",
-  twitter: {
-    card: "summary_large_image",
-  },
+    "We build high-performance, scalable web applications. Your strategic partner for digital transformation.",
+  twitter: { card: "summary_large_image" },
   openGraph: {
     title: "FrantendX Digital Solutions",
-    description: "Next.js Full Stack Agency",
+    description: "Software Agency - Build. Ship. Scale.",
     url: "https://frantendx.com",
-    siteName: "FrantendX Digital Solutions",
+    siteName: "FrantendX",
     locale: "en_US",
     type: "website",
   },
@@ -31,8 +29,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f8fafc" },
-    { media: "(prefers-color-scheme: dark)", color: "#020617" },
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
   ],
   width: "device-width",
   initialScale: 1,
@@ -46,7 +44,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn(inter.className, "font-sans antialiased")}>
+      <body className={cn(inter.variable, "font-sans")}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
