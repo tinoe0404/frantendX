@@ -16,18 +16,25 @@ export default async function Image() {
             <div
                 style={{
                     fontSize: 128,
-                    background: '#F8FAFC',
+                    background: '#0a0a0a',
                     width: '100%',
                     height: '100%',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     flexDirection: 'column',
-                    color: '#0F172A', // Slate-900 for contrast
+                    color: '#ffffff',
                 }}
             >
-                <div style={{ fontWeight: 'bold' }}>FrantendX</div>
-                <div style={{ fontSize: 48, marginTop: 24, opacity: 0.8 }}>Digital Solutions</div>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                    src="https://frantendx.com/images/logo.png"
+                    alt=""
+                    width={280}
+                    height={80}
+                    style={{ marginBottom: 32 }}
+                />
+                <div style={{ fontSize: 48, opacity: 0.7, fontWeight: 500 }}>Build. Ship. Scale.</div>
             </div>
         ),
         {
