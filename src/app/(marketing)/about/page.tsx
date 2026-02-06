@@ -16,7 +16,7 @@ const values = [
   {
     icon: Zap,
     title: "Speed",
-    description: "We build fast, and our sites load faster. Performance is not an afterthought; it's a priority.",
+    description: "We build fast, and our sites load faster. Performance is not an afterthought; it is a priority.",
   },
   {
     icon: Scaling,
@@ -29,23 +29,32 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="py-24 md:py-32">
-        <div className="mx-auto max-w-6xl px-6 text-center">
+      <section className="relative py-24 md:py-32 overflow-hidden">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-muted/50 via-background to-background" aria-hidden="true" />
+        <div className="relative mx-auto max-w-6xl px-6 text-center">
+          <p className="mb-4 text-sm font-medium text-muted-foreground tracking-widest uppercase">
+            About us
+          </p>
           <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl text-balance mb-6">
             Driven by innovation, grounded in quality.
           </h1>
-          <p className="mx-auto max-w-2xl text-xl text-muted-foreground leading-relaxed">
+          <p className="mx-auto max-w-2xl text-lg text-muted-foreground leading-relaxed">
             We are more than just developers. We are your strategic partners in the digital age.
           </p>
         </div>
       </section>
 
       {/* Mission */}
-      <section className="py-20 md:py-24 border-y border-border">
+      <section className="py-24 md:py-32 border-t border-border">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Our Mission</h2>
+              <p className="text-sm font-medium text-muted-foreground tracking-widest uppercase">
+                Our mission
+              </p>
+              <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
+                Bridging technology and business goals
+              </h2>
               <p className="text-muted-foreground leading-relaxed">
                 FrantendX Digital Solutions was founded to bridge the gap between complex technology and business goals.
                 We believe that every business deserves a digital presence that is not only beautiful but also
@@ -56,7 +65,7 @@ export default function AboutPage() {
                 to deliver solutions that stand the test of time and market shifts.
               </p>
             </div>
-            <div className="relative h-[360px] w-full rounded-2xl border border-border bg-card flex items-center justify-center">
+            <div className="relative h-[320px] md:h-[400px] w-full rounded-2xl border border-border bg-card flex items-center justify-center">
               <span className="text-sm text-muted-foreground">Team / Office Image</span>
             </div>
           </div>
@@ -64,10 +73,13 @@ export default function AboutPage() {
       </section>
 
       {/* Core Values */}
-      <section className="py-24 md:py-32">
+      <section className="py-24 md:py-32 border-t border-border">
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center mb-14">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            <p className="mb-3 text-sm font-medium text-muted-foreground tracking-widest uppercase">
+              What drives us
+            </p>
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
               Our Core Values
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-muted-foreground leading-relaxed">
@@ -77,9 +89,9 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {values.map((v) => (
-              <Card key={v.title} className="bg-card border-border">
+              <Card key={v.title} className="border-border">
                 <CardHeader className="pb-4">
-                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-secondary text-foreground">
+                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-secondary text-brand">
                     <v.icon className="h-5 w-5" />
                   </div>
                   <CardTitle className="text-lg">{v.title}</CardTitle>

@@ -40,7 +40,7 @@ export function ROICalculator() {
 
             <div className="mt-8 grid grid-cols-2 gap-4">
               <div className="rounded-xl border border-border bg-card p-5">
-                <div className="flex items-center gap-2 text-foreground mb-1">
+                <div className="flex items-center gap-2 text-brand mb-1">
                   <TrendingUp className="h-4 w-4" />
                   <span className="text-sm font-medium">Avg. Growth</span>
                 </div>
@@ -48,7 +48,7 @@ export function ROICalculator() {
                 <p className="text-xs text-muted-foreground mt-0.5">Revenue multiplier</p>
               </div>
               <div className="rounded-xl border border-border bg-card p-5">
-                <div className="flex items-center gap-2 text-foreground mb-1">
+                <div className="flex items-center gap-2 text-brand mb-1">
                   <DollarSign className="h-4 w-4" />
                   <span className="text-sm font-medium">ROI Period</span>
                 </div>
@@ -85,7 +85,7 @@ export function ROICalculator() {
                 step={1000}
                 value={monthlySales}
                 onChange={(e) => setMonthlySales(Number(e.target.value))}
-                className="w-full h-1.5 rounded-full appearance-none cursor-pointer bg-secondary accent-foreground"
+                className="w-full h-1.5 rounded-full appearance-none cursor-pointer bg-secondary accent-brand"
               />
               <div className="flex justify-between text-xs text-muted-foreground">
                 <span>$1,000</span>
@@ -100,7 +100,7 @@ export function ROICalculator() {
               </div>
               <div className="flex items-center justify-between rounded-xl bg-secondary p-4">
                 <span className="text-sm text-muted-foreground">Monthly Growth</span>
-                <span className="text-lg font-bold text-foreground tabular-nums">+{fmt(growth)}</span>
+                <span className="text-lg font-bold text-brand tabular-nums">+{fmt(growth)}</span>
               </div>
             </div>
 

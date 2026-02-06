@@ -165,7 +165,7 @@ export function ContactForm() {
                     {...form.register("website_url")}
                 />
 
-                <Button type="submit" className="w-full" disabled={isPending}>
+                <Button type="submit" className="w-full bg-brand text-brand-foreground hover:bg-brand/90" disabled={isPending}>
                     {isPending ? (
                         <>
                             <Loader2 className="mr-2 h-4 w-4 animate-spin" />

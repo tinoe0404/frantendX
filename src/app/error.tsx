@@ -25,7 +25,7 @@ export default function Error({
         We apologize for the inconvenience. An unexpected error has occurred.
       </p>
       <div className="flex gap-4">
-        <Button onClick={() => reset()} size="lg" className="rounded-full">
+        <Button onClick={() => reset()} size="lg" className="rounded-full bg-brand text-brand-foreground hover:bg-brand/90">
           Try Again
         </Button>
         <Button onClick={() => (window.location.href = "/")} variant="outline" size="lg" className="rounded-full">

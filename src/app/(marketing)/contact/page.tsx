@@ -10,12 +10,15 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="py-24 md:py-32">
+    <section className="py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Left */}
           <div className="space-y-10">
             <div className="space-y-4">
+              <p className="text-sm font-medium text-muted-foreground tracking-widest uppercase">
+                Get in touch
+              </p>
               <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl text-balance">
                 {"Let's build your next project."}
               </h1>
@@ -26,7 +29,7 @@ export default function ContactPage() {
 
             <div className="space-y-6">
               <div className="flex items-start gap-4">
-                <div className="h-10 w-10 rounded-xl bg-secondary flex items-center justify-center text-foreground shrink-0">
+                <div className="h-10 w-10 rounded-xl bg-secondary flex items-center justify-center text-brand shrink-0">
                   <Mail className="h-5 w-5" />
                 </div>
                 <div>
@@ -36,7 +39,7 @@ export default function ContactPage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="h-10 w-10 rounded-xl bg-secondary flex items-center justify-center text-foreground shrink-0">
+                <div className="h-10 w-10 rounded-xl bg-secondary flex items-center justify-center text-brand shrink-0">
                   <MapPin className="h-5 w-5" />
                 </div>
                 <div>
@@ -46,7 +49,7 @@ export default function ContactPage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="h-10 w-10 rounded-xl bg-secondary flex items-center justify-center text-foreground shrink-0">
+                <div className="h-10 w-10 rounded-xl bg-secondary flex items-center justify-center text-brand shrink-0">
                   <Phone className="h-5 w-5" />
                 </div>
                 <div>
@@ -56,7 +59,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <Card className="bg-card border-border">
+            <Card className="border-border">
               <CardContent className="p-6">
                 <p className="text-sm italic text-muted-foreground leading-relaxed">
                   {'"FrantendX Digital Solutions delivered our SaaS dashboard 2 weeks ahead of schedule. The code quality is exceptional."'}
@@ -69,12 +72,12 @@ export default function ContactPage() {
           </div>
 
           {/* Right */}
-          <div className="rounded-2xl border border-border bg-card p-8 md:p-10">
+          <div className="rounded-2xl border border-border bg-card p-6 md:p-10">
             <h2 className="text-xl font-bold text-foreground mb-8">Send us a message</h2>
             <ContactForm />
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

@@ -23,7 +23,7 @@ export function CallToAction() {
             {"Start your project with FrantendX. We'll turn your vision into production-ready software."}
           </p>
           <div className="mt-10 flex items-center justify-center gap-4 flex-col sm:flex-row">
-            <Button size="lg" className="h-12 rounded-full px-8 text-base font-medium gap-2" asChild>
+            <Button size="lg" className="h-12 rounded-full px-8 text-base font-medium gap-2 bg-brand text-brand-foreground hover:bg-brand/90" asChild>
               <Link href="/contact">
                 Start your project
                 <ArrowRight className="h-4 w-4" />
