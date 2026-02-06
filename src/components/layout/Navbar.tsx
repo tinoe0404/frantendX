@@ -6,8 +6,6 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
-import { useMotionValueEvent, useScroll } from "framer-motion";
-
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -53,12 +51,14 @@ function ThemeSwitch() {
 export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
   const [scrolled, setScrolled] = React.useState(false);
-  const { scrollY } = useScroll();
   const pathname = usePathname();
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    setScrolled(latest > 10);
-  });
+  React.useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 10);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header
