@@ -6,7 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
-import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+import { useMotionValueEvent, useScroll } from "framer-motion";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -61,7 +61,7 @@ export function Navbar() {
   });
 
   return (
-    <motion.header
+    <header
       className={cn(
         "sticky top-0 z-50 w-full transition-all duration-300",
         scrolled
@@ -160,6 +160,6 @@ export function Navbar() {
           </Sheet>
         </div>
       </div>
-    </motion.header>
+    </header>
   );
 }
