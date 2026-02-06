@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
@@ -70,15 +71,15 @@ export function Navbar() {
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5 group">
-          <div className="flex h-7 w-7 items-center justify-center rounded-md bg-foreground transition-transform group-hover:scale-105">
-            <span className="text-xs font-bold text-background leading-none">
-              FX
-            </span>
-          </div>
-          <span className="font-semibold text-foreground tracking-tight">
-            FrantendX
-          </span>
+        <Link href="/" className="flex items-center group shrink-0">
+          <Image
+            src="/images/logo.png"
+            alt="FrantendX Digital Solutions"
+            width={140}
+            height={40}
+            className="h-9 w-auto transition-transform group-hover:scale-[1.02]"
+            priority
+          />
         </Link>
 
         {/* Desktop Navigation */}
@@ -119,11 +120,14 @@ export function Navbar() {
             </SheetTrigger>
             <SheetContent side="right" className="w-72 bg-background">
               <SheetHeader className="px-1">
-                <SheetTitle className="flex items-center gap-2.5 text-left">
-                  <div className="flex h-7 w-7 items-center justify-center rounded-md bg-foreground">
-                    <span className="text-xs font-bold text-background leading-none">FX</span>
-                  </div>
-                  <span className="font-semibold tracking-tight">FrantendX</span>
+                <SheetTitle className="text-left">
+                  <Image
+                    src="/images/logo.png"
+                    alt="FrantendX Digital Solutions"
+                    width={120}
+                    height={34}
+                    className="h-8 w-auto"
+                  />
                 </SheetTitle>
               </SheetHeader>
               <nav className="flex flex-col gap-1 mt-8 px-1">
