@@ -2,49 +2,125 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+const stats = [
+  { value: "20+", label: "Projects delivered" },
+  { value: "98%", label: "Client satisfaction" },
+  { value: "3x", label: "Average ROI" },
+  { value: "<12mo", label: "Time to payback" },
+];
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.06, delayChildren: 0.1 },
+  },
+};
+
+const wordVariants = {
+  hidden: { opacity: 0, y: 24, filter: "blur(6px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.5, ease: "easeOut" as const },
+  },
+};
+
 export function Hero() {
-    return (
-        <section className="relative overflow-hidden pt-24 pb-16 md:pt-32 md:pb-24 lg:pt-40 lg:pb-32">
-            {/* Background Gradient Blob */}
-            <div
-                className="absolute -top-40 -right-40 h-[500px] w-[500px] rounded-full bg-gradient-radial from-blue-100/40 to-transparent opacity-20 blur-3xl pointer-events-none"
-                aria-hidden="true"
-            />
+  const headline = ["We build", "software that", "drives growth."];
 
-            <div className="container max-w-screen-2xl px-4 md:px-8 relative z-10 text-center">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    className="mx-auto max-w-3xl space-y-8"
-                >
-                    {/* Badge */}
-                    <div className="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-700 mb-4">
-                        🚀 Transforming Ideas into Digital Reality
-                    </div>
+  return (
+    <section className="relative overflow-hidden">
+      {/* Subtle radial gradient background */}
+      <div
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-muted/50 via-background to-background"
+        aria-hidden="true"
+      />
 
-                    {/* Heading */}
-                    <h1 className="text-5xl font-bold tracking-tight text-foreground sm:text-6xl md:text-7xl">
-                        Digital Solutions Built to{" "}
-                        <span className="text-primary">Drive Real Business Growth</span>
-                    </h1>
+      <div className="relative mx-auto max-w-6xl px-6 pt-24 pb-20 md:pt-36 md:pb-28 lg:pt-44 lg:pb-36">
+        <div className="mx-auto max-w-4xl text-center">
+          {/* Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0 }}
+            className="mb-8 inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-sm text-muted-foreground"
+          >
+            <Sparkles className="h-3.5 w-3.5" />
+            <span>Now accepting projects for Q2 2026</span>
+          </motion.div>
 
-                    {/* Subtext */}
-                    <p className="mx-auto max-w-2xl text-xl text-muted-foreground leading-relaxed">
-                        Helping businesses solve operational challenges, attract more customers, and increase revenue through smart, reliable digital systems built for long-term success.
-                    </p>
+          {/* Headline */}
+          <motion.h1
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl text-balance leading-[1.1]"
+          >
+            {headline.map((line, lineIdx) => (
+              <span key={lineIdx} className="block">
+                {line.split(" ").map((word, wordIdx) => (
+                  <motion.span
+                    key={`${lineIdx}-${wordIdx}`}
+                    variants={wordVariants}
+                    className="inline-block mr-[0.3em]"
+                  >
+                    {word}
+                  </motion.span>
+                ))}
+              </span>
+            ))}
+          </motion.h1>
 
-                    {/* Buttons */}
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-                        <Button size="lg" className="w-full sm:w-auto text-base h-12 px-8" asChild>
-                            <Link href="/contact">Get a Free Quote</Link>
-                        </Button>
+          {/* Subtext */}
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="mx-auto mt-8 max-w-xl text-lg text-muted-foreground leading-relaxed"
+          >
+            High-performance web applications built to solve real business problems, attract customers, and scale revenue.
+          </motion.p>
 
-                    </div>
-                </motion.div>
+          {/* CTAs */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.65 }}
+            className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+          >
+            <Button size="lg" className="h-12 rounded-full px-8 text-base font-medium gap-2" asChild>
+              <Link href="/contact">
+                Start a project
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+            <Button size="lg" variant="outline" className="h-12 rounded-full px-8 text-base font-medium" asChild>
+              <Link href="/services">
+                Explore services
+              </Link>
+            </Button>
+          </motion.div>
+        </div>
+
+        {/* Stats row */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.85 }}
+          className="mx-auto mt-20 grid max-w-3xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-4"
+        >
+          {stats.map((stat) => (
+            <div key={stat.label} className="flex flex-col items-center justify-center bg-card px-6 py-8">
+              <span className="text-2xl font-bold text-foreground md:text-3xl">{stat.value}</span>
+              <span className="mt-1.5 text-xs text-muted-foreground">{stat.label}</span>
             </div>
-        </section>
-    );
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
 }
