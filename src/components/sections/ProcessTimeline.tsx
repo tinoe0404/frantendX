@@ -39,7 +39,7 @@ export function ProcessTimeline() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="text-center mb-14"
         >
           <p className="mb-3 text-sm font-medium text-muted-foreground tracking-widest uppercase">
             How we work
@@ -52,7 +52,7 @@ export function ProcessTimeline() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
           {steps.map((step, i) => (
             <motion.div
               key={step.id}
@@ -62,7 +62,7 @@ export function ProcessTimeline() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="relative rounded-2xl border border-border bg-card p-6 text-center"
             >
-              <div className="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-secondary text-foreground">
+              <div className="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-secondary text-brand">
                 <step.icon className="h-5 w-5" />
               </div>
               <div className="mb-2 text-xs font-medium text-muted-foreground">

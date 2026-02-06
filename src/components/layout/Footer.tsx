@@ -60,7 +60,7 @@ export function Footer() {
                   className="h-9 text-sm bg-background"
                   required
                 />
-                <Button type="submit" size="sm" className="h-9 px-3 rounded-md">
+                <Button type="submit" size="sm" className="h-9 px-3 rounded-md bg-brand text-brand-foreground hover:bg-brand/90">
                   <ArrowRight className="h-4 w-4" />
                   <span className="sr-only">Subscribe</span>
                 </Button>

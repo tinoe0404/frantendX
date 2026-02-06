@@ -12,7 +12,7 @@ export default function NotFound() {
       <p className="text-lg text-muted-foreground mb-8 max-w-md leading-relaxed">
         {"Sorry, we couldn't find the page you're looking for."}
       </p>
-      <Button asChild size="lg" className="rounded-full">
+      <Button asChild size="lg" className="rounded-full bg-brand text-brand-foreground hover:bg-brand/90">
         <Link href="/">Return Home</Link>
       </Button>
     </div>

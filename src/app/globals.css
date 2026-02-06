@@ -4,33 +4,37 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Light Mode: Clean warm white */
+  /* Light Mode: Clean warm white with teal accent */
   --background: 0 0% 100%;
-  --foreground: 0 0% 9%;
+  --foreground: 210 11% 15%;
 
-  --card: 0 0% 98%;
-  --card-foreground: 0 0% 9%;
+  --card: 210 20% 98%;
+  --card-foreground: 210 11% 15%;
   --popover: 0 0% 100%;
-  --popover-foreground: 0 0% 9%;
+  --popover-foreground: 210 11% 15%;
 
-  --primary: 0 0% 9%;
+  --primary: 210 11% 15%;
   --primary-foreground: 0 0% 98%;
 
-  --secondary: 0 0% 96%;
-  --secondary-foreground: 0 0% 9%;
+  --secondary: 210 14% 95%;
+  --secondary-foreground: 210 11% 15%;
 
-  --muted: 0 0% 96%;
-  --muted-foreground: 0 0% 45%;
-  --accent: 0 0% 96%;
-  --accent-foreground: 0 0% 9%;
+  --muted: 210 14% 95%;
+  --muted-foreground: 210 7% 46%;
+  --accent: 210 14% 93%;
+  --accent-foreground: 210 11% 15%;
 
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 98%;
 
-  --border: 0 0% 90%;
-  --input: 0 0% 90%;
-  --ring: 0 0% 9%;
+  --border: 210 14% 90%;
+  --input: 210 14% 90%;
+  --ring: 210 11% 15%;
   --radius: 0.625rem;
+
+  /* Brand accent - used for highlights, links, CTAs */
+  --brand: 173 58% 39%;
+  --brand-foreground: 0 0% 100%;
 
   --chart-1: 220 70% 50%;
   --chart-2: 160 60% 45%;
@@ -38,37 +42,40 @@
   --chart-4: 280 65% 60%;
   --chart-5: 340 75% 55%;
 
-  --surface: 0 0% 100%;
-  --surface-foreground: 0 0% 9%;
+  --surface: 210 20% 98%;
+  --surface-foreground: 210 11% 15%;
 }
 
 .dark {
-  /* Dark Mode: Rich near-black, not pure */
-  --background: 0 0% 4%;
+  /* Dark Mode: Rich near-black */
+  --background: 220 14% 5%;
   --foreground: 0 0% 98%;
 
-  --card: 0 0% 7%;
+  --card: 220 14% 8%;
   --card-foreground: 0 0% 98%;
-  --popover: 0 0% 7%;
+  --popover: 220 14% 8%;
   --popover-foreground: 0 0% 98%;
 
   --primary: 0 0% 98%;
-  --primary-foreground: 0 0% 9%;
+  --primary-foreground: 220 14% 5%;
 
-  --secondary: 0 0% 12%;
+  --secondary: 220 12% 13%;
   --secondary-foreground: 0 0% 98%;
 
-  --muted: 0 0% 12%;
-  --muted-foreground: 0 0% 64%;
-  --accent: 0 0% 15%;
+  --muted: 220 12% 13%;
+  --muted-foreground: 215 10% 58%;
+  --accent: 220 12% 16%;
   --accent-foreground: 0 0% 98%;
 
   --destructive: 0 63% 31%;
   --destructive-foreground: 0 0% 98%;
 
-  --border: 0 0% 16%;
-  --input: 0 0% 16%;
+  --border: 220 12% 16%;
+  --input: 220 12% 16%;
   --ring: 0 0% 83%;
+
+  --brand: 173 58% 39%;
+  --brand-foreground: 0 0% 100%;
 
   --chart-1: 220 70% 50%;
   --chart-2: 160 60% 45%;
@@ -76,7 +83,7 @@
   --chart-4: 280 65% 60%;
   --chart-5: 340 75% 55%;
 
-  --surface: 0 0% 6%;
+  --surface: 220 14% 7%;
   --surface-foreground: 0 0% 98%;
 }
 
@@ -103,6 +110,8 @@
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
+  --color-brand: hsl(var(--brand));
+  --color-brand-foreground: hsl(var(--brand-foreground));
   --color-surface: hsl(var(--surface));
   --color-surface-foreground: hsl(var(--surface-foreground));
   --color-chart-1: hsl(var(--chart-1));

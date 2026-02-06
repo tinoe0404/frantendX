@@ -49,7 +49,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0 }}
             className="mb-8 inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-sm text-muted-foreground"
           >
-            <Sparkles className="h-3.5 w-3.5" />
+            <Sparkles className="h-3.5 w-3.5 text-brand" />
             <span>Now accepting projects for Q2 2026</span>
           </motion.div>
 
@@ -92,7 +92,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.65 }}
             className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <Button size="lg" className="h-12 rounded-full px-8 text-base font-medium gap-2" asChild>
+            <Button size="lg" className="h-12 rounded-full px-8 text-base font-medium gap-2 bg-brand text-brand-foreground hover:bg-brand/90" asChild>
               <Link href="/contact">
                 Start a project
                 <ArrowRight className="h-4 w-4" />

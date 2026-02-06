@@ -68,10 +68,10 @@ export function ServicesPreview() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className={`group relative rounded-2xl border border-border bg-card p-6 md:p-8 transition-colors hover:bg-accent/50 ${service.span}`}
+              className={`group relative rounded-2xl border border-border bg-card p-6 md:p-8 transition-colors hover:border-brand/40 ${service.span}`}
             >
               <div className="flex items-start justify-between mb-6">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-secondary text-foreground">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-secondary text-brand">
                   <service.icon className="h-5 w-5" />
                 </div>
                 <ArrowUpRight className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />

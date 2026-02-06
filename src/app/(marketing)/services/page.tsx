@@ -19,6 +19,7 @@ import {
     Shield,
     BarChart3,
     Cloud,
+    ArrowRight,
     type LucideIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -298,23 +299,28 @@ export default function ServicesPage() {
     return (
         <>
             {/* Hero Section */}
-            <section className="relative py-20 md:py-32 bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50 overflow-hidden">
-                <div className="container px-4 md:px-8 mx-auto text-center relative z-10">
-                    <Badge variant="outline" className="mb-4 px-4 py-1 text-sm border-blue-300 text-blue-700 bg-blue-50">
+            <section className="relative py-24 md:py-32 overflow-hidden">
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-muted/50 via-background to-background" aria-hidden="true" />
+                <div className="mx-auto max-w-6xl px-6 text-center relative z-10">
+                    <Badge variant="outline" className="mb-6 px-4 py-1.5 text-sm border-border text-muted-foreground bg-card">
                         Types of Websites You Can Build
                     </Badge>
-                    <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl mb-6">
-                        Professional Websites for <span className="text-blue-600">Zimbabwean Businesses</span>
+                    <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl text-balance mb-6">
+                        Professional Websites for{" "}
+                        <span className="text-brand">Zimbabwean Businesses</span>
                     </h1>
-                    <p className="mx-auto max-w-2xl text-xl text-muted-foreground mb-8">
+                    <p className="mx-auto max-w-2xl text-lg text-muted-foreground leading-relaxed mb-10">
                         Transparent pricing, comprehensive features, and websites built to deliver real business results.
                         From simple landing pages to complex web applications.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Button size="lg" className="h-12 px-8 text-base bg-blue-600 hover:bg-blue-700" asChild>
-                            <Link href="/contact">Get a Free Quote</Link>
+                        <Button size="lg" className="h-12 rounded-full px-8 text-base font-medium gap-2 bg-brand text-brand-foreground hover:bg-brand/90" asChild>
+                            <Link href="/contact">
+                                Get a Free Quote
+                                <ArrowRight className="h-4 w-4" />
+                            </Link>
                         </Button>
-                        <Button size="lg" variant="outline" className="h-12 px-8 text-base border-blue-300 text-blue-700 hover:bg-blue-50" asChild>
+                        <Button size="lg" variant="outline" className="h-12 rounded-full px-8 text-base font-medium" asChild>
                             <Link href="#website-types">Browse Website Types</Link>
                         </Button>
                     </div>
@@ -322,61 +328,66 @@ export default function ServicesPage() {
             </section>
 
             {/* Important Notice */}
-            <section className="py-6 bg-blue-600 text-white">
-                <div className="container px-4 md:px-8 mx-auto text-center">
+            <section className="py-4 bg-brand text-brand-foreground">
+                <div className="mx-auto max-w-6xl px-6 text-center">
                     <p className="text-sm md:text-base font-medium">
-                        💡 <strong>Own Your Digital Assets:</strong> Domain registration ($6-$30/year) and web hosting ($80-$300/year) are billed separately to ensure you maintain 100% ownership of your website.
+                        <strong>Own Your Digital Assets:</strong> Domain registration ($6-$30/year) and web hosting ($80-$300/year) are billed separately to ensure you maintain 100% ownership of your website.
                     </p>
                 </div>
             </section>
 
             {/* Website Types Section */}
-            <section id="website-types" className="py-20 bg-slate-50">
-                <div className="container px-4 md:px-8 mx-auto">
+            <section id="website-types" className="py-24 md:py-32">
+                <div className="mx-auto max-w-6xl px-6">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl font-bold tracking-tight mb-4">Choose the Right Website Type</h2>
-                        <p className="text-muted-foreground max-w-2xl mx-auto">
+                        <p className="mb-3 text-sm font-medium text-muted-foreground tracking-widest uppercase">
+                            Our packages
+                        </p>
+                        <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
+                            Choose the Right Website Type
+                        </h2>
+                        <p className="mt-4 text-muted-foreground max-w-2xl mx-auto leading-relaxed">
                             Every business has unique needs. Select the website type that matches your goals and budget.
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {websiteTypes.map((type) => (
                             <Card
                                 key={type.id}
                                 className={`flex flex-col transition-all duration-300 hover:shadow-lg ${type.highlighted
-                                        ? 'border-blue-500 shadow-xl relative ring-2 ring-blue-500 bg-white'
-                                        : 'border-border bg-white hover:border-blue-300'
+                                        ? "border-brand shadow-xl relative ring-2 ring-brand"
+                                        : "border-border hover:border-brand/40"
                                     }`}
                             >
                                 {type.highlighted && (
                                     <div className="absolute top-0 right-0 left-0 -mt-3 flex justify-center">
-                                        <span className="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-md">
+                                        <span className="bg-brand text-brand-foreground text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-md">
                                             Most Popular
                                         </span>
                                     </div>
                                 )}
                                 <CardHeader>
-                                    <Badge variant="secondary" className="w-fit mb-2 text-xs bg-blue-50 text-blue-700 border-blue-200">
+                                    <Badge variant="secondary" className="w-fit mb-2 text-xs">
                                         {type.subtitle}
                                     </Badge>
                                     <CardTitle className="text-xl mb-2">{type.title}</CardTitle>
                                     <CardDescription className="text-sm text-muted-foreground mb-3">
                                         {type.purpose}
                                     </CardDescription>
-                                    <div className="pt-3 border-t border-border/50">
-                                        <div className="text-2xl font-bold text-blue-600 mb-1">{type.priceRange}</div>
+                                    <div className="pt-3 border-t border-border">
+                                        <div className="text-2xl font-bold text-brand mb-1">{type.priceRange}</div>
                                         <div className="text-xs text-muted-foreground">Perfect for: {type.whoItsFor}</div>
                                     </div>
                                 </CardHeader>
                                 <CardContent className="flex-1">
-                                    <div className="space-y-1 mb-4">
-                                        <h4 className="text-xs font-semibold uppercase tracking-wide text-blue-700 mb-2">Main Features</h4>
+                                    <div className="mb-3">
+                                        <h4 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Main Features</h4>
                                     </div>
                                     <ul className="space-y-3">
                                         {type.features.map((feature, idx) => (
                                             <li key={idx} className="flex items-start gap-3 text-sm">
-                                                <feature.icon className="h-4 w-4 text-blue-600 mt-0.5 shrink-0" />
+                                                <feature.icon className="h-4 w-4 text-brand mt-0.5 shrink-0" />
                                                 <span className="text-muted-foreground leading-snug">{feature.text}</span>
                                             </li>
                                         ))}
@@ -384,7 +395,7 @@ export default function ServicesPage() {
                                 </CardContent>
                                 <CardFooter className="pt-6">
                                     <Button
-                                        className={`w-full ${type.highlighted ? 'bg-blue-600 hover:bg-blue-700' : ''}`}
+                                        className={`w-full rounded-full ${type.highlighted ? "bg-brand text-brand-foreground hover:bg-brand/90" : ""}`}
                                         variant={type.highlighted ? "default" : "outline"}
                                         asChild
                                     >
@@ -398,63 +409,76 @@ export default function ServicesPage() {
             </section>
 
             {/* Additional Services Section */}
-            <section className="py-20 bg-white">
-                <div className="container px-4 md:px-8 mx-auto max-w-6xl">
+            <section className="py-24 md:py-32 border-t border-border">
+                <div className="mx-auto max-w-6xl px-6">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl font-bold tracking-tight mb-4">🧩 Additional Services You Can Bundle</h2>
-                        <p className="text-muted-foreground max-w-2xl mx-auto">
+                        <p className="mb-3 text-sm font-medium text-muted-foreground tracking-widest uppercase">
+                            Add-ons
+                        </p>
+                        <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
+                            Additional Services You Can Bundle
+                        </h2>
+                        <p className="mt-4 text-muted-foreground max-w-2xl mx-auto leading-relaxed">
                             Complete your digital presence with these essential add-on services. Great for maximizing your website's potential.
                         </p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {additionalServices.map((service, idx) => (
-                            <Card key={idx} className="bg-slate-50 border-border hover:border-blue-300 transition-colors duration-300">
+                            <Card key={idx} className="border-border hover:border-brand/40 transition-colors duration-300">
                                 <CardHeader>
                                     <CardTitle className="text-lg flex items-start justify-between gap-2">
                                         <span>{service.service}</span>
-                                        <Badge variant="outline" className="text-blue-700 border-blue-300 bg-blue-50 shrink-0">
+                                        <Badge variant="secondary" className="shrink-0 text-xs">
                                             {service.price}
                                         </Badge>
                                     </CardTitle>
                                 </CardHeader>
                                 <CardContent>
-                                    <p className="text-sm text-muted-foreground">{service.description}</p>
+                                    <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
                                 </CardContent>
                             </Card>
                         ))}
                     </div>
 
                     <div className="mt-12 text-center">
-                        <Button size="lg" className="bg-blue-600 hover:bg-blue-700" asChild>
-                            <Link href="/contact">Build Your Custom Package</Link>
+                        <Button size="lg" className="h-12 rounded-full px-8 text-base font-medium gap-2 bg-brand text-brand-foreground hover:bg-brand/90" asChild>
+                            <Link href="/contact">
+                                Build Your Custom Package
+                                <ArrowRight className="h-4 w-4" />
+                            </Link>
                         </Button>
                     </div>
                 </div>
             </section>
 
             {/* Pricing Factors Section */}
-            <section className="py-20 bg-slate-50">
-                <div className="container px-4 md:px-8 mx-auto max-w-5xl">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <section className="py-24 md:py-32 border-t border-border">
+                <div className="mx-auto max-w-6xl px-6">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                         <div>
-                            <h2 className="text-3xl font-bold tracking-tight mb-6">What Influences the Price?</h2>
-                            <p className="text-muted-foreground mb-8 text-lg">
-                                Transparent pricing starts with understanding what goes into building your website.
-                                Here's what we consider when quoting your project.
+                            <p className="mb-3 text-sm font-medium text-muted-foreground tracking-widest uppercase">
+                                Transparency
                             </p>
-                            <Button variant="outline" size="lg" className="border-blue-300 text-blue-700 hover:bg-blue-50" asChild>
+                            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance mb-4">
+                                What Influences the Price?
+                            </h2>
+                            <p className="text-muted-foreground mb-8 leading-relaxed">
+                                Transparent pricing starts with understanding what goes into building your website.
+                                Here is what we consider when quoting your project.
+                            </p>
+                            <Button variant="outline" size="lg" className="h-12 rounded-full px-8 text-base font-medium" asChild>
                                 <Link href="/contact">Get Detailed Quote</Link>
                             </Button>
                         </div>
                         <div className="space-y-6">
                             {pricingFactors.map((factor, idx) => (
                                 <div key={idx} className="flex gap-4">
-                                    <div className="h-10 w-10 shrink-0 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                                    <div className="h-10 w-10 shrink-0 rounded-full bg-secondary flex items-center justify-center text-brand">
                                         <Zap className="h-5 w-5" />
                                     </div>
                                     <div>
-                                        <h4 className="font-semibold text-lg mb-1">{factor.title}</h4>
+                                        <h4 className="font-semibold text-foreground mb-1">{factor.title}</h4>
                                         <p className="text-muted-foreground text-sm leading-relaxed">
                                             {factor.description}
                                         </p>
@@ -467,25 +491,30 @@ export default function ServicesPage() {
             </section>
 
             {/* FAQ Section */}
-            <section className="py-20 bg-white">
-                <div className="container px-4 md:px-8 mx-auto max-w-3xl">
-                    <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold tracking-tight mb-4">Frequently Asked Questions</h2>
-                        <p className="text-muted-foreground">
+            <section className="py-24 md:py-32 border-t border-border">
+                <div className="mx-auto max-w-3xl px-6">
+                    <div className="text-center mb-14">
+                        <p className="mb-3 text-sm font-medium text-muted-foreground tracking-widest uppercase">
+                            FAQ
+                        </p>
+                        <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
+                            Frequently Asked Questions
+                        </h2>
+                        <p className="mt-4 text-muted-foreground leading-relaxed">
                             Everything you need to know about our website development services and pricing.
                         </p>
                     </div>
-                    <Accordion type="single" collapsible className="w-full space-y-4">
+                    <Accordion type="single" collapsible className="w-full space-y-3">
                         {faqs.map((faq, idx) => (
                             <AccordionItem
                                 key={idx}
                                 value={`item-${idx}`}
-                                className="bg-slate-50 border border-border rounded-lg px-6 hover:border-blue-300 transition-colors"
+                                className="bg-card border border-border rounded-xl px-6 hover:border-brand/40 transition-colors data-[state=open]:border-brand/40"
                             >
-                                <AccordionTrigger className="text-left font-semibold hover:no-underline py-4">
+                                <AccordionTrigger className="text-left font-semibold hover:no-underline py-4 text-foreground">
                                     {faq.question}
                                 </AccordionTrigger>
-                                <AccordionContent className="text-muted-foreground pb-4">
+                                <AccordionContent className="text-muted-foreground pb-4 leading-relaxed">
                                     {faq.answer}
                                 </AccordionContent>
                             </AccordionItem>
@@ -495,84 +524,75 @@ export default function ServicesPage() {
             </section>
 
             {/* Tips Section */}
-            <section className="py-16 bg-gradient-to-r from-slate-800 to-slate-900 text-white">
-                <div className="container px-4 md:px-8 mx-auto max-w-5xl">
-                    <div className="text-center mb-10">
-                        <h2 className="text-2xl md:text-3xl font-bold mb-4">🧠 Tips for Choosing Your Package</h2>
+            <section className="py-24 md:py-32 border-t border-border bg-card">
+                <div className="mx-auto max-w-6xl px-6">
+                    <div className="text-center mb-14">
+                        <p className="mb-3 text-sm font-medium text-muted-foreground tracking-widest uppercase">
+                            Getting started
+                        </p>
+                        <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
+                            Tips for Choosing Your Package
+                        </h2>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <Card className="bg-slate-700/50 border-slate-600 text-white">
-                            <CardHeader>
-                                <CardTitle className="text-lg flex items-start gap-2">
-                                    <Check className="h-5 w-5 text-green-400 shrink-0 mt-0.5" />
-                                    <span>Display Clear Packages</span>
-                                </CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                <p className="text-sm text-slate-300">
-                                    Choose from Basic, Business, E-Commerce, or Enterprise packages with all inclusions clearly listed. Final cost depends on your specific features & customization needs.
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {[
+                            {
+                                title: "Display Clear Packages",
+                                desc: "Choose from Basic, Business, E-Commerce, or Enterprise packages with all inclusions clearly listed. Final cost depends on your specific features & customization needs.",
+                            },
+                            {
+                                title: "Show Starting Prices",
+                                desc: "All prices shown are starting ranges. Your final quote depends on features, customization, and add-ons you select during consultation.",
+                            },
+                            {
+                                title: "Add Value-Added Services",
+                                desc: "Maximize your investment with SEO, analytics setup, maintenance plans, and ongoing support contracts tailored to your business.",
+                            },
+                            {
+                                title: "View Real Examples",
+                                desc: "Check our portfolio to see what each package type looks like in action. Real client examples help you visualize your own project.",
+                            },
+                        ].map((tip) => (
+                            <div
+                                key={tip.title}
+                                className="rounded-2xl border border-border bg-background p-6 md:p-8"
+                            >
+                                <div className="flex items-start gap-3 mb-3">
+                                    <div className="flex h-6 w-6 items-center justify-center rounded-full bg-brand/10 shrink-0 mt-0.5">
+                                        <Check className="h-3.5 w-3.5 text-brand" />
+                                    </div>
+                                    <h3 className="text-base font-semibold text-foreground">{tip.title}</h3>
+                                </div>
+                                <p className="text-sm text-muted-foreground leading-relaxed pl-9">
+                                    {tip.desc}
                                 </p>
-                            </CardContent>
-                        </Card>
-                        <Card className="bg-slate-700/50 border-slate-600 text-white">
-                            <CardHeader>
-                                <CardTitle className="text-lg flex items-start gap-2">
-                                    <Check className="h-5 w-5 text-green-400 shrink-0 mt-0.5" />
-                                    <span>Show Starting Prices</span>
-                                </CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                <p className="text-sm text-slate-300">
-                                    All prices shown are starting ranges. Your final quote depends on features, customization, and add-ons you select during consultation.
-                                </p>
-                            </CardContent>
-                        </Card>
-                        <Card className="bg-slate-700/50 border-slate-600 text-white">
-                            <CardHeader>
-                                <CardTitle className="text-lg flex items-start gap-2">
-                                    <Check className="h-5 w-5 text-green-400 shrink-0 mt-0.5" />
-                                    <span>Add Value-Added Services</span>
-                                </CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                <p className="text-sm text-slate-300">
-                                    Maximize your investment with SEO, analytics setup, maintenance plans, and ongoing support contracts tailored to your business.
-                                </p>
-                            </CardContent>
-                        </Card>
-                        <Card className="bg-slate-700/50 border-slate-600 text-white">
-                            <CardHeader>
-                                <CardTitle className="text-lg flex items-start gap-2">
-                                    <Check className="h-5 w-5 text-green-400 shrink-0 mt-0.5" />
-                                    <span>View Real Examples</span>
-                                </CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                <p className="text-sm text-slate-300">
-                                    Check our portfolio to see what each package type looks like in action. Real client examples help you visualize your own project.
-                                </p>
-                            </CardContent>
-                        </Card>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
 
             {/* Final CTA */}
-            <section className="py-24 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
-                <div className="container px-4 md:px-8 mx-auto text-center">
-                    <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">
-                        Ready to Build Your Website?
-                    </h2>
-                    <p className="max-w-2xl mx-auto text-blue-100 text-xl mb-10">
-                        Get a free consultation and detailed quote. We'll help you choose the perfect package and customization options for your business needs.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Button size="lg" variant="secondary" className="h-14 px-10 text-lg font-semibold bg-white text-blue-600 hover:bg-blue-50" asChild>
-                            <Link href="/contact">Get Free Consultation →</Link>
-                        </Button>
-                        <Button size="lg" variant="outline" className="h-14 px-10 text-lg font-semibold border-2 border-white text-white hover:bg-white/10" asChild>
-                            <Link href="#website-types">View All Packages</Link>
-                        </Button>
+            <section className="py-24 md:py-32 border-t border-border">
+                <div className="mx-auto max-w-6xl px-6">
+                    <div className="mx-auto max-w-2xl text-center">
+                        <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl text-balance">
+                            Ready to Build Your Website?
+                        </h2>
+                        <p className="mx-auto mt-6 max-w-lg text-lg leading-relaxed text-muted-foreground">
+                            Get a free consultation and detailed quote. We will help you choose the perfect package and customization options for your business needs.
+                        </p>
+                        <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+                            <Button size="lg" className="h-12 rounded-full px-8 text-base font-medium gap-2 bg-brand text-brand-foreground hover:bg-brand/90" asChild>
+                                <Link href="/contact">
+                                    Get Free Consultation
+                                    <ArrowRight className="h-4 w-4" />
+                                </Link>
+                            </Button>
+                            <Button size="lg" variant="outline" className="h-12 rounded-full px-8 text-base font-medium" asChild>
+                                <Link href="#website-types">View All Packages</Link>
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </section>

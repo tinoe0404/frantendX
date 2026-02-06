@@ -56,7 +56,7 @@ export function Testimonials() {
                 {`"${t.content}"`}
               </p>
               <div className="flex items-center gap-3 pt-4 border-t border-border">
-                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-secondary text-foreground text-sm font-semibold">
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-brand/10 text-brand text-sm font-semibold">
                   {t.client.charAt(0)}
                 </div>
                 <div>

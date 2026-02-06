@@ -102,7 +102,7 @@ export function Navbar() {
         {/* Desktop Actions */}
         <div className="hidden md:flex items-center gap-3">
           <ThemeSwitch />
-          <Button size="sm" className="h-9 rounded-full px-5 text-sm font-medium" asChild>
+          <Button size="sm" className="h-9 rounded-full px-5 text-sm font-medium bg-brand text-brand-foreground hover:bg-brand/90" asChild>
             <Link href="/contact">Get Started</Link>
           </Button>
         </div>
@@ -144,7 +144,7 @@ export function Navbar() {
                 ))}
                 <div className="pt-6">
                   <Button
-                    className="w-full h-11 rounded-full font-medium"
+                    className="w-full h-11 rounded-full font-medium bg-brand text-brand-foreground hover:bg-brand/90"
                     onClick={() => setIsOpen(false)}
                     asChild
                   >
