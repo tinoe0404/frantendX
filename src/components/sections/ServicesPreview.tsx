@@ -17,13 +17,13 @@ const services = [
   {
     icon: Code,
     title: "Custom Software",
-    description: "Scalable web applications with Next.js, TypeScript, and modern cloud infrastructure. SaaS platforms, internal tools, and more.",
+    description: "Scalable web applications with modern cloud infrastructure. SaaS platforms, internal tools, and more.",
     span: "md:col-span-2",
   },
   {
     icon: Smartphone,
     title: "Mobile Applications",
-    description: "Cross-platform mobile experiences using React Native. Native performance, single codebase.",
+    description: "Cross-platform mobile experiences. Native performance, single codebase.",
     span: "md:col-span-1",
   },
   {

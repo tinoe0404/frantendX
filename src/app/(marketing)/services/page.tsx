@@ -198,7 +198,7 @@ const websiteTypes: WebsiteType[] = [
         whoItsFor: "Startups, businesses expanding to mobile, on-demand services",
         priceRange: "$1,000 - $10,000+",
         features: [
-            { icon: Globe, text: "Cross-platform development (React Native/Flutter)" },
+            { icon: Globe, text: "Cross-platform mobile development" },
             { icon: Zap, text: "High-performance native experience" },
             { icon: MessageCircle, text: "Push notifications & offline capabilities" },
             { icon: Shield, text: "App Store & Google Play deployment" },
@@ -214,7 +214,7 @@ const websiteTypes: WebsiteType[] = [
         whoItsFor: "News sites, bloggers, content creators, reviewers",
         priceRange: "$150 - $600",
         features: [
-            { icon: FileText, text: "CMS (WordPress or similar) for easy content posting" },
+            { icon: FileText, text: "User-friendly CMS for easy content posting" },
             { icon: Briefcase, text: "Categories, tags & author pages" },
             { icon: MessageCircle, text: "Commenting system & community engagement" },
             { icon: Users, text: "Social sharing & newsletter integration" },

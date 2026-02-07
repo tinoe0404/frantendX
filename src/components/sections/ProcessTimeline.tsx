@@ -19,7 +19,7 @@ const steps = [
   {
     id: 3,
     title: "Development",
-    description: "Writing clean, scalable code with Next.js, establishing database schemas, and API logic.",
+    description: "Writing clean, scalable code, establishing database schemas, and API logic.",
     icon: Code,
   },
   {

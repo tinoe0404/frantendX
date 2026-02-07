@@ -4,7 +4,7 @@ import { CheckCircle2, Zap, Scaling } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: "Learn about FrantendX Digital Solutions, a leading digital agency specializing in Next.js and high-performance web development.",
+  description: "Learn about FrantendX Digital Solutions, a leading digital agency specializing in high-performance web development.",
 };
 
 const values = [
@@ -61,7 +61,7 @@ export default function AboutPage() {
                 fundamentally robust, secure, and scalable.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Our team leverages cutting-edge technologies like Next.js, AI, and Cloud Computing
+                Our team leverages cutting-edge technologies, AI, and Cloud Computing
                 to deliver solutions that stand the test of time and market shifts.
               </p>
             </div>
