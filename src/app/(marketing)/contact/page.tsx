@@ -34,7 +34,19 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground">Email Us</h3>
-                  <p className="text-sm text-muted-foreground">hello@frantendx.com</p>
+                  <a
+                    href="mailto:info@frantendxsolutions.co.zw"
+                    className="text-sm text-muted-foreground hover:text-brand transition-colors underline underline-offset-2"
+                  >
+                    info@frantendxsolutions.co.zw
+                  </a>
+                  <br />
+                  <a
+                    href="mailto:billing@frantendxsolutions.co.zw"
+                    className="text-sm text-muted-foreground hover:text-brand transition-colors underline underline-offset-2"
+                  >
+                    billing@frantendxsolutions.co.zw
+                  </a>
                 </div>
               </div>
 
@@ -54,7 +66,12 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground">Phone</h3>
-                  <p className="text-sm text-muted-foreground">+263 78 123 4567</p>
+                  <a
+                    href="tel:+2630780885780"
+                    className="text-sm text-muted-foreground hover:text-brand transition-colors underline underline-offset-2"
+                  >
+                    0780 885 780
+                  </a>
                 </div>
               </div>
             </div>

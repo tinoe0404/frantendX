@@ -24,17 +24,18 @@ export default async function Image() {
                     justifyContent: 'center',
                     flexDirection: 'column',
                     color: '#ffffff',
+                    gap: 12,
                 }}
             >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                    src="https://frantendx.com/images/logo.png"
-                    alt=""
-                    width={280}
-                    height={80}
-                    style={{ marginBottom: 32 }}
-                />
-                <div style={{ fontSize: 48, opacity: 0.7, fontWeight: 500 }}>Build. Ship. Scale.</div>
+                <div style={{ fontSize: 64, fontWeight: 800, letterSpacing: '-0.02em' }}>
+                    FrantendX
+                </div>
+                <div style={{ fontSize: 28, opacity: 0.6, fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase' }}>
+                    Digital Solutions
+                </div>
+                <div style={{ fontSize: 36, opacity: 0.5, fontWeight: 400, marginTop: 24 }}>
+                    Build. Ship. Scale.
+                </div>
             </div>
         ),
         {

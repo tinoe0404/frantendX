@@ -5,6 +5,8 @@ export default function JsonLd() {
         "name": "FrantendX Digital Solutions",
         "url": "https://frantendx.com",
         "priceRange": "$$$",
+        "email": "info@frantendxsolutions.co.zw",
+        "telephone": "+2630780885780",
         "address": {
             "@type": "PostalAddress",
             "addressCountry": "ZW"

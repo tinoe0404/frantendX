@@ -71,15 +71,23 @@ export function Navbar() {
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         {/* Logo */}
-        <Link href="/" className="flex items-center group shrink-0">
+        <Link href="/" className="flex items-center gap-2.5 group shrink-0">
           <Image
             src="/images/logo.png"
             alt="FrantendX Digital Solutions"
-            width={140}
-            height={40}
-            className="h-9 w-auto transition-transform group-hover:scale-[1.02]"
+            width={120}
+            height={36}
+            className="h-8 w-auto transition-transform group-hover:scale-[1.02]"
             priority
           />
+          <div className="flex flex-col leading-none">
+            <span className="text-sm font-bold tracking-tight text-foreground">
+              FrantendX
+            </span>
+            <span className="hidden sm:block text-[10px] font-medium tracking-wider uppercase text-muted-foreground">
+              Digital Solutions
+            </span>
+          </div>
         </Link>
 
         {/* Desktop Navigation */}
@@ -121,13 +129,23 @@ export function Navbar() {
             <SheetContent side="right" className="w-72 bg-background">
               <SheetHeader className="px-1">
                 <SheetTitle className="text-left">
-                  <Image
-                    src="/images/logo.png"
-                    alt="FrantendX Digital Solutions"
-                    width={120}
-                    height={34}
-                    className="h-8 w-auto"
-                  />
+                  <span className="flex items-center gap-2.5">
+                    <Image
+                      src="/images/logo.png"
+                      alt="FrantendX Digital Solutions"
+                      width={100}
+                      height={30}
+                      className="h-7 w-auto"
+                    />
+                    <span className="flex flex-col leading-none">
+                      <span className="text-sm font-bold tracking-tight text-foreground">
+                        FrantendX
+                      </span>
+                      <span className="text-[10px] font-medium tracking-wider uppercase text-muted-foreground">
+                        Digital Solutions
+                      </span>
+                    </span>
+                  </span>
                 </SheetTitle>
               </SheetHeader>
               <nav className="flex flex-col gap-1 mt-8 px-1">

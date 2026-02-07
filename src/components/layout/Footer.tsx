@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -39,13 +38,14 @@ export function Footer() {
           {/* Brand */}
           <div className="col-span-2">
             <Link href="/" className="inline-block mb-5">
-              <Image
-                src="/images/logo.png"
-                alt="FrantendX Digital Solutions"
-                width={140}
-                height={40}
-                className="h-10 w-auto"
-              />
+              <span className="flex flex-col leading-none">
+                <span className="text-lg font-bold tracking-tight text-foreground">
+                  FrantendX
+                </span>
+                <span className="text-[11px] font-medium tracking-wider uppercase text-muted-foreground">
+                  Digital Solutions
+                </span>
+              </span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs mb-6">
               Building world-class digital experiences that drive growth. Your strategic partner for software that scales.
