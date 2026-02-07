@@ -5,12 +5,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const stats = [
-  { value: "20+", label: "Projects delivered" },
-  { value: "98%", label: "Client satisfaction" },
-  { value: "3x", label: "Average ROI" },
-  { value: "<12mo", label: "Time to payback" },
-];
+
 
 const containerVariants = {
   hidden: {},
@@ -107,19 +102,7 @@ export function Hero() {
         </div>
 
         {/* Stats row */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.85 }}
-          className="mx-auto mt-20 grid max-w-3xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-4"
-        >
-          {stats.map((stat) => (
-            <div key={stat.label} className="flex flex-col items-center justify-center bg-card px-6 py-8">
-              <span className="text-2xl font-bold text-foreground md:text-3xl">{stat.value}</span>
-              <span className="mt-1.5 text-xs text-muted-foreground">{stat.label}</span>
-            </div>
-          ))}
-        </motion.div>
+
       </div>
     </section>
   );
