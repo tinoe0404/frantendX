@@ -76,16 +76,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <Card className="border-border">
-              <CardContent className="p-6">
-                <p className="text-sm italic text-muted-foreground leading-relaxed">
-                  {'"FrantendX Digital Solutions delivered our SaaS dashboard 2 weeks ahead of schedule. The code quality is exceptional."'}
-                </p>
-                <p className="text-xs font-semibold mt-4 text-foreground uppercase tracking-wider">
-                  -- Happy Client
-                </p>
-              </CardContent>
-            </Card>
+
           </div>
 
           {/* Right */}

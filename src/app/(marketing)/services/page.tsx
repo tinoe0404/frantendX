@@ -286,10 +286,7 @@ const faqs: FAQ[] = [
         question: "What's included in website maintenance?",
         answer: "Our maintenance packages include regular software updates, security patches, daily backups, performance monitoring, uptime tracking, and priority technical support. Plans start at $30/month for basic sites and scale based on complexity.",
     },
-    {
-        question: "Do you provide content and images?",
-        answer: "We offer content creation services starting at $50/page for professional copywriting. For images, we can source high-quality stock photos or arrange professional photography. Many clients provide their own content and images, which helps reduce costs.",
-    },
+
     {
         question: "How long does it take to build a website?",
         answer: "Timeline depends on complexity: Basic Business Websites take 1-2 weeks, Professional Corporate sites need 3-4 weeks, E-Commerce stores require 4-8 weeks, and Custom Web Applications typically take 6-12 weeks. We'll provide a detailed timeline during consultation.",
@@ -301,10 +298,6 @@ const faqs: FAQ[] = [
     {
         question: "Will my website work on mobile phones?",
         answer: "Yes! Every website we build is fully responsive and mobile-optimized. With over 80% of Zimbabweans accessing the internet via mobile, we ensure your site looks perfect and functions smoothly on all devices and screen sizes.",
-    },
-    {
-        question: "Do you offer training on how to update my website?",
-        answer: "Yes! For websites with content management systems (CMS), we provide comprehensive training on how to add pages, update content, post news, and manage your site. We also create custom video tutorials specific to your website.",
     },
 ];
 
@@ -560,14 +553,6 @@ export default function ServicesPage() {
                             {
                                 title: "Show Starting Prices",
                                 desc: "All prices shown are starting ranges. Your final quote depends on features, customization, and add-ons you select during consultation.",
-                            },
-                            {
-                                title: "Add Value-Added Services",
-                                desc: "Maximize your investment with SEO, analytics setup, maintenance plans, and ongoing support contracts tailored to your business.",
-                            },
-                            {
-                                title: "View Real Examples",
-                                desc: "Check our portfolio to see what each package type looks like in action. Real client examples help you visualize your own project.",
                             },
                         ].map((tip) => (
                             <div
