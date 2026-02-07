@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -38,19 +37,12 @@ export function Footer() {
         <div className="grid grid-cols-2 gap-8 md:grid-cols-5 lg:gap-12">
           {/* Brand */}
           <div className="col-span-2">
-            <Link href="/" className="inline-flex items-center gap-3 mb-5">
-              <Image
-                src="/images/logo.png"
-                alt="FrantendX Digital Solutions"
-                width={120}
-                height={36}
-                className="h-9 w-auto"
-              />
+            <Link href="/" className="inline-block mb-5">
               <span className="flex flex-col leading-none">
-                <span className="text-sm font-bold tracking-tight text-foreground">
+                <span className="text-lg font-bold tracking-tight text-foreground">
                   FrantendX
                 </span>
-                <span className="text-[10px] font-medium tracking-wider uppercase text-muted-foreground">
+                <span className="text-[11px] font-medium tracking-wider uppercase text-muted-foreground">
                   Digital Solutions
                 </span>
               </span>
