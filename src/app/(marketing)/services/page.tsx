@@ -240,24 +240,9 @@ const additionalServices: AdditionalService[] = [
         price: "$80 - $300/year",
     },
     {
-        service: "SSL Security Certificate",
-        description: "HTTPS security for data protection",
-        price: "Included or $10 - $50/year",
-    },
-    {
-        service: "SEO Setup & Optimization",
-        description: "On-page SEO, keyword research, search optimization",
-        price: "$50 - $300+",
-    },
-    {
         service: "Website Maintenance",
         description: "Regular updates, backups, security patches & support",
         price: "$30 - $100+/month",
-    },
-    {
-        service: "Content Creation",
-        description: "Professional copywriting & media production",
-        price: "$50 - $300+/page",
     },
 ];
 
