@@ -120,6 +120,8 @@ export function ContactForm() {
                                 </FormControl>
                                 <SelectContent>
                                     <SelectItem value="Web App">Web App Development</SelectItem>
+                                    <SelectItem value="Mobile App">Mobile App Development</SelectItem>
+                                    <SelectItem value="UI/UX Design">UI/UX Design</SelectItem>
                                     <SelectItem value="E-commerce">E-commerce Solution</SelectItem>
                                     <SelectItem value="API">API & Integration</SelectItem>
                                     <SelectItem value="Other">Other</SelectItem>

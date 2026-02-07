@@ -143,6 +143,22 @@ const websiteTypes: WebsiteType[] = [
         highlighted: false,
     },
     {
+        id: "ui-ux-design",
+        title: "UI/UX Design",
+        subtitle: "Design & Prototyping",
+        purpose: "User-centric design solutions to validate ideas before development.",
+        whoItsFor: "Startups, product teams, established businesses",
+        priceRange: "$300 - $1,500",
+        features: [
+            { icon: Users, text: "User research & persona development" },
+            { icon: Workflow, text: "Wireframing & user flow mapping" },
+            { icon: Image, text: "High-fidelity UI design & prototyping" },
+            { icon: Zap, text: "Interactive prototypes for testing" },
+            { icon: FileText, text: "Design system creation & handover" },
+        ],
+        highlighted: false,
+    },
+    {
         id: "landing-page",
         title: "Landing Page",
         subtitle: "Lead Generation",
@@ -173,6 +189,22 @@ const websiteTypes: WebsiteType[] = [
             { icon: Shield, text: "Enterprise-grade security & scalability" },
         ],
         highlighted: false,
+    },
+    {
+        id: "mobile-app",
+        title: "Mobile App Development",
+        subtitle: "iOS & Android",
+        purpose: "Native-quality mobile applications to reach your customers on their devices.",
+        whoItsFor: "Startups, businesses expanding to mobile, on-demand services",
+        priceRange: "$1,000 - $10,000+",
+        features: [
+            { icon: Globe, text: "Cross-platform development (React Native/Flutter)" },
+            { icon: Zap, text: "High-performance native experience" },
+            { icon: MessageCircle, text: "Push notifications & offline capabilities" },
+            { icon: Shield, text: "App Store & Google Play deployment" },
+            { icon: Cloud, text: "Scalable cloud backend integration" },
+        ],
+        highlighted: true,
     },
     {
         id: "blog-content",
@@ -356,8 +388,8 @@ export default function ServicesPage() {
                             <Card
                                 key={type.id}
                                 className={`flex flex-col transition-all duration-300 hover:shadow-lg ${type.highlighted
-                                        ? "border-brand shadow-xl relative ring-2 ring-brand"
-                                        : "border-border hover:border-brand/40"
+                                    ? "border-brand shadow-xl relative ring-2 ring-brand"
+                                    : "border-border hover:border-brand/40"
                                     }`}
                             >
                                 {type.highlighted && (
