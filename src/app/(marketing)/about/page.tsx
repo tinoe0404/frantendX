@@ -64,6 +64,11 @@ export default function AboutPage() {
                 Our team leverages cutting-edge technologies, AI, and Cloud Computing
                 to deliver solutions that stand the test of time and market shifts.
               </p>
+              <p className="text-muted-foreground leading-relaxed">
+                We build smart digital solutions — from websites (static & dynamic) to mobile apps and custom software.
+                Empowering businesses with reliable tech tailored to their goals.
+                <span className="block mt-2 font-medium text-foreground">Innovate. Build. Grow with FrantendX Digital Solutions.</span>
+              </p>
             </div>
           </div>
         </div>
