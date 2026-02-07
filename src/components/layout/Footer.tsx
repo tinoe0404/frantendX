@@ -1,10 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+
 
 const footerLinks = {
   services: [
@@ -20,16 +17,11 @@ const footerLinks = {
     { name: "Careers", href: "/about" },
     { name: "Contact", href: "/contact" },
   ],
-  resources: [
-    { name: "Documentation", href: "#" },
-    { name: "Case Studies", href: "#" },
-    { name: "Tech Stack", href: "#" },
-    { name: "Open Source", href: "#" },
-  ],
+
 };
 
 export function Footer() {
-  const [email, setEmail] = useState("");
+
 
   return (
     <footer className="border-t border-border bg-background">
@@ -50,26 +42,7 @@ export function Footer() {
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs mb-6">
               Building world-class digital experiences that drive growth. Your strategic partner for software that scales.
             </p>
-            <div className="space-y-2.5">
-              <p className="text-sm font-medium text-foreground">Stay updated</p>
-              <form
-                onSubmit={(e) => { e.preventDefault(); setEmail(""); }}
-                className="flex gap-2"
-              >
-                <Input
-                  type="email"
-                  placeholder="you@company.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="h-9 text-sm bg-background"
-                  required
-                />
-                <Button type="submit" size="sm" className="h-9 px-3 rounded-md bg-brand text-brand-foreground hover:bg-brand/90">
-                  <ArrowRight className="h-4 w-4" />
-                  <span className="sr-only">Subscribe</span>
-                </Button>
-              </form>
-            </div>
+
           </div>
 
           {/* Services */}
@@ -101,18 +74,7 @@ export function Footer() {
           </div>
 
           {/* Resources */}
-          <div>
-            <h4 className="text-sm font-medium text-foreground mb-4">Resources</h4>
-            <ul className="space-y-2.5">
-              {footerLinks.resources.map((link) => (
-                <li key={link.name}>
-                  <Link href={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+
         </div>
 
         {/* Bottom */}
