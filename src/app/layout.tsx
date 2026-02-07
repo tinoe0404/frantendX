@@ -37,6 +37,8 @@ export const viewport: Viewport = {
   maximumScale: 5,
 };
 
+import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -52,6 +54,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
+          <WhatsAppButton />
           <Toaster />
           <JsonLd />
         </ThemeProvider>
