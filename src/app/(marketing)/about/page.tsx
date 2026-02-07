@@ -47,7 +47,7 @@ export default function AboutPage() {
       {/* Mission */}
       <section className="py-24 md:py-32 border-t border-border">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="mx-auto max-w-3xl text-center">
             <div className="space-y-6">
               <p className="text-sm font-medium text-muted-foreground tracking-widest uppercase">
                 Our mission
@@ -64,9 +64,6 @@ export default function AboutPage() {
                 Our team leverages cutting-edge technologies like Next.js, AI, and Cloud Computing
                 to deliver solutions that stand the test of time and market shifts.
               </p>
-            </div>
-            <div className="relative h-[320px] md:h-[400px] w-full rounded-2xl border border-border bg-card flex items-center justify-center">
-              <span className="text-sm text-muted-foreground">Team / Office Image</span>
             </div>
           </div>
         </div>
