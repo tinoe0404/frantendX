@@ -38,14 +38,22 @@ export function Footer() {
         <div className="grid grid-cols-2 gap-8 md:grid-cols-5 lg:gap-12">
           {/* Brand */}
           <div className="col-span-2">
-            <Link href="/" className="inline-block mb-5">
+            <Link href="/" className="inline-flex items-center gap-3 mb-5">
               <Image
                 src="/images/logo.png"
                 alt="FrantendX Digital Solutions"
-                width={140}
-                height={40}
-                className="h-10 w-auto"
+                width={120}
+                height={36}
+                className="h-9 w-auto"
               />
+              <span className="flex flex-col leading-none">
+                <span className="text-sm font-bold tracking-tight text-foreground">
+                  FrantendX
+                </span>
+                <span className="text-[10px] font-medium tracking-wider uppercase text-muted-foreground">
+                  Digital Solutions
+                </span>
+              </span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs mb-6">
               Building world-class digital experiences that drive growth. Your strategic partner for software that scales.
