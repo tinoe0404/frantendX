@@ -35,6 +35,7 @@ export function ContactForm() {
         defaultValues: {
             name: "",
             email: "",
+            phone: "",
             service: "",
             message: "",
             budget: "",
@@ -85,6 +86,20 @@ export function ContactForm() {
                             <FormLabel>Email</FormLabel>
                             <FormControl>
                                 <Input type="email" placeholder="you@company.com" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                    )}
+                />
+
+                <FormField
+                    control={form.control}
+                    name="phone"
+                    render={({ field }) => (
+                        <FormItem>
+                            <FormLabel>Phone Number</FormLabel>
+                            <FormControl>
+                                <Input type="tel" placeholder="+263 77 123 4567" {...field} />
                             </FormControl>
                             <FormMessage />
                         </FormItem>

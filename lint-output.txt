@@ -1,0 +1,18 @@
+
+> frantendx-temp@0.1.0 lint
+> eslint
+
+
+C:\Projects\frantendX\src\app\(marketing)\services\page.tsx
+   13:5    warning  'CalendarDays' is defined but never used                         @typescript-eslint/no-unused-vars
+   21:5    warning  'Cloud' is defined but never used                                @typescript-eslint/no-unused-vars
+  422:131  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Projects\frantendX\src\app\actions\contact.ts
+  3:10  warning  'z' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Projects\frantendX\src\components\forms\ContactForm.tsx
+  56:18  warning  'error' is defined but never used  @typescript-eslint/no-unused-vars
+
+Γ£û 5 problems (1 error, 4 warnings)
+
