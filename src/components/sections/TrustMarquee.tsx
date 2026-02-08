@@ -2,29 +2,30 @@
 
 import { motion } from "framer-motion";
 
-const companies = [
-  "Acme Corp",
-  "Apex Digital",
-  "BoltTech",
-  "NovaStar",
-  "Quantum AI",
-  "Skyline IO",
-  "Vertex Labs",
-  "Prism Co",
+const businessMessages = [
+  "Drive Revenue Growth",
+  "Automate Operations",
+  "Scale Your Business",
+  "Attract More Customers",
+  "Solve Business Problems",
+  "Streamline Processes",
+  "Increase Efficiency",
+  "Build Digital Presence",
 ];
 
-function LogoPlaceholder({ name }: { name: string }) {
+function BusinessMessage({ message }: { message: string }) {
   return (
-    <div className="flex items-center gap-2.5 px-8 select-none shrink-0">
-      <span className="text-sm font-semibold text-muted-foreground/40 whitespace-nowrap tracking-wide uppercase">
-        {name}
+    <div className="flex items-center gap-3 px-8 select-none shrink-0">
+      <div className="h-1.5 w-1.5 rounded-full bg-brand/60" />
+      <span className="text-sm font-semibold text-foreground/60 whitespace-nowrap tracking-wide">
+        {message}
       </span>
     </div>
   );
 }
 
 export function TrustMarquee() {
-  const doubled = [...companies, ...companies];
+  const doubled = [...businessMessages, ...businessMessages];
 
   return (
     <section className="border-y border-border bg-card/50 py-10">
@@ -36,7 +37,7 @@ export function TrustMarquee() {
           transition={{ duration: 0.5 }}
           className="mb-6 text-center text-xs font-medium text-muted-foreground tracking-widest uppercase"
         >
-          Trusted by forward-thinking teams
+          How We Help Your Business Grow
         </motion.p>
       </div>
 
@@ -45,8 +46,8 @@ export function TrustMarquee() {
         <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-20 bg-gradient-to-l from-background to-transparent" />
 
         <div className="flex animate-infinite-scroll">
-          {doubled.map((company, i) => (
-            <LogoPlaceholder key={`${company}-${i}`} name={company} />
+          {doubled.map((message, i) => (
+            <BusinessMessage key={`${message}-${i}`} message={message} />
           ))}
         </div>
       </div>

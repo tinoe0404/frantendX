@@ -18,25 +18,21 @@ const services = [
     icon: Code,
     title: "Custom Software",
     description: "Scalable web applications with modern cloud infrastructure. SaaS platforms, internal tools, and more.",
-    span: "md:col-span-2",
   },
   {
     icon: Smartphone,
     title: "Mobile Applications",
     description: "Cross-platform mobile experiences. Native performance, single codebase.",
-    span: "md:col-span-1",
   },
   {
     icon: Gauge,
     title: "Performance & SEO",
     description: "Perfect Lighthouse scores, Core Web Vitals optimization, and structured data for search visibility.",
-    span: "md:col-span-1",
   },
   {
     icon: Headphones,
     title: "24/7 Support & Maintenance",
     description: "Continuous monitoring, rapid response, and proactive maintenance to keep your systems running smoothly.",
-    span: "md:col-span-2",
   },
 ];
 
@@ -59,7 +55,7 @@ export function ServicesPreview() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {services.map((service, i) => (
             <motion.div
               key={service.title}
@@ -68,7 +64,7 @@ export function ServicesPreview() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className={`group relative rounded-2xl border border-border bg-card p-6 md:p-8 transition-colors hover:border-brand/40 ${service.span}`}
+              className="group relative rounded-2xl border border-border bg-card p-6 md:p-8 transition-colors hover:border-brand/40"
             >
               <div className="flex items-start justify-between mb-6">
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-secondary text-brand">
