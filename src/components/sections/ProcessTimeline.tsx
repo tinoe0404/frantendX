@@ -1,34 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Search, PenTool, Code, Rocket } from "lucide-react";
-
-const steps = [
-  {
-    id: 1,
-    title: "Discovery",
-    description: "We analyze your needs, understand your audience, and define success metrics.",
-    icon: Search,
-  },
-  {
-    id: 2,
-    title: "Design",
-    description: "Creating intuitive wireframes and high-fidelity prototypes aligned with your brand.",
-    icon: PenTool,
-  },
-  {
-    id: 3,
-    title: "Development",
-    description: "Writing clean, scalable code, establishing database schemas, and API logic.",
-    icon: Code,
-  },
-  {
-    id: 4,
-    title: "Launch",
-    description: "Thorough testing, SEO optimization, and deployment to a high-performance CDN.",
-    icon: Rocket,
-  },
-];
+import { ProcessSteps } from "@/components/ProcessSteps";
 
 export function ProcessTimeline() {
   return (
@@ -52,29 +25,7 @@ export function ProcessTimeline() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-          {steps.map((step, i) => (
-            <motion.div
-              key={step.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="relative rounded-2xl border border-border bg-card p-6 text-center"
-            >
-              <div className="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-secondary text-brand">
-                <step.icon className="h-5 w-5" />
-              </div>
-              <div className="mb-2 text-xs font-medium text-muted-foreground">
-                {`Step ${step.id}`}
-              </div>
-              <h3 className="text-base font-semibold text-foreground mb-2">{step.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {step.description}
-              </p>
-            </motion.div>
-          ))}
-        </div>
+        <ProcessSteps />
       </div>
     </section>
   );

@@ -38,7 +38,9 @@ export const viewport: Viewport = {
 };
 
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
-
+import { ScrollProgress } from "@/components/ScrollProgress";
+import { CursorGlow } from "@/components/CursorGlow";
+import { PageTransition } from "@/components/PageTransition";
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -53,10 +55,14 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
-          <WhatsAppButton />
-          <Toaster />
-          <JsonLd />
+          <ScrollProgress />
+          <CursorGlow />
+          <PageTransition>
+            {children}
+            <WhatsAppButton />
+            <Toaster />
+            <JsonLd />
+          </PageTransition>
         </ThemeProvider>
       </body>
     </html>

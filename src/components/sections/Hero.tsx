@@ -4,6 +4,8 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { staggerContainer, fadeUp } from "@/lib/motion-variants";
+import { MagneticButton } from "@/components/MagneticButton";
 
 export function Hero() {
   return (
@@ -15,12 +17,15 @@ export function Hero() {
       />
 
       <div className="relative mx-auto max-w-6xl px-6 pt-24 pb-20 md:pt-36 md:pb-28 lg:pt-44 lg:pb-36">
-        <div className="mx-auto max-w-4xl text-center">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          animate="show"
+          className="mx-auto max-w-4xl text-center"
+        >
           {/* Headline */}
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0, ease: "easeOut" }}
+            variants={fadeUp}
             className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl text-balance leading-[1.1]"
           >
             Digital solutions that solve real business problems.
@@ -28,81 +33,45 @@ export function Hero() {
 
           {/* Subtext */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
+            variants={fadeUp}
             className="mx-auto mt-8 max-w-xl text-lg text-muted-foreground leading-relaxed"
           >
             We design and build high-performance websites and systems that attract customers, automate operations, and increase revenue.
           </motion.p>
 
           {/* CTAs */}
-          <div className="mt-10 flex flex-col items-center justify-center gap-4">
+          <motion.div variants={fadeUp} className="mt-10 flex flex-col items-center justify-center gap-4">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               {/* Primary CTA */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: 0.3 }}
+              <MagneticButton
+                className="inline-flex items-center justify-center h-12 rounded-full px-8 text-base font-medium gap-2 bg-brand text-brand-foreground hover:bg-brand/90 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all duration-200"
               >
-                <Button
-                  size="lg"
-                  className="h-12 rounded-full px-8 text-base font-medium gap-2 bg-brand text-brand-foreground hover:bg-brand/90 hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all duration-200"
-                  asChild
-                >
-                  <Link href="/contact">
-                    Start a project
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </Button>
-              </motion.div>
+                <Link href="/contact" className="flex items-center gap-2">
+                  Start a project
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </MagneticButton>
 
               {/* Secondary CTA */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.4, delay: 0.4 }}
+              <Button
+                size="lg"
+                variant="outline"
+                className="h-12 rounded-full px-8 text-base font-medium hover:underline group"
+                asChild
               >
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="h-12 rounded-full px-8 text-base font-medium hover:underline group"
-                  asChild
-                >
-                  <Link href="/services" className="flex items-center gap-2">
-                    Explore services
-                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
-                  </Link>
-                </Button>
-              </motion.div>
+                <Link href="/services" className="flex items-center gap-2">
+                  Explore services
+                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
+                </Link>
+              </Button>
             </div>
 
             {/* Helper text */}
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.4, delay: 0.5 }}
-              className="text-sm text-muted-foreground"
-            >
+            <p className="text-sm text-muted-foreground mt-4">
               Free consultation available
-            </motion.p>
-          </div>
-
-          {/* Trust Indicator */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.4, delay: 0.6 }}
-            className="mt-12 space-y-2"
-          >
-            <p className="text-sm font-medium text-foreground">
-              Trusted by forward-thinking businesses in Zimbabwe
-            </p>
-            <p className="text-xs text-muted-foreground">
-              Websites • Business Systems • E-commerce • Automation
             </p>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

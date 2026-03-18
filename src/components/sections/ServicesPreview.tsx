@@ -3,15 +3,8 @@
 import { motion } from "framer-motion";
 import { Code, Smartphone, Gauge, Headphones, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, delay: i * 0.1, ease: "easeOut" as const },
-  }),
-};
+import { staggerContainer, scaleIn } from "@/lib/motion-variants";
+import { ServiceCard } from "@/components/ServiceCard";
 
 const services = [
   {
@@ -55,32 +48,19 @@ export function ServicesPreview() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {services.map((service, i) => (
-            <motion.div
-              key={service.title}
-              custom={i}
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="group relative rounded-2xl border border-border bg-card p-6 md:p-8 transition-colors hover:border-brand/40"
-            >
-              <div className="flex items-start justify-between mb-6">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-secondary text-brand">
-                  <service.icon className="h-5 w-5" />
-                </div>
-                <ArrowUpRight className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
-              </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">
-                {service.title}
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {service.description}
-              </p>
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          {services.map((s, i) => (
+            <motion.div key={i} variants={scaleIn}>
+              <ServiceCard title={s.title} description={s.description} icon={<s.icon className="h-5 w-5" />} />
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0 }}
