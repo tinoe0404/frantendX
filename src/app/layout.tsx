@@ -9,7 +9,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://frantendx.com"),
+  metadataBase: new URL("https://frantendxsolutions.co.zw"),
   title: {
     default: "FrantendX Digital Solutions | Software Agency",
     template: "%s | FrantendX",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "FrantendX Digital Solutions",
     description: "Software Agency - Build. Ship. Scale.",
-    url: "https://frantendx.com",
+    url: "https://frantendxsolutions.co.zw",
     siteName: "FrantendX",
     locale: "en_US",
     type: "website",

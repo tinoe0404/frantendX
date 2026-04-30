@@ -31,6 +31,8 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion";
+import { GradientMesh } from "@/components/GradientMesh";
+import { GridPattern } from "@/components/GridPattern";
 
 export const metadata: Metadata = {
     title: "Services & Pricing | FrantendX Digital Solutions",
@@ -309,28 +311,30 @@ export default function ServicesPage() {
     return (
         <>
             {/* Hero Section */}
-            <section className="relative py-24 md:py-32 overflow-hidden">
-                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-muted/50 via-background to-background" aria-hidden="true" />
+            <section className="relative py-24 md:py-32 overflow-hidden min-h-[60vh] flex flex-col justify-center">
+                <GradientMesh />
+                <GridPattern />
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_30%,_hsl(var(--background))_80%)]" aria-hidden="true" />
                 <div className="mx-auto max-w-6xl px-6 text-center relative z-10">
-                    <Badge variant="outline" className="mb-6 px-4 py-1.5 text-sm border-border text-muted-foreground bg-card">
+                    <p className="mb-4 text-sm font-medium text-brand tracking-widest uppercase">
                         Types of Websites You Can Build
-                    </Badge>
+                    </p>
                     <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl text-balance mb-6">
                         Professional Websites for{" "}
-                        <span className="text-brand">Zimbabwean Businesses</span>
+                        <span className="hero-gradient-text block mt-2">Zimbabwean Businesses</span>
                     </h1>
                     <p className="mx-auto max-w-2xl text-lg text-muted-foreground leading-relaxed mb-10">
                         Transparent pricing, comprehensive features, and websites built to deliver real business results.
                         From simple landing pages to complex web applications.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Button size="lg" className="h-12 rounded-full px-8 text-base font-medium gap-2 bg-brand text-brand-foreground hover:bg-brand/90" asChild>
+                        <Button size="lg" className="h-12 rounded-full px-8 text-base font-medium gap-2 bg-brand text-brand-foreground hover:bg-brand/90 hover:shadow-[0_0_30px_rgba(94,234,212,0.3)] transition-all duration-300" asChild>
                             <Link href="/contact">
                                 Get a Free Quote
                                 <ArrowRight className="h-4 w-4" />
                             </Link>
                         </Button>
-                        <Button size="lg" variant="outline" className="h-12 rounded-full px-8 text-base font-medium" asChild>
+                        <Button size="lg" variant="outline" className="h-12 rounded-full px-8 text-base font-medium border-border/50 hover:border-brand/40 hover:bg-brand/5 transition-all duration-300" asChild>
                             <Link href="#website-types">Browse Website Types</Link>
                         </Button>
                     </div>
@@ -363,11 +367,11 @@ export default function ServicesPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {websiteTypes.map((type) => (
-                            <Card
+                            <div
                                 key={type.id}
-                                className={`flex flex-col transition-all duration-300 hover:shadow-lg ${type.highlighted
-                                    ? "border-brand shadow-xl relative ring-2 ring-brand"
-                                    : "border-border hover:border-brand/40"
+                                className={`glass-card gradient-border flex flex-col rounded-2xl overflow-hidden ${type.highlighted
+                                    ? "ring-2 ring-brand ring-offset-2 ring-offset-background"
+                                    : ""
                                     }`}
                             >
                                 {type.highlighted && (
@@ -377,22 +381,22 @@ export default function ServicesPage() {
                                         </span>
                                     </div>
                                 )}
-                                <CardHeader>
-                                    <Badge variant="secondary" className="w-fit mb-2 text-xs">
+                                <div className="p-6">
+                                    <span className="inline-block px-3 py-1 rounded-full bg-brand/10 text-brand text-xs font-medium mb-3">
                                         {type.subtitle}
-                                    </Badge>
-                                    <CardTitle className="text-xl mb-2">{type.title}</CardTitle>
-                                    <CardDescription className="text-sm text-muted-foreground mb-3">
+                                    </span>
+                                    <h3 className="text-xl font-bold text-foreground mb-2">{type.title}</h3>
+                                    <p className="text-sm text-muted-foreground mb-4">
                                         {type.purpose}
-                                    </CardDescription>
-                                    <div className="pt-3 border-t border-border">
+                                    </p>
+                                    <div className="pt-4 border-t border-border/50 mb-4">
                                         <div className="text-2xl font-bold text-brand mb-1">{type.priceRange}</div>
                                         <div className="text-xs text-muted-foreground">Perfect for: {type.whoItsFor}</div>
                                     </div>
-                                </CardHeader>
-                                <CardContent className="flex-1">
-                                    <div className="mb-3">
-                                        <h4 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Main Features</h4>
+                                </div>
+                                <div className="px-6 flex-1">
+                                    <div className="mb-4">
+                                        <h4 className="text-xs font-semibold uppercase tracking-wide text-brand">Main Features</h4>
                                     </div>
                                     <ul className="space-y-3">
                                         {type.features.map((feature, idx) => (
@@ -402,17 +406,17 @@ export default function ServicesPage() {
                                             </li>
                                         ))}
                                     </ul>
-                                </CardContent>
-                                <CardFooter className="pt-6">
+                                </div>
+                                <div className="p-6 pt-6 mt-auto">
                                     <Button
-                                        className={`w-full rounded-full ${type.highlighted ? "bg-brand text-brand-foreground hover:bg-brand/90" : ""}`}
+                                        className={`w-full rounded-full ${type.highlighted ? "bg-brand text-brand-foreground hover:bg-brand/90" : "border-border/50 hover:bg-brand/5"}`}
                                         variant={type.highlighted ? "default" : "outline"}
                                         asChild
                                     >
                                         <Link href="/contact">Get Started</Link>
                                     </Button>
-                                </CardFooter>
-                            </Card>
+                                </div>
+                            </div>
                         ))}
                     </div>
                 </div>

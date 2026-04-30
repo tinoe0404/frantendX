@@ -3,7 +3,7 @@ export default function JsonLd() {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
         "name": "FrantendX Digital Solutions",
-        "url": "https://frantendx.com",
+        "url": "https://frantendxsolutions.co.zw",
         "priceRange": "$$$",
         "email": "info@frantendxsolutions.co.zw",
         "telephone": "+2630780885780",
@@ -11,10 +11,7 @@ export default function JsonLd() {
             "@type": "PostalAddress",
             "addressCountry": "ZW"
         },
-        "sameAs": [
-            "https://twitter.com/frantendx",
-            "https://linkedin.com/company/frantendx"
-        ]
+        
     };
 
     return (

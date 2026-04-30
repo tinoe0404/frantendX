@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: '/api/',
         },
-        sitemap: 'https://frantendx.com/sitemap.xml',
+        sitemap: 'https://frantendxsolutions.co.zw/sitemap.xml',
     }
 }

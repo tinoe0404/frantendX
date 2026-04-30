@@ -5,7 +5,10 @@ import { ProcessSteps } from "@/components/ProcessSteps";
 
 export function ProcessTimeline() {
   return (
-    <section className="py-24 md:py-32 border-t border-border">
+    <section className="py-24 md:py-32 relative">
+      {/* Section gradient divider at top */}
+      <div className="section-gradient-divider absolute top-0 left-0 right-0" />
+
       <div className="mx-auto max-w-6xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -14,7 +17,7 @@ export function ProcessTimeline() {
           transition={{ duration: 0.5 }}
           className="text-center mb-14"
         >
-          <p className="mb-3 text-sm font-medium text-muted-foreground tracking-widest uppercase">
+          <p className="mb-3 text-sm font-medium text-brand tracking-widest uppercase">
             How we work
           </p>
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">

@@ -1,6 +1,7 @@
 import { Metadata } from "next";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle2, Zap, Scaling } from "lucide-react";
+import { GradientMesh } from "@/components/GradientMesh";
+import { GridPattern } from "@/components/GridPattern";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -29,27 +30,31 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative py-24 md:py-32 overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-muted/50 via-background to-background" aria-hidden="true" />
-        <div className="relative mx-auto max-w-6xl px-6 text-center">
-          <p className="mb-4 text-sm font-medium text-muted-foreground tracking-widest uppercase">
+      <section className="relative py-24 md:py-32 overflow-hidden min-h-[60vh] flex flex-col justify-center">
+        <GradientMesh />
+        <GridPattern />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_30%,_hsl(var(--background))_80%)]" aria-hidden="true" />
+        <div className="relative mx-auto max-w-6xl px-6 text-center z-10">
+          <p className="mb-4 text-sm font-medium text-brand tracking-widest uppercase">
             About us
           </p>
           <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl text-balance mb-6">
-            Driven by innovation, grounded in quality.
+            Building the Future of <span className="hero-gradient-text">Digital Experiences.</span>
           </h1>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground leading-relaxed">
-            We are more than just developers. We are your strategic partners in the digital age.
+            We are more than just developers. We are your strategic partners in the digital age, driven by innovation and grounded in quality.
           </p>
         </div>
       </section>
 
       {/* Mission */}
-      <section className="py-24 md:py-32 border-t border-border">
+      <section className="py-24 md:py-32 relative">
+        <div className="section-gradient-divider absolute top-0 left-0 right-0" />
         <div className="mx-auto max-w-6xl px-6">
-          <div className="mx-auto max-w-3xl text-center">
-            <div className="space-y-6">
-              <p className="text-sm font-medium text-muted-foreground tracking-widest uppercase">
+          <div className="mx-auto max-w-3xl text-center glass-card rounded-2xl p-8 md:p-12 relative overflow-hidden group">
+            <div className="absolute inset-0 bg-brand/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="relative z-10 space-y-6">
+              <p className="text-sm font-medium text-brand tracking-widest uppercase">
                 Our mission
               </p>
               <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
@@ -67,7 +72,7 @@ export default function AboutPage() {
               <p className="text-muted-foreground leading-relaxed">
                 We build smart digital solutions — from websites (static & dynamic) to mobile apps and custom software.
                 Empowering businesses with reliable tech tailored to their goals.
-                <span className="block mt-2 font-medium text-foreground">Innovate. Build. Grow with FrantendX Digital Solutions.</span>
+                <span className="block mt-4 font-medium text-foreground">Innovate. Build. Grow with FrantendX Digital Solutions.</span>
               </p>
             </div>
           </div>
@@ -75,10 +80,11 @@ export default function AboutPage() {
       </section>
 
       {/* Core Values */}
-      <section className="py-24 md:py-32 border-t border-border">
+      <section className="py-24 md:py-32 relative">
+        <div className="section-gradient-divider absolute top-0 left-0 right-0" />
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center mb-14">
-            <p className="mb-3 text-sm font-medium text-muted-foreground tracking-widest uppercase">
+            <p className="mb-3 text-sm font-medium text-brand tracking-widest uppercase">
               What drives us
             </p>
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
@@ -89,19 +95,15 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="bento-grid">
             {values.map((v) => (
-              <Card key={v.title} className="border-border">
-                <CardHeader className="pb-4">
-                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-secondary text-brand">
-                    <v.icon className="h-5 w-5" />
-                  </div>
-                  <CardTitle className="text-lg">{v.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{v.description}</p>
-                </CardContent>
-              </Card>
+              <div key={v.title} className="glass-card gradient-border rounded-xl p-6 group">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand/10 text-brand group-hover:bg-brand/20 transition-colors">
+                  <v.icon className="h-6 w-6" />
+                </div>
+                <h3 className="text-lg font-semibold mb-2 group-hover:text-brand transition-colors">{v.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{v.description}</p>
+              </div>
             ))}
           </div>
         </div>
