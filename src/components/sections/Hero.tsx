@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles, Bot } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { staggerContainer, fadeUp } from "@/lib/motion-variants";
 import { MagneticButton } from "@/components/MagneticButton";
@@ -36,8 +36,8 @@ export function Hero() {
             className="inline-flex items-center gap-2 mb-8"
           >
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-medium border border-brand/30 bg-brand/10 text-brand backdrop-blur-sm">
-              <Sparkles className="h-3 w-3" />
-              Now accepting new projects for Q3 2026
+              <Bot className="h-3.5 w-3.5 animate-pulse" />
+              Building Custom AI Agents for Businesses
             </span>
           </motion.div>
 
