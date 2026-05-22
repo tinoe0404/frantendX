@@ -6,7 +6,7 @@ const codeLines = [
   { indent: 0, text: "const", keyword: "app", rest: " = createApp({" },
   { indent: 1, text: "framework:", keyword: '"Next.js"', rest: "," },
   { indent: 1, text: "performance:", keyword: '"blazing"', rest: "," },
-  { indent: 1, text: "design:", keyword: '"world-class"', rest: "," },
+  { indent: 1, text: "design:", keyword: '"premium"', rest: "," },
   { indent: 0, text: "});", keyword: "", rest: "" },
   { indent: 0, text: "", keyword: "", rest: "" },
   { indent: 0, text: "app.", keyword: "launch", rest: "();" },

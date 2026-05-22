@@ -26,7 +26,7 @@ const services = [
     icon: Gauge,
     title: "Performance & SEO",
     description:
-      "Perfect Lighthouse scores, Core Web Vitals optimization, and structured data for search visibility.",
+      "Excellent Lighthouse scores, Core Web Vitals optimization, and structured data for search visibility.",
     featured: false,
   },
   {

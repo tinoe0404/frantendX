@@ -14,7 +14,7 @@ const testimonials = [
   },
   {
     quote:
-      "Their development team built an internal system that automated our scheduling and client management perfectly. It saved us hundreds of hours in operational work.",
+      "Their development team built an internal system that automated our scheduling and client management seamlessly. It saved us hundreds of hours in operational work.",
     name: "Operations Director",
     role: "HaviChem Cleaning Services",
     initials: "HC",

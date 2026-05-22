@@ -60,7 +60,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs mb-6">
-              Building world-class digital experiences that drive growth. Your
+              Building exceptional digital experiences that drive growth. Your
               strategic partner for software that scales.
               <br />
               <span className="font-medium text-foreground">

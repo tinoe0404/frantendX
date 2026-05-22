@@ -299,7 +299,7 @@ const faqs: FAQ[] = [
     },
     {
         question: "Will my website work on mobile phones?",
-        answer: "Yes! Every website we build is fully responsive and mobile-optimized. With over 80% of Zimbabweans accessing the internet via mobile, we ensure your site looks perfect and functions smoothly on all devices and screen sizes.",
+        answer: "Yes! Every website we build is fully responsive and mobile-optimized. With over 80% of Zimbabweans accessing the internet via mobile, we ensure your site looks great and functions smoothly on all devices and screen sizes.",
     },
 ];
 
