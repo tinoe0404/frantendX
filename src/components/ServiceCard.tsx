@@ -8,9 +8,10 @@ interface ServiceCardProps {
   icon: React.ReactNode;
   featured?: boolean;
   visual?: React.ReactNode;
+  badge?: string;
 }
 
-export function ServiceCard({ title, description, icon, featured, visual }: ServiceCardProps) {
+export function ServiceCard({ title, description, icon, featured, visual, badge }: ServiceCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
 
   const mouseX = useMotionValue(0);
@@ -47,10 +48,17 @@ export function ServiceCard({ title, description, icon, featured, visual }: Serv
       style={{ rotateX, rotateY, transformPerspective: 800 }}
       whileHover={{ y: -4 }}
       transition={{ duration: 0.3, ease: "easeOut" }}
-      className={`h-full flex flex-col flex-1 w-full glass-card gradient-border rounded-xl cursor-pointer group overflow-hidden ${
+      className={`h-full flex flex-col flex-1 w-full glass-card gradient-border rounded-xl cursor-pointer group relative ${
         featured ? "bento-featured" : ""
       }`}
     >
+      {badge && (
+        <div className="absolute top-0 right-6 -translate-y-1/2 z-20">
+          <span className="bg-brand text-brand-foreground text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider shadow-md">
+            {badge}
+          </span>
+        </div>
+      )}
       <div className={`p-6 ${featured ? "md:p-8" : ""} h-full flex flex-col`}>
         {/* Icon with glow */}
         <div className="mb-4 relative">

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code, Smartphone, Gauge, Headphones } from "lucide-react";
+import { Code, Smartphone, Bot, Gauge, Headphones } from "lucide-react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { staggerContainer, scaleIn } from "@/lib/motion-variants";
@@ -9,11 +9,20 @@ import { ServiceCard } from "@/components/ServiceCard";
 
 const services = [
   {
+    icon: Bot,
+    title: "AI Agents & Automation",
+    description:
+      "Custom-built AI agents to automate customer support, generate leads, and streamline internal workflows. Support Bots, Sales Agents, and Data Assistants.",
+    featured: false,
+    badge: "New",
+  },
+  {
     icon: Code,
     title: "Custom Software",
     description:
       "Scalable web applications with modern cloud infrastructure. SaaS platforms, internal tools, and more. We architect systems built to grow with your business.",
-    featured: true,
+    featured: false,
+    badge: "Most Popular",
   },
   {
     icon: Smartphone,
@@ -21,6 +30,7 @@ const services = [
     description:
       "Cross-platform mobile experiences. Native performance, single codebase.",
     featured: false,
+    badge: "Most Popular",
   },
   {
     icon: Gauge,
@@ -63,9 +73,9 @@ export function ServicesPreview() {
           </p>
         </motion.div>
 
-        {/* Bento Grid */}
+        {/* Uniform Grid */}
         <motion.div
-          className="bento-grid"
+          className="flex flex-wrap justify-center gap-6"
           variants={staggerContainer}
           initial="hidden"
           whileInView="show"
@@ -75,13 +85,14 @@ export function ServicesPreview() {
             <motion.div
               key={i}
               variants={scaleIn}
-              className={`flex flex-col h-full ${s.featured ? "bento-featured" : ""}`}
+              className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] flex flex-col"
             >
               <ServiceCard
                 title={s.title}
                 description={s.description}
                 icon={<s.icon className="h-5 w-5" />}
                 featured={s.featured}
+                badge={s.badge}
               />
             </motion.div>
           ))}

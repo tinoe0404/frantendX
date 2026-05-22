@@ -81,6 +81,22 @@ interface FAQ {
 
 const websiteTypes: WebsiteType[] = [
     {
+        id: "ai-agents",
+        title: "AI Agents & Automation",
+        subtitle: "Smart Solutions",
+        purpose: "Automate workflows and enhance customer experience with custom-trained AI agents.",
+        whoItsFor: "Forward-thinking businesses, customer support teams, e-commerce brands",
+        priceRange: "$1,500 - $8,000+",
+        features: [
+            { icon: MessageCircle, text: "Customer Support Chatbots (min. $1,500)" },
+            { icon: Users, text: "Sales & Lead Gen Agents (min. $2,000)" },
+            { icon: Workflow, text: "Internal Workflow Automation (min. $2,500)" },
+            { icon: ShoppingCart, text: "AI E-Commerce Assistants (min. $1,800)" },
+            { icon: Zap, text: "Custom LLM Integrations (min. $3,000)" },
+        ],
+        highlighted: false,
+    },
+    {
         id: "basic-business",
         title: "Basic Business Website",
         subtitle: "Online Presence",
@@ -222,7 +238,6 @@ const websiteTypes: WebsiteType[] = [
             { icon: Users, text: "Social sharing & newsletter integration" },
             { icon: BarChart3, text: "SEO optimized for content discovery" },
         ],
-        highlighted: false,
     },
 ];
 
@@ -369,8 +384,8 @@ export default function ServicesPage() {
                         {websiteTypes.map((type) => (
                             <div
                                 key={type.id}
-                                className={`glass-card gradient-border flex flex-col rounded-2xl ${type.highlighted
-                                    ? "ring-2 ring-brand ring-offset-2 ring-offset-background mt-4 md:mt-0"
+                                className={`glass-card gradient-border relative flex flex-col rounded-2xl ${type.highlighted
+                                    ? "ring-2 ring-brand ring-offset-2 ring-offset-background"
                                     : ""
                                     }`}
                             >
