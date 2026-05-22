@@ -47,7 +47,7 @@ export function ServiceCard({ title, description, icon, featured, visual }: Serv
       style={{ rotateX, rotateY, transformPerspective: 800 }}
       whileHover={{ y: -4 }}
       transition={{ duration: 0.3, ease: "easeOut" }}
-      className={`glass-card gradient-border rounded-xl cursor-pointer group overflow-hidden ${
+      className={`h-full flex flex-col flex-1 w-full glass-card gradient-border rounded-xl cursor-pointer group overflow-hidden ${
         featured ? "bento-featured" : ""
       }`}
     >

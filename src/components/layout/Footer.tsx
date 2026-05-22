@@ -1,7 +1,22 @@
 "use client";
 
 import Link from "next/link";
-import { Github, Linkedin, Twitter, Mail, MapPin } from "lucide-react";
+import { Facebook, Mail, MapPin } from "lucide-react";
+
+const Tiktok = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg
+    {...props}
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+  </svg>
+);
 
 const footerLinks = {
   services: [
@@ -20,9 +35,8 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { name: "GitHub", href: "#", icon: Github },
-  { name: "LinkedIn", href: "#", icon: Linkedin },
-  { name: "Twitter", href: "#", icon: Twitter },
+  { name: "Facebook", href: "https://www.facebook.com/share/1Abq7x59qp/?mibextid=wwXIfr", icon: Facebook },
+  { name: "TikTok", href: "https://www.tiktok.com/@frantendx.digital?_r=1&_d=ela0a940ff42h3&sec_uid=MS4wLjABAAAA2wz0a70wcccHITdcnvh7HP0zzp0FkX4S80ugQYAkMRJWs3iElLwRqgh2Pfh-Pe3s&share_author_id=7635936433617781761&sharer_language=en&source=h5_m&u_code=f3a2k206h12bll&item_author_type=1&utm_source=copy&tt_from=copy&enable_checksum=1&utm_medium=ios&share_link_id=C47B066E-B1AC-4671-AA0A-CD9F7FF2A90C&user_id=7635936433617781761&sec_user_id=MS4wLjABAAAA2wz0a70wcccHITdcnvh7HP0zzp0FkX4S80ugQYAkMRJWs3iElLwRqgh2Pfh-Pe3s&social_share_type=4&ug_btm=b8727,b0&utm_campaign=client_share&share_app_id=1233", icon: Tiktok },
 ];
 
 export function Footer() {

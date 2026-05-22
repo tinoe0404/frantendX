@@ -75,7 +75,7 @@ export function ServicesPreview() {
             <motion.div
               key={i}
               variants={scaleIn}
-              className={s.featured ? "bento-featured" : ""}
+              className={`flex flex-col h-full ${s.featured ? "bento-featured" : ""}`}
             >
               <ServiceCard
                 title={s.title}

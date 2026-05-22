@@ -369,13 +369,13 @@ export default function ServicesPage() {
                         {websiteTypes.map((type) => (
                             <div
                                 key={type.id}
-                                className={`glass-card gradient-border flex flex-col rounded-2xl overflow-hidden ${type.highlighted
-                                    ? "ring-2 ring-brand ring-offset-2 ring-offset-background"
+                                className={`glass-card gradient-border flex flex-col rounded-2xl ${type.highlighted
+                                    ? "ring-2 ring-brand ring-offset-2 ring-offset-background mt-4 md:mt-0"
                                     : ""
                                     }`}
                             >
                                 {type.highlighted && (
-                                    <div className="absolute top-0 right-0 left-0 -mt-3 flex justify-center">
+                                    <div className="absolute top-0 right-0 left-0 -translate-y-1/2 flex justify-center z-10">
                                         <span className="bg-brand text-brand-foreground text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-md">
                                             Most Popular
                                         </span>
