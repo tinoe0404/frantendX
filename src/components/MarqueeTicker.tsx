@@ -7,6 +7,7 @@ const clients = [
   { name: "Nomadic Trails Tours", icon: "🗺️" },
   { name: "Educating Rural Girl Child of Zimbabwe", icon: "📚" },
   { name: "OSHY WIRES GURU", icon: "⚡" },
+  { name: "YETAURA INVESTMENTS (PRIVATE) LIMITED", icon: "📈" },
 ];
 
 export function MarqueeTicker() {
