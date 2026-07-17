@@ -11,15 +11,15 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 export const metadata: Metadata = {
   metadataBase: new URL("https://frantendxsolutions.co.zw"),
   title: {
-    default: "FrantendX Digital Solutions | Software Agency",
+    default: "FrantendX | AI Agents & Enterprise Software",
     template: "%s | FrantendX",
   },
   description:
-    "We build high-performance, scalable web applications. Your strategic partner for digital transformation.",
+    "We build intelligent AI agents, automated workflows, and scalable enterprise software for the future of business.",
   twitter: { card: "summary_large_image" },
   openGraph: {
-    title: "FrantendX Digital Solutions",
-    description: "Software Agency - Build. Ship. Scale.",
+    title: "FrantendX - AI Agents & Enterprise Software",
+    description: "Build the future with AI-driven digital systems and business automation.",
     url: "https://frantendxsolutions.co.zw",
     siteName: "FrantendX",
     locale: "en_US",

@@ -2,103 +2,86 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, Bot } from "lucide-react";
+import { ArrowRight, Box } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { staggerContainer, fadeUp } from "@/lib/motion-variants";
-import { MagneticButton } from "@/components/MagneticButton";
-import { GradientMesh } from "@/components/GradientMesh";
 import { GridPattern } from "@/components/GridPattern";
-import { HeroVisual } from "@/components/HeroVisual";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden min-h-[90vh] flex flex-col justify-center">
-      {/* Layered backgrounds */}
-      <GradientMesh />
-      <GridPattern />
+    <section className="relative overflow-hidden min-h-screen flex flex-col justify-center items-center">
+      {/* Subtle Grid Background */}
+      <GridPattern className="opacity-40" />
 
-      {/* Vignette overlay */}
+      {/* Fade overlay for depth */}
       <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_30%,_hsl(var(--background))_80%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_hsl(var(--background))_100%)]"
         aria-hidden="true"
       />
 
-      <div className="relative mx-auto max-w-6xl px-6 pt-24 pb-12 md:pt-36 md:pb-20 lg:pt-44 lg:pb-28">
+      <div className="relative z-10 mx-auto max-w-5xl px-6 pt-32 pb-20 text-center">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           animate="show"
-          className="mx-auto max-w-4xl text-center"
+          className="mx-auto flex flex-col items-center"
         >
-          {/* Floating badge */}
+          {/* Minimal Badge */}
           <motion.div
             variants={fadeUp}
-            className="inline-flex items-center gap-2 mb-8"
+            className="inline-flex items-center gap-2 mb-8 px-3 py-1 rounded-full text-xs font-medium border border-border/50 bg-foreground/5 text-foreground backdrop-blur-md"
           >
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-medium border border-brand/30 bg-brand/10 text-brand backdrop-blur-sm">
-              <Bot className="h-3.5 w-3.5 animate-pulse" />
-              Building Custom AI Agents for Businesses
-            </span>
+            <Box className="h-3.5 w-3.5" />
+            <span>FrantendX OS 2.0</span>
           </motion.div>
 
-          {/* Headline with gradient text */}
+          {/* Headline - Editorial Typography */}
           <motion.h1
             variants={fadeUp}
-            className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl text-balance leading-[1.08]"
+            className="text-5xl font-semibold tracking-tighter text-foreground sm:text-6xl md:text-7xl lg:text-8xl max-w-4xl leading-[1]"
           >
-            Digital solutions that solve{" "}
+            Build the future with <br className="hidden md:block" />
             <span className="hero-gradient-text">
-              real business problems.
+              intelligent systems.
             </span>
           </motion.h1>
 
           {/* Subtext */}
           <motion.p
             variants={fadeUp}
-            className="mx-auto mt-8 max-w-xl text-lg text-muted-foreground leading-relaxed"
+            className="mx-auto mt-8 max-w-2xl text-lg md:text-xl text-muted-foreground leading-relaxed font-light tracking-tight"
           >
-            We design and build high-performance websites and systems that
-            attract customers, automate operations, and increase revenue.
+            We engineer sophisticated AI agents, automated business workflows, and scalable enterprise platforms to accelerate your company&apos;s growth.
           </motion.p>
 
           {/* CTAs */}
           <motion.div
             variants={fadeUp}
-            className="mt-10 flex flex-col items-center justify-center gap-4"
+            className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              {/* Primary CTA — with glow */}
-              <MagneticButton className="group relative inline-flex items-center justify-center h-12 rounded-full px-8 text-base font-medium gap-2 bg-brand text-brand-foreground transition-all duration-300 hover:shadow-[0_0_30px_rgba(94,234,212,0.35)]">
-                <span className="absolute inset-0 rounded-full bg-brand opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-300" />
-                <Link href="/contact" className="relative flex items-center gap-2">
-                  Start a project
-                  <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
-                </Link>
-              </MagneticButton>
+            <Button
+              size="lg"
+              className="h-12 rounded-full px-8 text-base font-medium bg-foreground text-background hover:bg-foreground/90 transition-all group"
+              asChild
+            >
+              <Link href="/contact" className="flex items-center gap-2">
+                Start building
+                <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
+              </Link>
+            </Button>
 
-              {/* Secondary CTA — with gradient border */}
-              <Button
-                size="lg"
-                variant="outline"
-                className="h-12 rounded-full px-8 text-base font-medium group border-border/50 hover:border-brand/40 hover:bg-brand/5 transition-all duration-300"
-                asChild
-              >
-                <Link href="/services" className="flex items-center gap-2">
-                  Explore services
-                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
-                </Link>
-              </Button>
-            </div>
-
-            {/* Helper text */}
-            <p className="text-sm text-muted-foreground mt-4">
-              Free consultation available
-            </p>
+            <Button
+              size="lg"
+              variant="outline"
+              className="h-12 rounded-full px-8 text-base font-medium border-border/50 hover:bg-foreground/5 transition-all group"
+              asChild
+            >
+              <Link href="/services" className="flex items-center gap-2">
+                Explore capabilities
+              </Link>
+            </Button>
           </motion.div>
         </motion.div>
-
-        {/* Hero Visual — browser mockup */}
-        <HeroVisual />
       </div>
     </section>
   );
