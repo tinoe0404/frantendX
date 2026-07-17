@@ -1,25 +1,25 @@
-"use client";
+// Server Component — no hooks or event handlers needed
 
 import Link from "next/link";
 import { Facebook, Mail, MapPin, Linkedin, Twitter, Github } from "lucide-react";
 
 const footerLinks = {
   products: [
-    { name: "ZimFlow AI", href: "/products/zimflow" },
-    { name: "ZimbaSure AI", href: "/products/zimbasure" },
-    { name: "SMEGuard AI", href: "/products/smeguard" },
-    { name: "Platform API", href: "/api-docs" },
+    { name: "Zonkezonke App", href: "/#innovation" },
+    { name: "Gowild Tours Platform", href: "/#innovation" },
+    { name: "HaviChem System", href: "/#innovation" },
+    { name: "Platform API", href: "/contact" },
   ],
   solutions: [
-    { name: "AI Agents", href: "/solutions/agents" },
-    { name: "Business Automation", href: "/solutions/automation" },
-    { name: "SaaS Platforms", href: "/solutions/saas" },
-    { name: "Enterprise Systems", href: "/solutions/enterprise" },
+    { name: "AI Agents", href: "/services" },
+    { name: "Business Automation", href: "/services" },
+    { name: "SaaS Platforms", href: "/services" },
+    { name: "Enterprise Systems", href: "/services" },
   ],
   company: [
     { name: "About Us", href: "/about" },
     { name: "Case Studies", href: "/case-studies" },
-    { name: "Careers", href: "/careers" },
+    { name: "Careers", href: "/about" },
     { name: "Contact", href: "/contact" },
   ],
 };

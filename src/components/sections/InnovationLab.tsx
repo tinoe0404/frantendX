@@ -76,7 +76,7 @@ const products = [
 
 export function InnovationLab() {
   return (
-    <section className="py-32 relative overflow-hidden bg-background">
+    <section id="innovation" className="py-32 relative overflow-hidden bg-background">
       <div className="section-gradient-divider absolute top-0 left-0 right-0" />
       
       {/* Background Glow */}

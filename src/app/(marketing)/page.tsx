@@ -1,4 +1,5 @@
 import { Hero } from "@/components/sections/Hero";
+import { TrustSection } from "@/components/sections/TrustSection";
 import { MarqueeTicker } from "@/components/MarqueeTicker";
 import { ServicesPreview } from "@/components/sections/ServicesPreview";
 import { InnovationLab } from "@/components/sections/InnovationLab";
@@ -12,6 +13,7 @@ export default function Home() {
       <div className="max-w-6xl mx-auto px-6 pb-10">
         <StatsCounter />
       </div>
+      <TrustSection />
       <MarqueeTicker />
       <ServicesPreview />
       <InnovationLab />

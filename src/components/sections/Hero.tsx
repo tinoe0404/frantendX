@@ -28,7 +28,7 @@ const floatingElement: Variants = {
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden min-h-screen flex flex-col justify-center items-center bg-background">
+    <section className="relative overflow-hidden min-h-[100dvh] flex flex-col justify-center items-center bg-background">
       {/* Subtle glowing ambient gradient */}
       <div
         className="pointer-events-none absolute inset-0 flex items-center justify-center"
@@ -38,7 +38,7 @@ export function Hero() {
         <div className="w-[600px] h-[300px] bg-foreground/[0.02] rounded-[100%] blur-[80px] absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 animate-pulse duration-10000" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-32 pb-20 text-center w-full">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-24 pb-8 text-center w-full flex flex-col items-center justify-center flex-1">
         {/* Floating Background Interface Elements */}
         <div className="hidden lg:block absolute inset-0 pointer-events-none" aria-hidden="true">
           <motion.div
@@ -87,12 +87,12 @@ export function Hero() {
           variants={staggerContainer}
           initial="hidden"
           animate="show"
-          className="mx-auto flex flex-col items-center max-w-5xl relative z-20"
+          className="mx-auto flex flex-col items-center justify-center max-w-5xl relative z-20 w-full"
         >
           {/* Minimal Badge */}
           <motion.div
             variants={fadeUp}
-            className="inline-flex items-center gap-2 mb-10 px-3 py-1 rounded-full text-[11px] font-medium tracking-[0.2em] uppercase border border-border/40 bg-foreground/[0.03] text-muted-foreground backdrop-blur-md"
+            className="inline-flex items-center gap-2 mb-6 px-3 py-1 rounded-full text-[11px] font-medium tracking-[0.2em] uppercase border border-border/40 bg-foreground/[0.03] text-muted-foreground backdrop-blur-md"
           >
             <Sparkles className="h-3 w-3" />
             <span>AI SOFTWARE COMPANY</span>
@@ -101,31 +101,41 @@ export function Hero() {
           {/* Headline - Cinematic Typography */}
           <motion.h1
             variants={fadeUp}
-            className="text-5xl font-medium tracking-tighter text-foreground sm:text-7xl md:text-8xl lg:text-[100px] leading-[0.95] text-balance"
+            className="text-5xl font-medium tracking-tighter text-foreground sm:text-6xl md:text-7xl lg:text-[80px] leading-[0.95] text-balance mb-6"
           >
-            Building Intelligent Systems For The Future Of Africa
+            AI Agents & Custom Software Built for African Scale
           </motion.h1>
 
           {/* Subtext */}
           <motion.p
             variants={fadeUp}
-            className="mx-auto mt-10 max-w-2xl text-lg md:text-xl text-muted-foreground leading-relaxed font-light tracking-tight"
+            className="mx-auto max-w-2xl text-lg text-muted-foreground leading-relaxed font-light tracking-tight mb-8"
           >
-            FrantendX designs and develops AI agents, automation platforms, SaaS products, and enterprise systems that help businesses operate smarter.
+            We engineer offline-capable platforms and automated systems with native WhatsApp and EcoCash integrations, helping Zimbabwean businesses operate smarter and faster.
           </motion.p>
+
+          {/* Trust Badge */}
+          <motion.div variants={fadeUp} className="mb-8 flex items-center justify-center gap-2">
+            <div className="flex -space-x-2">
+              <div className="w-7 h-7 rounded-full border-2 border-background bg-muted/30 flex items-center justify-center text-[9px] font-bold">1</div>
+              <div className="w-7 h-7 rounded-full border-2 border-background bg-muted/50 flex items-center justify-center text-[9px] font-bold">2</div>
+              <div className="w-7 h-7 rounded-full border-2 border-background bg-muted/80 flex items-center justify-center text-[9px] font-bold">3</div>
+            </div>
+            <span className="text-sm font-medium text-muted-foreground ml-2">Trusted by 10+ businesses across Zimbabwe</span>
+          </motion.div>
 
           {/* CTAs */}
           <motion.div
             variants={fadeUp}
-            className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-4"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
           >
             <Button
               size="lg"
-              className="h-12 rounded-full px-8 text-base font-medium bg-foreground text-background hover:bg-foreground/90 transition-all duration-300 group shadow-lg shadow-foreground/10"
+              className="h-12 rounded-full px-8 text-base font-medium bg-foreground text-background hover:bg-foreground/90 transition-all duration-300 group shadow-lg shadow-foreground/10 hover:-translate-y-0.5 hover:shadow-xl"
               asChild
             >
               <Link href="/contact" className="flex items-center gap-2">
-                Start A Project
+                Start a project
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
               </Link>
             </Button>
@@ -133,14 +143,40 @@ export function Hero() {
             <Button
               size="lg"
               variant="outline"
-              className="h-12 rounded-full px-8 text-base font-medium border-border/30 hover:border-border/80 hover:bg-foreground/5 transition-all duration-300 bg-background/50 backdrop-blur-sm"
+              className="h-12 rounded-full px-8 text-base font-medium border-border/30 hover:border-foreground/30 hover:bg-transparent transition-all duration-300 bg-transparent text-foreground/80 hover:text-foreground"
               asChild
             >
               <Link href="/services">
-                Explore Solutions
+                Explore services
               </Link>
             </Button>
           </motion.div>
+
+          {/* Client Logos Strip */}
+          <motion.div 
+            variants={fadeUp}
+            className="w-full max-w-4xl border-t border-border/30 pt-8"
+          >
+            <p className="text-xs font-medium tracking-[0.1em] uppercase text-muted-foreground mb-8 text-center">
+              Powering innovation for leading brands
+            </p>
+            <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-700">
+              {/* SVG Text Logos to avoid emoji */}
+              <div className="text-xl font-black tracking-tighter text-foreground/80 hover:text-foreground transition-colors">
+                Gowild Tours
+              </div>
+              <div className="text-xl font-serif italic text-foreground/80 hover:text-foreground transition-colors">
+                HaviChem
+              </div>
+              <div className="text-xl font-bold uppercase tracking-widest text-foreground/80 hover:text-foreground transition-colors">
+                Educating Rural Girl Child
+              </div>
+              <div className="text-xl font-extrabold tracking-tight text-foreground/80 hover:text-foreground transition-colors">
+                Zonkezonke
+              </div>
+            </div>
+          </motion.div>
+
         </motion.div>
       </div>
     </section>
