@@ -38,10 +38,10 @@ export function CallToAction() {
           </motion.div>
 
           <h2 className="text-4xl font-semibold tracking-tighter text-foreground sm:text-5xl md:text-6xl text-balance">
-            Deploy your <span className="hero-gradient-text">AI strategy.</span>
+            Build Your Next <br/><span className="hero-gradient-text">Intelligent System.</span>
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground font-light tracking-tight">
-            Partner with FrantendX to design, build, and scale sophisticated AI software and automated business systems.
+            Partner with FrantendX to design, engineer, and deploy scalable AI products and custom enterprise software.
           </p>
 
           <div className="mt-12 flex items-center justify-center gap-4 flex-col sm:flex-row">
@@ -51,7 +51,7 @@ export function CallToAction() {
               asChild
             >
               <Link href="/contact">
-                Schedule a briefing
+                Start a Conversation
                 <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-0.5 transition-transform" />
               </Link>
             </Button>
