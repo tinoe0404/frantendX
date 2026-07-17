@@ -66,11 +66,11 @@ export function ServicesPreview() {
             <motion.div
               key={i}
               variants={scaleIn}
-              className="flex flex-col group p-8 rounded-2xl border border-border/50 bg-foreground/[0.02] hover:bg-foreground/[0.04] transition-colors relative overflow-hidden"
+              className="flex flex-col group p-8 rounded-2xl border border-border/50 bg-foreground/[0.02] hover:bg-foreground/[0.03] hover:-translate-y-1 hover:shadow-2xl hover:shadow-foreground/5 hover:border-border/80 transition-all duration-500 relative overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-foreground/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-br from-foreground/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
               
-              <div className="h-12 w-12 rounded-xl bg-background border border-border/50 flex items-center justify-center mb-6 shadow-sm">
+              <div className="h-12 w-12 rounded-xl bg-background border border-border/50 flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-500">
                 <s.icon className="h-6 w-6 text-foreground opacity-80" />
               </div>
               

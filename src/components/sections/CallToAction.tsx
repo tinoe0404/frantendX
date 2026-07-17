@@ -47,7 +47,7 @@ export function CallToAction() {
           <div className="mt-12 flex items-center justify-center gap-4 flex-col sm:flex-row">
             <Button
               size="lg"
-              className="h-12 rounded-full px-8 text-base font-medium bg-foreground text-background hover:bg-foreground/90 transition-all duration-300 group"
+              className="h-12 rounded-full px-8 text-base font-medium bg-foreground text-background hover:bg-foreground/90 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-foreground/10 transition-all duration-300 group"
               asChild
             >
               <Link href="/contact">

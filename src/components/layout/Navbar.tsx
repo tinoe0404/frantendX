@@ -65,7 +65,7 @@ export function Navbar() {
         className={cn(
           "pointer-events-auto flex items-center justify-between w-full max-w-5xl h-14 px-5 mx-auto rounded-full transition-all duration-500",
           scrolled
-            ? "bg-background/60 backdrop-blur-md border border-border/50 shadow-sm"
+            ? "bg-background/70 backdrop-blur-xl border border-border/50 shadow-[0_4px_24px_rgba(0,0,0,0.02)]"
             : "bg-transparent border-transparent"
         )}
       >
