@@ -1,48 +1,34 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code, Bot, Database, Workflow, ShieldCheck } from "lucide-react";
+import { Database, Workflow, ShieldCheck, Cpu } from "lucide-react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { staggerContainer, scaleIn } from "@/lib/motion-variants";
-import { ServiceCard } from "@/components/ServiceCard";
 
-const services = [
+const solutions = [
   {
-    icon: Bot,
+    icon: Cpu,
     title: "AI Agents",
-    description:
-      "Intelligent autonomous agents designed to automate customer support, generate leads, and act as smart data assistants within your ecosystem.",
+    description: "Autonomous AI assistants that automate business workflows.",
     featured: false,
-    badge: "Core",
   },
   {
     icon: Workflow,
     title: "Business Automation",
-    description:
-      "Streamline operations by connecting discrete systems. We build automated workflows that reduce manual labor and accelerate decision-making.",
+    description: "Intelligent systems that reduce repetitive manual work.",
     featured: false,
-    badge: "Popular",
   },
   {
     icon: Database,
-    title: "Enterprise SaaS Platforms",
-    description:
-      "Scalable, high-performance web applications built on modern cloud architecture. Designed for massive scale and uncompromising security.",
-    featured: false,
-  },
-  {
-    icon: Code,
-    title: "Custom Digital Systems",
-    description:
-      "Bespoke software engineering tailored to your unique operational requirements. Native performance across all digital touchpoints.",
+    title: "SaaS Platforms",
+    description: "Scalable cloud applications designed for modern businesses.",
     featured: false,
   },
   {
     icon: ShieldCheck,
-    title: "Security & Maintenance",
-    description:
-      "Continuous monitoring, proactive maintenance, and robust security protocols to keep your enterprise systems highly available.",
+    title: "Enterprise Systems",
+    description: "Secure custom software solutions for organizations.",
     featured: false,
   },
 ];
@@ -60,38 +46,40 @@ export function ServicesPreview() {
           transition={{ duration: 0.5 }}
           className="mb-16 text-center max-w-2xl mx-auto"
         >
-          <p className="mb-4 text-xs font-semibold text-muted-foreground tracking-[0.2em] uppercase">
-            Capabilities
-          </p>
           <h2 className="text-3xl font-semibold tracking-tighter text-foreground sm:text-4xl lg:text-5xl">
-            Engineered for scale.
+            Solutions We Build
           </h2>
           <p className="mt-6 text-lg text-muted-foreground leading-relaxed font-light">
             We deliver sophisticated digital infrastructure, blending artificial intelligence with modern software engineering.
           </p>
         </motion.div>
 
-        {/* Uniform Grid */}
+        {/* 2x2 Grid */}
         <motion.div
-          className="flex flex-wrap justify-center gap-4"
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
           variants={staggerContainer}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
         >
-          {services.map((s, i) => (
+          {solutions.map((s, i) => (
             <motion.div
               key={i}
               variants={scaleIn}
-              className="w-full sm:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)] flex flex-col"
+              className="flex flex-col group p-8 rounded-2xl border border-border/50 bg-foreground/[0.02] hover:bg-foreground/[0.04] transition-colors relative overflow-hidden"
             >
-              <ServiceCard
-                title={s.title}
-                description={s.description}
-                icon={<s.icon className="h-5 w-5 opacity-70" />}
-                featured={s.featured}
-                badge={s.badge}
-              />
+              <div className="absolute inset-0 bg-gradient-to-br from-foreground/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              
+              <div className="h-12 w-12 rounded-xl bg-background border border-border/50 flex items-center justify-center mb-6 shadow-sm">
+                <s.icon className="h-6 w-6 text-foreground opacity-80" />
+              </div>
+              
+              <h3 className="text-xl font-semibold text-foreground tracking-tight mb-3">
+                {s.title}
+              </h3>
+              <p className="text-muted-foreground leading-relaxed font-light">
+                {s.description}
+              </p>
             </motion.div>
           ))}
         </motion.div>
