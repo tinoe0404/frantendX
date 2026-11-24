@@ -45,7 +45,8 @@ function lineIntersectsBox(x1: number, y1: number, x2: number, y2: number, b: Ex
     (cy - ay) * (bx - ax) > (by - ay) * (cx - ax);
 
   const segIntersect = (ax: number, ay: number, bx: number, by: number, cx: number, cy: number, dx: number, dy: number) =>
-    ccw(ax, ay, cx, cy) !== ccw(bx, by, cx, cy) && ccw(ax, ay, bx, by) !== ccw(ax, ay, dx, dy);
+    ccw(ax, ay, cx, cy, dx, dy) !== ccw(bx, by, cx, cy, dx, dy) &&
+    ccw(ax, ay, bx, by, cx, cy) !== ccw(ax, ay, bx, by, dx, dy);
 
   return (
     segIntersect(x1, y1, x2, y2, b.left, b.top, b.right, b.top) ||
