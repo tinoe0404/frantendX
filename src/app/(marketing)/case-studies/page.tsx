@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function CaseStudiesPage() {
   return (
-    <div className="pt-20 md:pt-28">
+    <div className="pt-24 md:pt-36">
       <FeaturedWork />
       <CallToAction />
     </div>

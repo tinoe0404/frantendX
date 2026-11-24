@@ -20,7 +20,7 @@ const values = [
   {
     step: "02",
     icon: Zap,
-    title: "Engineering Speed",
+    title: "Engineering speed",
     description:
       "We iterate rapidly without sacrificing technical rigor. Fast loading, optimized runtimes, and immediate business value are non-negotiable.",
   },
@@ -46,13 +46,13 @@ export default function AboutPage() {
             <span>01 · ABOUT FRANTIVA</span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#141210] dark:text-[#FAF7F4] font-headline mb-6 max-w-4xl">
-            Building the Future of
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-[-0.02em] [word-spacing:0.08em] [text-wrap:balance] text-[#141210] dark:text-[#FAF7F4] font-headline mb-6 max-w-4xl leading-[1.04]">
+            Building the future of
             <br />
-            <span className="text-[#D4693A]">Digital Experiences.</span>
+            <span className="text-[#D4693A]">digital experiences.</span>
           </h1>
 
-          <p className="body-calm text-lg sm:text-xl max-w-[60ch] mb-10">
+          <p className="text-lg sm:text-xl text-[#5F5A55] dark:text-[#A09A93] leading-relaxed max-w-[56ch] [text-wrap:pretty] mb-10">
             We are more than just developers. We are strategic product engineers and AI architects,
             building reliable digital infrastructure that drives measurable commercial growth.
           </p>
@@ -70,10 +70,10 @@ export default function AboutPage() {
             </Button>
             <Link
               href="/services"
-              className="text-sm font-medium text-[#141210] dark:text-[#FAF7F4] hover:text-[#D4693A] dark:hover:text-[#D4693A] transition-colors py-2 px-3 inline-flex items-center gap-1 group"
+              className="text-sm font-medium text-[#5F5A55] dark:text-[#A09A93] hover:text-[#141210] dark:hover:text-[#FAF7F4] transition-colors py-2 px-3 inline-flex items-center gap-1 group"
             >
               <span>Explore services</span>
-              <span className="group-hover:translate-x-0.5 transition-transform">→</span>
+              <span className="group-hover:translate-x-0.5 transition-transform duration-150">→</span>
             </Link>
           </div>
         </section>
@@ -86,11 +86,11 @@ export default function AboutPage() {
               <span>02 · OUR MISSION</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#141210] dark:text-[#FAF7F4] font-headline mb-6 max-w-2xl">
-              Bridging Technology and Business Goals.
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.02em] [word-spacing:0.08em] [text-wrap:balance] text-[#141210] dark:text-[#FAF7F4] font-headline mb-6 max-w-2xl">
+              Bridging technology and business goals.
             </h2>
 
-            <div className="space-y-4 body-calm text-base sm:text-lg max-w-3xl">
+            <div className="space-y-4 text-base sm:text-lg text-[#5F5A55] dark:text-[#A09A93] leading-relaxed max-w-[56ch] [text-wrap:pretty]">
               <p>
                 Frantiva Technologies was founded to bridge the gap between complex software engineering and tangible business outcomes.
                 We believe that every modern enterprise deserves digital systems that are not only elegant, but fundamentally robust,
@@ -114,10 +114,10 @@ export default function AboutPage() {
             <span>03 · GUIDING VALUES</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#141210] dark:text-[#FAF7F4] font-headline mb-4">
-            Our Core Principles.
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.02em] [word-spacing:0.08em] [text-wrap:balance] text-[#141210] dark:text-[#FAF7F4] font-headline mb-4">
+            Our core principles.
           </h2>
-          <p className="body-calm text-base sm:text-lg mb-12 max-w-[60ch]">
+          <p className="text-base sm:text-lg text-[#5F5A55] dark:text-[#A09A93] leading-relaxed mb-12 max-w-[56ch] [text-wrap:pretty]">
             The engineering tenets that guide every line of code, architectural review, and client engagement.
           </p>
 
@@ -125,16 +125,16 @@ export default function AboutPage() {
             {values.map((v) => (
               <div
                 key={v.title}
-                className="rounded-[24px] border border-[#EAE4DE] dark:border-[#2B2724] bg-[#FFFFFF] dark:bg-[#1D1A17] p-8 flex flex-col justify-between"
+                className="rounded-[24px] border border-[#EAE4DE] dark:border-[#2B2724] bg-[#FFFFFF] dark:bg-[#1D1A17] p-8 flex flex-col justify-between hover:border-[#D4693A]/50 transition-colors duration-200"
               >
                 <div>
-                  <div className="w-11 h-11 rounded-full border-2 border-[#D4693A] flex items-center justify-center font-headline font-bold text-sm text-[#D4693A] mb-6">
+                  <div className="w-11 h-11 rounded-full border-2 border-[#D4693A] flex items-center justify-center font-headline font-bold text-sm tracking-[-0.005em] [word-spacing:0.08em] text-[#D4693A] mb-6">
                     {v.step}
                   </div>
-                  <h3 className="text-xl font-bold tracking-tight text-[#141210] dark:text-[#FAF7F4] font-headline mb-3">
+                  <h3 className="text-xl font-bold tracking-[-0.005em] [word-spacing:0.08em] [text-wrap:balance] text-[#141210] dark:text-[#FAF7F4] font-headline mb-3">
                     {v.title}
                   </h3>
-                  <p className="text-sm text-[#5F5A55] dark:text-[#A09A93] leading-relaxed">
+                  <p className="text-sm text-[#5F5A55] dark:text-[#A09A93] leading-relaxed max-w-[56ch] [text-wrap:pretty]">
                     {v.description}
                   </p>
                 </div>

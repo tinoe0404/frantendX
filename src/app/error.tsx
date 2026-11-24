@@ -22,17 +22,17 @@ export default function Error({
         <AlertTriangle className="h-7 w-7" aria-hidden="true" />
       </div>
 
-      <div className="flex items-center gap-2 mb-4 font-mono text-[12px] uppercase tracking-[0.12em] text-[#5F5A55] dark:text-[#A09A93]">
+      <div className="flex items-center gap-2 mb-4 font-mono text-[12px] font-normal uppercase tracking-[0.1em] text-[#5F5A55] dark:text-[#A09A93]">
         <span className="w-4 h-[1.5px] bg-[#D4693A] inline-block" />
-        <span>SYSTEM ERROR</span>
+        <span>System error</span>
       </div>
 
-      <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-[#141210] dark:text-[#FAF7F4] font-headline mb-4">
-        Something Went Wrong.
+      <h2 className="text-4xl sm:text-5xl font-extrabold tracking-[-0.02em] [word-spacing:0.08em] [text-wrap:balance] text-[#141210] dark:text-[#FAF7F4] font-headline mb-4">
+        Something went wrong.
       </h2>
 
-      <p className="body-calm text-base sm:text-lg mb-8 max-w-md leading-relaxed">
-        An unexpected runtime exception was intercepted. Please retry or return to safety.
+      <p className="font-sans text-[#5F5A55] dark:text-[#A09A93] text-base sm:text-lg mb-8 max-w-[56ch] [text-wrap:pretty] leading-relaxed">
+        An unexpected error was encountered. Please retry or return to the homepage.
       </p>
 
       <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">

@@ -9,17 +9,17 @@ export default function NotFound() {
         <FileQuestion className="h-7 w-7" aria-hidden="true" />
       </div>
 
-      <div className="flex items-center gap-2 mb-4 font-mono text-[12px] uppercase tracking-[0.12em] text-[#5F5A55] dark:text-[#A09A93]">
+      <div className="flex items-center gap-2 mb-4 font-mono text-[12px] font-normal uppercase tracking-[0.1em] text-[#5F5A55] dark:text-[#A09A93]">
         <span className="w-4 h-[1.5px] bg-[#D4693A] inline-block" />
-        <span>404 · PAGE NOT FOUND</span>
+        <span>404 · Page not found</span>
       </div>
 
-      <h1 className="text-5xl sm:text-7xl font-extrabold tracking-tight text-[#141210] dark:text-[#FAF7F4] font-headline mb-4">
-        Page Not Found.
+      <h1 className="text-5xl sm:text-7xl font-extrabold tracking-[-0.02em] [word-spacing:0.08em] [text-wrap:balance] text-[#141210] dark:text-[#FAF7F4] font-headline mb-4">
+        Page not found.
       </h1>
 
-      <p className="body-calm text-base sm:text-lg mb-8 max-w-md leading-relaxed">
-        The architectural endpoint you requested does not exist or has been relocated.
+      <p className="font-sans text-[#5F5A55] dark:text-[#A09A93] text-base sm:text-lg mb-8 max-w-[56ch] [text-wrap:pretty] leading-relaxed">
+        The page you requested does not exist or has been relocated.
       </p>
 
       <Button

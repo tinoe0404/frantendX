@@ -51,7 +51,7 @@ interface FAQ {
 const websiteTypes: WebsiteType[] = [
     {
         id: "ai-agents",
-        title: "AI Agents & Automation",
+        title: "AI agents & automation",
         subtitle: "Smart Solutions",
         purpose: "Automate complex workflows and customer operations with custom-trained AI agents.",
         whoItsFor: "Forward-thinking enterprises, operations teams, support departments",
@@ -67,7 +67,7 @@ const websiteTypes: WebsiteType[] = [
     },
     {
         id: "basic-business",
-        title: "Basic Business Website",
+        title: "Basic business website",
         subtitle: "Online Presence",
         purpose: "Establish a fast, professional online presence with instant brand credibility.",
         whoItsFor: "Small businesses, consultants, professionals, service providers",
@@ -83,7 +83,7 @@ const websiteTypes: WebsiteType[] = [
     },
     {
         id: "professional-corporate",
-        title: "Corporate Website Platform",
+        title: "Corporate website platform",
         subtitle: "Brand Authority",
         purpose: "Establish a powerful, authoritative digital presence for growing companies.",
         whoItsFor: "SMEs, educational institutions, corporate entities, established brands",
@@ -99,7 +99,7 @@ const websiteTypes: WebsiteType[] = [
     },
     {
         id: "ecommerce",
-        title: "E-Commerce Store Engine",
+        title: "E-commerce store engine",
         subtitle: "Digital Commerce",
         purpose: "Sell products around the clock with secure automated payment gateways.",
         whoItsFor: "Retail brands, wholesalers, direct-to-consumer businesses",
@@ -115,7 +115,7 @@ const websiteTypes: WebsiteType[] = [
     },
     {
         id: "custom-web-app",
-        title: "Custom Web Application",
+        title: "Custom web application",
         subtitle: "Advanced Software",
         purpose: "Build bespoke operational software with user accounts, dashboards, and role permissions.",
         whoItsFor: "SaaS startups, booking platforms, portals, enterprise operations",
@@ -131,7 +131,7 @@ const websiteTypes: WebsiteType[] = [
     },
     {
         id: "mobile-app",
-        title: "Mobile App Development",
+        title: "Mobile app development",
         subtitle: "iOS & Android",
         purpose: "Native-grade cross-platform mobile experiences reaching users on their devices.",
         whoItsFor: "Product companies, logistics dispatch, customer on-demand apps",
@@ -149,17 +149,17 @@ const websiteTypes: WebsiteType[] = [
 
 const additionalServices: AdditionalService[] = [
     {
-        service: "Domain Registration",
+        service: "Domain registration",
         description: ".com, .co.zw, and international extensions registered in your name.",
         price: "$6 - $30/yr",
     },
     {
-        service: "Enterprise Cloud Hosting",
+        service: "Enterprise cloud hosting",
         description: "High-speed NVMe hosting with 99.9% uptime SLA, CDN, and SSL.",
         price: "$80 - $300/yr",
     },
     {
-        service: "Continuous System Maintenance",
+        service: "Continuous system maintenance",
         description: "Proactive security patching, daily backups, and SLA support.",
         price: "$30 - $100+/mo",
     },
@@ -167,19 +167,19 @@ const additionalServices: AdditionalService[] = [
 
 const pricingFactors: PricingFactor[] = [
     {
-        title: "System Complexity",
+        title: "System complexity",
         description: "Informational pages require fewer development hours than applications with user sessions, complex database schemas, and background job queues.",
     },
     {
-        title: "Scope & Scale",
+        title: "Scope & scale",
         description: "The volume of bespoke layouts, responsive templates, and custom interactions directly dictates planning, development, and QA testing time.",
     },
     {
-        title: "API Integrations",
+        title: "API integrations",
         description: "Connecting payment providers, CRM pipelines, legacy ERPs, or custom LLM endpoints requires specialized security engineering.",
     },
     {
-        title: "Compliance & Security",
+        title: "Compliance & security",
         description: "Regulated industry requirements like HIPAA, GDPR, financial PCI DSS, and granular audit trail generation require defensive architectural hardening.",
     },
 ];
@@ -223,13 +223,13 @@ export default function ServicesPage() {
                         <span>01 · CAPABILITIES &amp; PRICING</span>
                     </div>
 
-                    <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#141210] dark:text-[#FAF7F4] font-headline mb-6 max-w-4xl">
-                        Predictable Pricing.
+                    <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-[-0.02em] [word-spacing:0.08em] [text-wrap:balance] text-[#141210] dark:text-[#FAF7F4] font-headline mb-6 max-w-4xl leading-[1.04]">
+                        Predictable pricing.
                         <br />
-                        <span className="text-[#D4693A]">Engineered to Scale.</span>
+                        <span className="text-[#D4693A]">Engineered to scale.</span>
                     </h1>
 
-                    <p className="body-calm text-lg sm:text-xl max-w-[60ch] mb-10">
+                    <p className="text-lg sm:text-xl text-[#5F5A55] dark:text-[#A09A93] leading-relaxed max-w-[56ch] [text-wrap:pretty] mb-10">
                         Transparent project tiers, defensive software engineering, and systems built to drive real commercial ROI.
                     </p>
 
@@ -246,10 +246,10 @@ export default function ServicesPage() {
                         </Button>
                         <Link
                             href="#packages"
-                            className="text-sm font-medium text-[#141210] dark:text-[#FAF7F4] hover:text-[#D4693A] dark:hover:text-[#D4693A] transition-colors py-2 px-3 inline-flex items-center gap-1 group"
+                            className="text-sm font-medium text-[#5F5A55] dark:text-[#A09A93] hover:text-[#141210] dark:hover:text-[#FAF7F4] transition-colors py-2 px-3 inline-flex items-center gap-1 group"
                         >
                             <span>Browse packages</span>
-                            <span className="group-hover:translate-x-0.5 transition-transform">→</span>
+                            <span className="group-hover:translate-x-0.5 transition-transform duration-150">→</span>
                         </Link>
                     </div>
                 </section>
@@ -257,15 +257,15 @@ export default function ServicesPage() {
                 {/* Ownership Notice */}
                 <div className="mb-20 rounded-[24px] border border-[#EAE4DE] dark:border-[#2B2724] bg-[#FFFFFF] dark:bg-[#1D1A17] p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                     <div>
-                        <span className="font-headline font-bold text-base text-[#141210] dark:text-[#FAF7F4] block mb-1">
-                            100% Asset Ownership Guarantee
+                        <span className="font-headline font-bold text-base tracking-[-0.005em] [word-spacing:0.08em] text-[#141210] dark:text-[#FAF7F4] block mb-1">
+                            100% asset ownership guarantee
                         </span>
-                        <p className="text-sm text-[#5F5A55] dark:text-[#A09A93]">
+                        <p className="text-sm text-[#5F5A55] dark:text-[#A09A93] max-w-[56ch] [text-wrap:pretty]">
                             Domain registration and dedicated hosting are provisioned in your name so your enterprise retains absolute control over its code and data.
                         </p>
                     </div>
                     <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#D4693A] shrink-0">
-                        Zero Vendor Lock-in
+                        Zero vendor lock-in
                     </span>
                 </div>
 
@@ -276,10 +276,10 @@ export default function ServicesPage() {
                         <span>02 · ENGINEERING PACKAGES</span>
                     </div>
 
-                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#141210] dark:text-[#FAF7F4] font-headline mb-4">
-                        Choose the Right Architecture.
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.02em] [word-spacing:0.08em] [text-wrap:balance] text-[#141210] dark:text-[#FAF7F4] font-headline mb-4">
+                        Choose the right architecture.
                     </h2>
-                    <p className="body-calm text-base sm:text-lg mb-14 max-w-[60ch]">
+                    <p className="text-base sm:text-lg text-[#5F5A55] dark:text-[#A09A93] leading-relaxed mb-14 max-w-[56ch] [text-wrap:pretty]">
                         Every organization has distinct requirements. Select the tier that aligns with your business goals.
                     </p>
 
@@ -305,16 +305,16 @@ export default function ServicesPage() {
                                         )}
                                     </div>
 
-                                    <h3 className="text-2xl font-bold tracking-tight text-[#141210] dark:text-[#FAF7F4] font-headline mb-2">
+                                    <h3 className="text-2xl font-bold tracking-[-0.005em] [word-spacing:0.08em] [text-wrap:balance] text-[#141210] dark:text-[#FAF7F4] font-headline mb-2">
                                         {type.title}
                                     </h3>
 
-                                    <p className="text-sm text-[#5F5A55] dark:text-[#A09A93] leading-relaxed mb-6">
+                                    <p className="text-sm text-[#5F5A55] dark:text-[#A09A93] leading-relaxed mb-6 max-w-[56ch] [text-wrap:pretty]">
                                         {type.purpose}
                                     </p>
 
                                     <div className="pb-6 mb-6 border-b border-[#EAE4DE] dark:border-[#2B2724]">
-                                        <span className="text-3xl font-bold font-headline text-[#141210] dark:text-[#FAF7F4] block mb-1">
+                                        <span className="text-3xl font-bold font-headline tracking-[-0.02em] [word-spacing:0.08em] text-[#141210] dark:text-[#FAF7F4] block mb-1">
                                             {type.priceRange}
                                         </span>
                                         <span className="text-xs text-[#5F5A55] dark:text-[#A09A93]">
@@ -356,10 +356,10 @@ export default function ServicesPage() {
                         <span>03 · COMPLEMENTARY SERVICES</span>
                     </div>
 
-                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#141210] dark:text-[#FAF7F4] font-headline mb-4">
-                        Infrastructure Add-ons.
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.02em] [word-spacing:0.08em] [text-wrap:balance] text-[#141210] dark:text-[#FAF7F4] font-headline mb-4">
+                        Infrastructure add-ons.
                     </h2>
-                    <p className="body-calm text-base sm:text-lg mb-14 max-w-[60ch]">
+                    <p className="text-base sm:text-lg text-[#5F5A55] dark:text-[#A09A93] leading-relaxed mb-14 max-w-[56ch] [text-wrap:pretty]">
                         Essential infrastructure services to secure and sustain your application lifecycle.
                     </p>
 
@@ -367,18 +367,18 @@ export default function ServicesPage() {
                         {additionalServices.map((service, i) => (
                             <div
                                 key={i}
-                                className="rounded-[24px] border border-[#EAE4DE] dark:border-[#2B2724] bg-[#FFFFFF] dark:bg-[#1D1A17] p-8 flex flex-col justify-between"
+                                className="rounded-[24px] border border-[#EAE4DE] dark:border-[#2B2724] bg-[#FFFFFF] dark:bg-[#1D1A17] p-8 flex flex-col justify-between hover:border-[#D4693A]/50 transition-colors duration-200"
                             >
                                 <div>
-                                    <span className="text-xl font-bold font-headline text-[#141210] dark:text-[#FAF7F4] block mb-2">
+                                    <span className="text-xl font-bold font-headline tracking-[-0.005em] [word-spacing:0.08em] text-[#141210] dark:text-[#FAF7F4] block mb-2">
                                         {service.service}
                                     </span>
-                                    <p className="text-sm text-[#5F5A55] dark:text-[#A09A93] leading-relaxed mb-6">
+                                    <p className="text-sm text-[#5F5A55] dark:text-[#A09A93] leading-relaxed mb-6 max-w-[56ch] [text-wrap:pretty]">
                                         {service.description}
                                     </p>
                                 </div>
                                 <div className="pt-4 border-t border-[#EAE4DE] dark:border-[#2B2724]">
-                                    <span className="text-xl font-bold font-headline text-[#D4693A]">
+                                    <span className="text-xl font-bold font-headline tracking-[-0.005em] [word-spacing:0.08em] text-[#D4693A]">
                                         {service.price}
                                     </span>
                                 </div>
@@ -394,10 +394,10 @@ export default function ServicesPage() {
                         <span>04 · HOW WE ESTIMATE</span>
                     </div>
 
-                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#141210] dark:text-[#FAF7F4] font-headline mb-4">
-                        Key Valuation Factors.
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.02em] [word-spacing:0.08em] [text-wrap:balance] text-[#141210] dark:text-[#FAF7F4] font-headline mb-4">
+                        Key valuation factors.
                     </h2>
-                    <p className="body-calm text-base sm:text-lg mb-14 max-w-[60ch]">
+                    <p className="text-base sm:text-lg text-[#5F5A55] dark:text-[#A09A93] leading-relaxed mb-14 max-w-[56ch] [text-wrap:pretty]">
                         How engineering effort translates into honest, predictable project investment.
                     </p>
 
@@ -405,17 +405,19 @@ export default function ServicesPage() {
                         {pricingFactors.map((factor, i) => (
                             <div
                                 key={i}
-                                className="rounded-[24px] border border-[#EAE4DE] dark:border-[#2B2724] bg-[#FFFFFF] dark:bg-[#1D1A17] p-8"
+                                className="rounded-[24px] border border-[#EAE4DE] dark:border-[#2B2724] bg-[#FFFFFF] dark:bg-[#1D1A17] p-8 flex flex-col justify-between hover:border-[#D4693A]/50 transition-colors duration-200"
                             >
-                                <span className="font-mono text-xs text-[#D4693A] font-bold block mb-3">
-                                    [0{i + 1}]
-                                </span>
-                                <h3 className="text-lg font-bold font-headline text-[#141210] dark:text-[#FAF7F4] mb-2">
-                                    {factor.title}
-                                </h3>
-                                <p className="text-sm text-[#5F5A55] dark:text-[#A09A93] leading-relaxed">
-                                    {factor.description}
-                                </p>
+                                <div>
+                                    <div className="w-8 h-8 rounded-full border border-[#D4693A] flex items-center justify-center font-mono text-xs font-bold text-[#D4693A] mb-4">
+                                        0{i + 1}
+                                    </div>
+                                    <h3 className="text-lg font-bold font-headline tracking-[-0.005em] [word-spacing:0.08em] [text-wrap:balance] text-[#141210] dark:text-[#FAF7F4] mb-2">
+                                        {factor.title}
+                                    </h3>
+                                    <p className="text-sm text-[#5F5A55] dark:text-[#A09A93] leading-relaxed max-w-[56ch] [text-wrap:pretty]">
+                                        {factor.description}
+                                    </p>
+                                </div>
                             </div>
                         ))}
                     </div>
@@ -428,18 +430,18 @@ export default function ServicesPage() {
                         <span>05 · FREQUENT QUESTIONS</span>
                     </div>
 
-                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#141210] dark:text-[#FAF7F4] font-headline mb-12">
-                        Common Clarifications.
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.02em] [word-spacing:0.08em] [text-wrap:balance] text-[#141210] dark:text-[#FAF7F4] font-headline mb-12">
+                        Common clarifications.
                     </h2>
 
                     <div className="rounded-[24px] border border-[#EAE4DE] dark:border-[#2B2724] bg-[#FFFFFF] dark:bg-[#1D1A17] p-6 sm:p-10">
                         <Accordion type="single" collapsible className="w-full divide-y divide-[#EAE4DE] dark:divide-[#2B2724]">
                             {faqs.map((faq, i) => (
                                 <AccordionItem key={i} value={`item-${i}`} className="border-b-0 py-2">
-                                    <AccordionTrigger className="text-left font-headline font-semibold text-lg text-[#141210] dark:text-[#FAF7F4] hover:no-underline hover:text-[#D4693A] transition-colors py-4">
+                                    <AccordionTrigger className="text-left font-headline font-semibold text-lg tracking-[-0.005em] [word-spacing:0.08em] text-[#141210] dark:text-[#FAF7F4] hover:no-underline hover:text-[#D4693A] transition-colors py-4">
                                         {faq.question}
                                     </AccordionTrigger>
-                                    <AccordionContent className="body-calm text-base leading-relaxed text-[#5F5A55] dark:text-[#A09A93] pb-4">
+                                    <AccordionContent className="text-base leading-relaxed text-[#5F5A55] dark:text-[#A09A93] max-w-[56ch] [text-wrap:pretty] pb-4">
                                         {faq.answer}
                                     </AccordionContent>
                                 </AccordionItem>

@@ -8,40 +8,40 @@ import { staggerContainer, fadeUp } from "@/lib/motion-variants";
 const projects = [
   {
     id: "gowild",
-    title: "Eco-Tourism Booking Platform",
+    title: "Eco-tourism booking platform",
     client: "Gowild Tours & Nomadic Trails",
     industry: "Tourism & Logistics",
     description:
       "A high-performance booking engine with real-time multi-currency availability, automated guide dispatch, and integrated payment processing.",
     metrics: [
-      { label: "Direct Bookings", value: "+45%" },
-      { label: "Page Speed", value: "0.8s" },
+      { label: "Direct bookings", value: "+45%" },
+      { label: "Page speed", value: "0.8s" },
     ],
     tags: ["Next.js", "PostgreSQL", "Stripe Core"],
   },
   {
     id: "havichem",
-    title: "Corporate Operations Core",
+    title: "Corporate operations core",
     client: "HaviChem Cleaning Services",
     industry: "Industrial & Chemical",
     description:
       "Custom internal operations software automating multi-facility cleaning crew shifts, inventory buffers, and client self-service portals.",
     metrics: [
-      { label: "Admin Time Saved", value: "60%" },
-      { label: "Operational Speed", value: "3x" },
+      { label: "Admin time saved", value: "60%" },
+      { label: "Operational speed", value: "3x" },
     ],
     tags: ["React Core", "Node.js", "Tailwind"],
   },
   {
     id: "rural-girl",
-    title: "Outreach & Impact Portal",
+    title: "Outreach & impact portal",
     client: "Educating Rural Girl Child",
     industry: "NGO & Education",
     description:
       "An accessible, optimized web platform driving international donor engagement, scholarship verification, and community impact tracking.",
     metrics: [
-      { label: "Donor Reach", value: "10K+" },
-      { label: "Engagement Rate", value: "+120%" },
+      { label: "Donor reach", value: "10K+" },
+      { label: "Engagement rate", value: "+120%" },
     ],
     tags: ["Next.js", "Headless CMS", "A11y"],
   },
@@ -49,22 +49,22 @@ const projects = [
 
 export function FeaturedWork() {
   return (
-    <section className="py-20 md:py-28">
+    <section className="py-24 md:py-36">
       <div className="mx-auto max-w-[1200px] px-6">
         {/* Eyebrow */}
-        <div className="flex items-center gap-2 mb-4 font-mono text-[12px] uppercase tracking-[0.12em] text-[#5F5A55] dark:text-[#A09A93]">
+        <div className="flex items-center gap-2 mb-4 font-mono text-[12px] font-normal uppercase tracking-[0.1em] text-[#5F5A55] dark:text-[#A09A93]">
           <span className="w-4 h-[1.5px] bg-[#D4693A] inline-block" />
-          <span>01 · CASE STUDIES</span>
+          <span>01 · Case studies</span>
         </div>
 
         {/* Big 2-line headline */}
-        <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#141210] dark:text-[#FAF7F4] font-headline mb-4">
-          Software Projects That
+        <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-[-0.02em] [word-spacing:0.08em] [text-wrap:balance] text-[#141210] dark:text-[#FAF7F4] font-headline mb-4">
+          Software projects that
           <br />
-          <span className="text-[#D4693A]">Deliver Real Results.</span>
+          <span className="text-[#D4693A]">deliver real results.</span>
         </h2>
 
-        <p className="body-calm text-base sm:text-lg mb-14 max-w-[60ch]">
+        <p className="font-sans text-[#5F5A55] dark:text-[#A09A93] text-base sm:text-lg mb-14 max-w-[56ch] [text-wrap:pretty]">
           We don&apos;t just build software — we engineer platforms that drive measurable commercial and operational outcomes.
         </p>
 
@@ -90,7 +90,7 @@ export function FeaturedWork() {
                   </span>
                 </div>
 
-                <h3 className="text-2xl font-bold tracking-tight text-[#141210] dark:text-[#FAF7F4] font-headline mb-2">
+                <h3 className="text-2xl font-bold tracking-[-0.005em] [word-spacing:0.08em] [text-wrap:balance] text-[#141210] dark:text-[#FAF7F4] font-headline mb-2">
                   {project.title}
                 </h3>
 
@@ -98,7 +98,7 @@ export function FeaturedWork() {
                   Built for: {project.client}
                 </p>
 
-                <p className="text-sm text-[#5F5A55] dark:text-[#A09A93] leading-relaxed mb-8">
+                <p className="text-sm text-[#5F5A55] dark:text-[#A09A93] leading-relaxed mb-8 max-w-[56ch] [text-wrap:pretty]">
                   {project.description}
                 </p>
 
@@ -106,7 +106,7 @@ export function FeaturedWork() {
                 <div className="grid grid-cols-2 gap-4 py-4 mb-6 border-y border-[#EAE4DE] dark:border-[#2B2724]">
                   {project.metrics.map((metric, j) => (
                     <div key={j}>
-                      <span className="text-2xl font-extrabold font-headline text-[#141210] dark:text-[#FAF7F4] block mb-0.5">
+                      <span className="text-2xl font-extrabold font-headline tracking-[-0.005em] [word-spacing:0.08em] text-[#141210] dark:text-[#FAF7F4] block mb-0.5">
                         {metric.value}
                       </span>
                       <span className="text-xs text-[#5F5A55] dark:text-[#A09A93]">
@@ -132,7 +132,7 @@ export function FeaturedWork() {
               <div>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#141210] dark:text-[#FAF7F4] hover:text-[#D4693A] dark:hover:text-[#D4693A] transition-colors group"
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#5F5A55] dark:text-[#A09A93] hover:text-[#141210] dark:hover:text-[#FAF7F4] transition-colors group"
                 >
                   <span>Discuss a similar project</span>
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
