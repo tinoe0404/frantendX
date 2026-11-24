@@ -34,15 +34,15 @@ export function InnovationLab() {
           <span>04 · PROPRIETARY LAB</span>
         </div>
 
-        {/* Big 2-line headline */}
-        <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#141210] dark:text-[#FAF7F4] font-headline mb-4">
-          Proven Platforms Built in
+        {/* Big 2-line headline in sentence case */}
+        <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-[-0.02em] [word-spacing:0.08em] [text-wrap:balance] text-[#141210] dark:text-[#FAF7F4] font-headline mb-4">
+          Proven platforms built in
           <br />
-          <span className="text-[#D4693A]">Our Innovation Lab.</span>
+          <span className="text-[#D4693A]">our innovation lab.</span>
         </h2>
 
-        {/* Optional one-line subtext */}
-        <p className="body-calm text-base sm:text-lg mb-14 max-w-[60ch]">
+        {/* Subtext: max-width 56ch, text-wrap pretty */}
+        <p className="text-base sm:text-lg text-[#5F5A55] dark:text-[#A09A93] leading-relaxed mb-14 max-w-[56ch] [text-wrap:pretty]">
           Internal products and systems battle-tested in live enterprise environments.
         </p>
 
@@ -58,10 +58,10 @@ export function InnovationLab() {
               className="rounded-[24px] border border-[#EAE4DE] dark:border-[#2B2724] bg-[#FFFFFF] dark:bg-[#1D1A17] p-8 flex flex-col justify-between hover:border-[#D4693A]/50 transition-colors duration-200"
             >
               <div>
-                <h3 className="text-2xl font-bold tracking-tight text-[#141210] dark:text-[#FAF7F4] font-headline mb-3">
+                <h3 className="text-2xl font-bold tracking-[-0.005em] [word-spacing:0.08em] [text-wrap:balance] text-[#141210] dark:text-[#FAF7F4] font-headline mb-3">
                   {product.title}
                 </h3>
-                <p className="text-base text-[#5F5A55] dark:text-[#A09A93] leading-relaxed mb-8">
+                <p className="text-base text-[#5F5A55] dark:text-[#A09A93] leading-relaxed mb-8 max-w-[56ch] [text-wrap:pretty]">
                   {product.description}
                 </p>
               </div>
@@ -69,7 +69,7 @@ export function InnovationLab() {
               <div>
                 <Link
                   href={product.href}
-                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#141210] dark:text-[#FAF7F4] hover:text-[#D4693A] dark:hover:text-[#D4693A] transition-colors group"
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-[#5F5A55] hover:text-[#141210] dark:text-[#A09A93] dark:hover:text-[#FAF7F4] transition-colors group"
                 >
                   <span>Explore</span>
                   <span className="group-hover:translate-x-1 transition-transform duration-150">→</span>

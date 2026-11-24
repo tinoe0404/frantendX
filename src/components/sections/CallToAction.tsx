@@ -6,9 +6,9 @@ import { Button } from "@/components/ui/button";
 
 export function CallToAction() {
   return (
-    <section className="py-28 md:py-36">
+    <section className="pt-20 pb-10 md:pt-28 md:pb-12">
       <div className="mx-auto max-w-[1200px] px-6">
-        <div className="rounded-[24px] border border-[#EAE4DE] dark:border-[#2B2724] bg-[#FFFFFF] dark:bg-[#1D1A17] p-10 sm:p-14 md:p-20">
+        <div className="rounded-[24px] border border-[#EAE4DE] dark:border-[#2B2724] bg-[#FFFFFF] dark:bg-[#1D1A17] p-8 sm:p-12 md:p-16 text-left">
           
           {/* Eyebrow: Mono format "— 05 · START A CONVERSATION" */}
           <div className="flex items-center gap-2 mb-6 font-mono text-[12px] uppercase tracking-[0.12em] text-[#5F5A55] dark:text-[#A09A93]">
@@ -16,14 +16,14 @@ export function CallToAction() {
             <span>05 · START A CONVERSATION</span>
           </div>
 
-          <div className="max-w-3xl">
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#141210] dark:text-[#FAF7F4] font-headline leading-[1.06] mb-6">
-              Software That Solves Real Problems.
+          <div className="max-w-3xl flex flex-col items-start text-left">
+            <h2 className="text-[clamp(32px,4vw,52px)] font-extrabold tracking-[-0.02em] [word-spacing:0.08em] [text-wrap:balance] text-[#141210] dark:text-[#FAF7F4] font-headline leading-[1.08] mb-6">
+              <span>Software that solves real problems.</span>
               <br />
-              <span className="text-[#D4693A]">AI That Creates Real Possibilities.</span>
+              <span className="text-[#D4693A]">AI that creates real possibilities.</span>
             </h2>
 
-            <p className="body-calm text-base sm:text-lg mb-10 max-w-[60ch]">
+            <p className="text-base sm:text-lg text-[#5F5A55] dark:text-[#A09A93] leading-relaxed mb-10 max-w-[56ch] [text-wrap:pretty]">
               Partner with Frantiva Technologies to design, engineer, and deploy scalable software platforms and intelligent automated systems.
             </p>
 

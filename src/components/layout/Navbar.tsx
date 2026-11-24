@@ -79,10 +79,10 @@ export function Navbar() {
             <span>F</span>
           </div>
           <div className="flex items-baseline gap-1.5">
-            <span className="font-display text-[22px] font-extrabold tracking-tight text-[#141210] dark:text-[#FAF7F4] leading-none">
+            <span className="font-display text-[22px] font-extrabold tracking-tight text-[#141210] dark:text-[#FAF7F4]">
               Frantiva
             </span>
-            <span className="font-sans text-[13px] font-normal text-[#5F5A55] dark:text-[#A09A93] tracking-[0.02em] leading-none">
+            <span className="font-sans text-[13px] font-normal text-[#5F5A55] dark:text-[#A09A93] tracking-[0.02em]">
               Technologies
             </span>
           </div>
@@ -154,10 +154,10 @@ export function Navbar() {
                         <span>F</span>
                       </div>
                       <div className="flex items-baseline gap-1.5">
-                        <span className="font-display text-[20px] font-extrabold tracking-tight text-[#141210] dark:text-[#FAF7F4] leading-none">
+                        <span className="font-display text-[20px] font-extrabold tracking-tight text-[#141210] dark:text-[#FAF7F4]">
                           Frantiva
                         </span>
-                        <span className="font-sans text-[12px] font-normal text-[#5F5A55] dark:text-[#A09A93] tracking-[0.02em] leading-none">
+                        <span className="font-sans text-[12px] font-normal text-[#5F5A55] dark:text-[#A09A93] tracking-[0.02em]">
                           Technologies
                         </span>
                       </div>

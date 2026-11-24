@@ -3,10 +3,10 @@ import { Mail, MapPin, Linkedin, Twitter, Github } from "lucide-react";
 
 const footerLinks = {
   capabilities: [
-    { name: "Autonomous AI Agents", href: "/services" },
-    { name: "Business Automation", href: "/services" },
-    { name: "Cloud & SaaS Platforms", href: "/services" },
-    { name: "Enterprise Custom Systems", href: "/services" },
+    { name: "Autonomous AI agents", href: "/services" },
+    { name: "Business automation", href: "/services" },
+    { name: "Cloud & SaaS platforms", href: "/services" },
+    { name: "Enterprise custom systems", href: "/services" },
   ],
   innovation: [
     { name: "Zonkezonke Platform", href: "/products/zonkezonke" },
@@ -36,16 +36,21 @@ export function Footer() {
           
           {/* Brand Identity Column */}
           <div className="md:col-span-5 space-y-5">
-            <Link href="/" className="inline-flex items-baseline gap-1.5">
-              <span className="text-2xl font-extrabold tracking-tight text-[#141210] dark:text-[#FAF7F4] font-headline">
-                Frantiva
-              </span>
-              <span className="text-xs font-medium text-[#5F5A55] dark:text-[#A09A93]">
-                Technologies
-              </span>
+            <Link href="/" className="inline-flex items-center gap-2.5 group shrink-0">
+              <div className="w-[30px] h-[30px] rounded-[7px] bg-[#141210] dark:bg-[#FAF7F4] text-[#FAF7F4] dark:text-[#141210] flex items-center justify-center font-display font-extrabold text-[15px] leading-none select-none transition-transform group-hover:scale-105">
+                <span>F</span>
+              </div>
+              <div className="flex items-baseline gap-1.5">
+                <span className="font-display text-[22px] font-extrabold tracking-tight text-[#141210] dark:text-[#FAF7F4]">
+                  Frantiva
+                </span>
+                <span className="font-sans text-[13px] font-normal text-[#5F5A55] dark:text-[#A09A93] tracking-[0.02em]">
+                  Technologies
+                </span>
+              </div>
             </Link>
 
-            <p className="body-calm text-sm leading-relaxed max-w-sm">
+            <p className="text-sm text-[#5F5A55] dark:text-[#A09A93] leading-relaxed max-w-[56ch] [text-wrap:pretty]">
               We engineer intelligent AI solutions, custom software and automated systems that help businesses solve complex problems, operate efficiently and scale with confidence.
             </p>
 
@@ -71,7 +76,7 @@ export function Footer() {
 
           {/* Capabilities */}
           <div className="md:col-span-2">
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-[#141210] dark:text-[#FAF7F4] mb-5">
+            <h4 className="font-mono text-[12px] font-normal uppercase tracking-[0.1em] text-[#5F5A55] dark:text-[#A09A93] mb-5">
               Capabilities
             </h4>
             <ul className="space-y-3">
@@ -90,7 +95,7 @@ export function Footer() {
 
           {/* Products & Innovation */}
           <div className="md:col-span-2">
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-[#141210] dark:text-[#FAF7F4] mb-5">
+            <h4 className="font-mono text-[12px] font-normal uppercase tracking-[0.1em] text-[#5F5A55] dark:text-[#A09A93] mb-5">
               Innovation
             </h4>
             <ul className="space-y-3">
@@ -109,10 +114,10 @@ export function Footer() {
 
           {/* Newsletter Column */}
           <div className="md:col-span-3 space-y-4">
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-[#141210] dark:text-[#FAF7F4]">
+            <h4 className="font-mono text-[12px] font-normal uppercase tracking-[0.1em] text-[#5F5A55] dark:text-[#A09A93]">
               Stay informed
             </h4>
-            <p className="text-xs text-[#5F5A55] dark:text-[#A09A93] leading-relaxed">
+            <p className="text-xs text-[#5F5A55] dark:text-[#A09A93] leading-relaxed max-w-[56ch] [text-wrap:pretty]">
               Receive periodic engineering insights and system updates.
             </p>
             <div className="flex gap-2">
@@ -122,7 +127,7 @@ export function Footer() {
                 className="flex-1 h-10 rounded-full px-4 text-xs bg-[#FFFFFF] dark:bg-[#1D1A17] border border-[#EAE4DE] dark:border-[#2B2724] text-[#141210] dark:text-[#FAF7F4] placeholder:text-[#5F5A55] focus:outline-none focus:border-[#D4693A] transition-colors"
               />
               <button
-                className="h-10 px-4 rounded-full bg-[#141210] dark:bg-[#FAF7F4] text-[#FAF7F4] dark:text-[#141210] hover:bg-[#D4693A] dark:hover:bg-[#D4693A] dark:hover:text-white transition-colors"
+                className="h-10 px-4 rounded-full bg-[#141210] dark:bg-[#FAF7F4] text-[#FAF7F4] dark:text-[#141210] hover:bg-[#D4693A] dark:hover:bg-[#D4693A] dark:hover:text-white transition-colors cursor-pointer"
                 aria-label="Subscribe"
               >
                 <Mail className="h-4 w-4" />

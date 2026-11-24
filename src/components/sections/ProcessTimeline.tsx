@@ -35,15 +35,15 @@ export function ProcessTimeline() {
           <span>03 · HOW WE WORK</span>
         </div>
 
-        {/* Big 2-line headline */}
-        <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#141210] dark:text-[#FAF7F4] font-headline mb-4">
-          From First Discovery to
+        {/* Big 2-line headline in sentence case */}
+        <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-[-0.02em] [word-spacing:0.08em] [text-wrap:balance] text-[#141210] dark:text-[#FAF7F4] font-headline mb-4">
+          From first discovery to
           <br />
-          <span className="text-[#D4693A]">Production Deployment.</span>
+          <span className="text-[#D4693A]">production deployment.</span>
         </h2>
 
-        {/* Optional one-line subtext */}
-        <p className="body-calm text-base sm:text-lg mb-14 max-w-[60ch]">
+        {/* Subtext: max-width 56ch, text-wrap pretty */}
+        <p className="text-base sm:text-lg text-[#5F5A55] dark:text-[#A09A93] leading-relaxed mb-14 max-w-[56ch] [text-wrap:pretty]">
           A proven four-step methodology that delivers predictable engineering outcomes.
         </p>
 
@@ -59,16 +59,16 @@ export function ProcessTimeline() {
               className="rounded-[24px] border border-[#EAE4DE] dark:border-[#2B2724] bg-[#FFFFFF] dark:bg-[#1D1A17] p-8 flex flex-col justify-between"
             >
               <div>
-                {/* Simple numbered circle with orange outline */}
-                <div className="w-11 h-11 rounded-full border-2 border-[#D4693A] flex items-center justify-center font-headline font-bold text-base text-[#D4693A] mb-6">
+                {/* Numbered circle with orange outline */}
+                <div className="w-11 h-11 rounded-full border-2 border-[#D4693A] flex items-center justify-center font-headline font-bold text-base tracking-[-0.005em] [word-spacing:0.08em] text-[#D4693A] mb-6">
                   {item.step}
                 </div>
 
-                <h3 className="text-xl font-bold tracking-tight text-[#141210] dark:text-[#FAF7F4] font-headline mb-2">
+                <h3 className="text-xl font-bold tracking-[-0.005em] [word-spacing:0.08em] [text-wrap:balance] text-[#141210] dark:text-[#FAF7F4] font-headline mb-2">
                   {item.title}
                 </h3>
 
-                <p className="text-sm text-[#5F5A55] dark:text-[#A09A93] leading-relaxed">
+                <p className="text-sm text-[#5F5A55] dark:text-[#A09A93] leading-relaxed max-w-[56ch] [text-wrap:pretty]">
                   {item.description}
                 </p>
               </div>

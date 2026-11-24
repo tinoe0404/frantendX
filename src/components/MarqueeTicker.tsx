@@ -7,8 +7,8 @@ const clients = [
   "Gowild Tours",
   "Nomadic Trails Tours",
   "Educating Rural Girl Child",
-  "OSHY WIRES GURU",
-  "YETAURA INVESTMENTS",
+  "Oshy Wires Guru",
+  "Yetaura Investments",
   "Zonkezonke",
 ];
 
@@ -42,7 +42,7 @@ export function MarqueeTicker() {
           {doubled.map((client, i) => (
             <div
               key={i}
-              className="flex items-center justify-center px-7 h-13 rounded-full border border-[#EAE4DE] dark:border-[#2B2724] bg-[#FFFFFF] dark:bg-[#1D1A17] shrink-0 transition-colors duration-150"
+              className="flex items-center justify-center h-12 px-6 rounded-full border border-[#EAE4DE] dark:border-[#2B2724] bg-[#FFFFFF] dark:bg-[#1D1A17] shrink-0 transition-colors duration-150"
             >
               <span className="text-sm font-medium tracking-tight text-[#5F5A55] dark:text-[#A09A93] grayscale hover:text-[#141210] dark:hover:text-[#FAF7F4] transition-colors whitespace-nowrap">
                 {client}

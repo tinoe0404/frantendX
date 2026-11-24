@@ -5,17 +5,17 @@ import { motion } from "framer-motion";
 
 const services = [
   {
-    title: "Autonomous AI Agents",
+    title: "Autonomous AI agents",
     description: "Custom agent workflows that automate complex multi-step business operations.",
     href: "/services",
   },
   {
-    title: "Business Automation",
+    title: "Business automation",
     description: "End-to-end process synchronization eliminating repetitive operational friction.",
     href: "/services",
   },
   {
-    title: "Cloud & SaaS Platforms",
+    title: "Cloud & SaaS platforms",
     description: "High-performance distributed web applications built for reliability and scale.",
     href: "/services",
   },
@@ -31,15 +31,15 @@ export function ServicesPreview() {
           <span>02 · WHAT WE BUILD</span>
         </div>
 
-        {/* Big 2-line headline */}
-        <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#141210] dark:text-[#FAF7F4] font-headline mb-4">
-          Intelligent Solutions.
+        {/* Big 2-line headline in sentence case with display font rules */}
+        <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-[-0.02em] [word-spacing:0.08em] [text-wrap:balance] text-[#141210] dark:text-[#FAF7F4] font-headline mb-4">
+          Intelligent solutions.
           <br />
-          <span className="text-[#D4693A]">Engineered to Scale.</span>
+          <span className="text-[#D4693A]">Engineered to scale.</span>
         </h2>
 
-        {/* Optional one-line subtext */}
-        <p className="body-calm text-base sm:text-lg mb-14 max-w-[60ch]">
+        {/* Subtext: max-width 56ch, text-wrap pretty */}
+        <p className="text-base sm:text-lg text-[#5F5A55] dark:text-[#A09A93] leading-relaxed mb-14 max-w-[56ch] [text-wrap:pretty]">
           We design and build reliable AI agents, custom web platforms and automated infrastructure.
         </p>
 
@@ -55,10 +55,10 @@ export function ServicesPreview() {
               className="rounded-[24px] border border-[#EAE4DE] dark:border-[#2B2724] bg-[#FFFFFF] dark:bg-[#1D1A17] p-8 flex flex-col justify-between hover:border-[#D4693A]/50 transition-colors duration-200"
             >
               <div>
-                <h3 className="text-2xl font-bold tracking-tight text-[#141210] dark:text-[#FAF7F4] font-headline mb-3">
+                <h3 className="text-2xl font-bold tracking-[-0.005em] [word-spacing:0.08em] [text-wrap:balance] text-[#141210] dark:text-[#FAF7F4] font-headline mb-3">
                   {service.title}
                 </h3>
-                <p className="text-base text-[#5F5A55] dark:text-[#A09A93] leading-relaxed mb-8">
+                <p className="text-base text-[#5F5A55] dark:text-[#A09A93] leading-relaxed mb-8 max-w-[56ch] [text-wrap:pretty]">
                   {service.description}
                 </p>
               </div>
@@ -66,7 +66,7 @@ export function ServicesPreview() {
               <div>
                 <Link
                   href={service.href}
-                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#141210] dark:text-[#FAF7F4] hover:text-[#D4693A] dark:hover:text-[#D4693A] transition-colors group"
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-[#5F5A55] hover:text-[#141210] dark:text-[#A09A93] dark:hover:text-[#FAF7F4] transition-colors group"
                 >
                   <span>Explore</span>
                   <span className="group-hover:translate-x-1 transition-transform duration-150">→</span>
