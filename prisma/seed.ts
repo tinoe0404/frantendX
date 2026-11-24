@@ -67,7 +67,7 @@ async function main() {
         {
             client: "Sarah J.",
             company: "CEO, TechStart",
-            content: "frantendX transformed our digital presence. The AI integration significantly boosted our efficiency.",
+            content: "Frantiva Technologies transformed our digital presence. The AI integration significantly boosted our efficiency.",
             approved: true,
         },
         {

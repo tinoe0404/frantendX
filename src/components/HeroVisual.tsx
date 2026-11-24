@@ -40,7 +40,7 @@ export function HeroVisual() {
           </div>
           <div className="flex-1 mx-4">
             <div className="h-6 rounded-md bg-muted/50 flex items-center px-3 text-xs text-muted-foreground font-mono">
-              frantendxsolutions.co.zw
+              frantiva.co.zw
             </div>
           </div>
         </div>

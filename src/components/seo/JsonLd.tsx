@@ -2,7 +2,8 @@ export default function JsonLd() {
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
-        "name": "FrantendX Digital Solutions",
+        "name": "Frantiva Technologies",
+        "legalName": "Frantiva Technologies (Private) Limited",
         "url": "https://frantendxsolutions.co.zw",
         "priceRange": "$$$",
         "email": "info@frantendxsolutions.co.zw",

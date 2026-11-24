@@ -11,17 +11,17 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 export const metadata: Metadata = {
   metadataBase: new URL("https://frantendxsolutions.co.zw"),
   title: {
-    default: "FrantendX | AI Agents & Enterprise Software",
-    template: "%s | FrantendX",
+    default: "Frantiva Technologies | AI Agents & Enterprise Software",
+    template: "%s | Frantiva Technologies",
   },
   description:
     "We build intelligent AI agents, automated workflows, and scalable enterprise software for the future of business.",
   twitter: { card: "summary_large_image" },
   openGraph: {
-    title: "FrantendX - AI Agents & Enterprise Software",
+    title: "Frantiva Technologies - AI Agents & Enterprise Software",
     description: "Build the future with AI-driven digital systems and business automation.",
     url: "https://frantendxsolutions.co.zw",
-    siteName: "FrantendX",
+    siteName: "Frantiva Technologies",
     locale: "en_US",
     type: "website",
   },

@@ -4,7 +4,7 @@ import { ContactForm } from "@/components/forms/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact Us",
-  description: "Get in touch with FrantendX Digital Solutions for your next digital project.",
+  description: "Get in touch with Frantiva Technologies for your next digital project.",
 };
 
 const trustedClients = [

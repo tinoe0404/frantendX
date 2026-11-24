@@ -5,7 +5,7 @@ import { GridPattern } from "@/components/GridPattern";
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: "Learn about FrantendX Digital Solutions, a leading digital agency specializing in high-performance web development.",
+  description: "Learn about Frantiva Technologies, a leading digital technology company specializing in AI solutions and high-performance software engineering.",
 };
 
 const values = [
@@ -61,7 +61,7 @@ export default function AboutPage() {
                 Bridging technology and business goals
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                FrantendX Digital Solutions was founded to bridge the gap between complex technology and business goals.
+                Frantiva Technologies was founded to bridge the gap between complex technology and business goals.
                 We believe that every business deserves a digital presence that is not only beautiful but also
                 fundamentally robust, secure, and scalable.
               </p>
@@ -72,7 +72,7 @@ export default function AboutPage() {
               <p className="text-muted-foreground leading-relaxed">
                 We build smart digital solutions — from websites (static & dynamic) to mobile apps and custom software.
                 Empowering businesses with reliable tech tailored to their goals.
-                <span className="block mt-4 font-medium text-foreground">Innovate. Build. Grow with FrantendX Digital Solutions.</span>
+                <span className="block mt-4 font-medium text-foreground">Innovate. Build. Grow with Frantiva Technologies.</span>
               </p>
             </div>
           </div>

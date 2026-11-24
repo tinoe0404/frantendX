@@ -96,7 +96,7 @@ export function InnovationLab() {
             </span>
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-4xl font-semibold tracking-tighter text-foreground sm:text-5xl lg:text-6xl mb-6">
-            FrantendX Innovation Lab
+            Frantiva Innovation Lab
           </motion.h2>
           <motion.p variants={fadeUp} className="text-xl text-muted-foreground leading-relaxed font-light">
             We don&apos;t just build for clients. We build for the future. Discover our portfolio of internal AI products and platforms.

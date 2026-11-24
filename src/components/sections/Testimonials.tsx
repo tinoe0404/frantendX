@@ -7,7 +7,7 @@ import { staggerContainer, fadeUp } from "@/lib/motion-variants";
 const testimonials = [
   {
     quote:
-      "FrantendX completely transformed our online presence. Our new platform handles bookings flawlessly, and the performance is incredible. It's been a game-changer for our tours.",
+      "Frantiva Technologies completely transformed our online presence. Our new platform handles bookings flawlessly, and the performance is incredible. It's been a game-changer for our tours.",
     name: "Management Team",
     role: "Gowild Tours",
     initials: "GT",
@@ -21,7 +21,7 @@ const testimonials = [
   },
   {
     quote:
-      "Working with FrantendX allowed us to significantly expand our digital reach. The platform they built is accessible, fast, and beautifully showcases our mission.",
+      "Working with Frantiva Technologies allowed us to significantly expand our digital reach. The platform they built is accessible, fast, and beautifully showcases our mission.",
     name: "Director",
     role: "Educating Rural Girl Child of Zimbabwe",
     initials: "NGO",

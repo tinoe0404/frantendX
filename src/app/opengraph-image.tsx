@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
 
-export const alt = 'FrantendX Digital Solutions'
+export const alt = 'Frantiva Technologies'
 export const size = {
     width: 1200,
     height: 630,
@@ -28,10 +28,10 @@ export default async function Image() {
                 }}
             >
                 <div style={{ fontSize: 64, fontWeight: 800, letterSpacing: '-0.02em' }}>
-                    FrantendX
+                    Frantiva
                 </div>
                 <div style={{ fontSize: 28, opacity: 0.6, fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase' }}>
-                    Digital Solutions
+                    Technologies
                 </div>
                 <div style={{ fontSize: 36, opacity: 0.5, fontWeight: 400, marginTop: 24 }}>
                     Build. Ship. Scale.

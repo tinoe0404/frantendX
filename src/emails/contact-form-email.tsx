@@ -36,7 +36,7 @@ export const ContactFormEmail = ({
             <Container style={container}>
                 <Heading style={h1}>New Project Inquiry</Heading>
                 <Text style={text}>
-                    You have received a new inquiry from the contact form on FrantendX.
+                    You have received a new inquiry from the contact form on Frantiva Technologies.
                 </Text>
                 <Section style={section}>
                     <Text style={text}>
@@ -64,7 +64,7 @@ export const ContactFormEmail = ({
                 <Text style={paragraph}>{message}</Text>
                 <Hr style={hr} />
                 <Text style={footer}>
-                    Check your FrantendX dashboard or reply directly to this email.
+                    Check your Frantiva Technologies dashboard or reply directly to this email.
                 </Text>
             </Container>
         </Body>

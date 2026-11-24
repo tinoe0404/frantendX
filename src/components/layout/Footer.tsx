@@ -46,10 +46,10 @@ export function Footer() {
             <Link href="/" className="inline-block mb-6">
               <span className="flex flex-col leading-none">
                 <span className="text-xl font-semibold tracking-tighter text-foreground">
-                  FrantendX
+                  Frantiva Technologies
                 </span>
                 <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-muted-foreground mt-1">
-                  AI Software Company
+                  (Private) Limited
                 </span>
               </span>
             </Link>
@@ -165,7 +165,7 @@ export function Footer() {
         {/* Bottom */}
         <div className="mt-20 pt-8 border-t border-border/30 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-muted-foreground font-light">
-            {`\u00A9 ${new Date().getFullYear()} FrantendX. All rights reserved.`}
+            {`\u00A9 ${new Date().getFullYear()} Frantiva Technologies (Private) Limited. All rights reserved.`}
           </p>
           <div className="flex items-center gap-8">
             <Link

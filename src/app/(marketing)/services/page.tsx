@@ -35,8 +35,8 @@ import { GradientMesh } from "@/components/GradientMesh";
 import { GridPattern } from "@/components/GridPattern";
 
 export const metadata: Metadata = {
-    title: "Services & Pricing | FrantendX Digital Solutions",
-    description: "Comprehensive website solutions for Zimbabwean businesses. From basic business sites to custom web applications, with transparent pricing and real ROI.",
+    title: "Services & Pricing | Frantiva Technologies",
+    description: "Comprehensive software and digital solutions for modern businesses. From intelligent AI agents to custom web applications, with transparent pricing and real ROI.",
 };
 
 // ============================================================================

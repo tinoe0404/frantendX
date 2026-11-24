@@ -73,10 +73,10 @@ export function Navbar() {
         <Link href="/" className="flex items-center gap-2 group shrink-0">
           <div className="flex flex-col leading-none">
             <span className="text-base font-semibold tracking-tight text-foreground">
-              FrantendX
+              Frantiva
             </span>
-            <span className="hidden sm:block text-[9px] font-medium tracking-[0.2em] uppercase text-muted-foreground mt-0.5">
-              AI & Automation
+            <span className="text-[9px] font-medium tracking-[0.2em] uppercase text-muted-foreground mt-0.5">
+              Technologies
             </span>
           </div>
         </Link>
@@ -122,10 +122,10 @@ export function Navbar() {
                 <SheetTitle>
                   <span className="flex flex-col leading-none">
                     <span className="text-base font-semibold tracking-tight text-foreground">
-                      FrantendX
+                      Frantiva
                     </span>
                     <span className="text-[9px] font-medium tracking-[0.2em] uppercase text-muted-foreground mt-1">
-                      AI & Automation
+                      Technologies
                     </span>
                   </span>
                 </SheetTitle>
