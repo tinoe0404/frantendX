@@ -88,7 +88,7 @@ export function Testimonials() {
 
                 {/* Bottom accent */}
                 <motion.div
-                  className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-brand/40 via-blue-500/30 to-transparent"
+                  className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#F26A38]/60 via-[#F26A38]/20 to-transparent"
                   initial={{ scaleX: 0, originX: 0 }}
                   whileInView={{ scaleX: 1 }}
                   transition={{ duration: 0.8, delay: 0.3 }}

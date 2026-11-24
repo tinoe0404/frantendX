@@ -11,7 +11,6 @@ export function CursorGlow() {
   const springY = useSpring(mouseY, { stiffness: 120, damping: 18 });
 
   useEffect(() => {
-    // Disable on mobile/touch devices
     const checkMobile = () => setIsMobile(window.innerWidth < 768 || "ontouchstart" in window);
     checkMobile();
     window.addEventListener("resize", checkMobile);
@@ -36,14 +35,14 @@ export function CursorGlow() {
       aria-hidden
     >
       <motion.div
-        className="absolute w-[500px] h-[500px] rounded-full"
+        className="absolute w-[450px] h-[450px] rounded-full"
         style={{
           x: springX,
           y: springY,
           translateX: "-50%",
           translateY: "-50%",
           background:
-            "radial-gradient(circle, hsl(173 58% 39% / 0.06) 0%, hsl(199 80% 55% / 0.03) 40%, transparent 70%)",
+            "radial-gradient(circle, rgba(242, 106, 56, 0.035) 0%, rgba(242, 106, 56, 0.01) 40%, transparent 70%)",
         }}
       />
     </motion.div>

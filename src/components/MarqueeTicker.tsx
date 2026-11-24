@@ -1,47 +1,56 @@
 "use client";
+
 import { motion } from "framer-motion";
 
 const clients = [
-  { name: "HaviChem Cleaning Services", icon: "🏢" },
-  { name: "Gowild Tours", icon: "🦁" },
-  { name: "Nomadic Trails Tours", icon: "🗺️" },
-  { name: "Educating Rural Girl Child of Zimbabwe", icon: "📚" },
-  { name: "OSHY WIRES GURU", icon: "⚡" },
-  { name: "YETAURA INVESTMENTS (PRIVATE) LIMITED", icon: "📈" },
+  "HaviChem Cleaning Services",
+  "Gowild Tours",
+  "Nomadic Trails Tours",
+  "Educating Rural Girl Child",
+  "OSHY WIRES GURU",
+  "YETAURA INVESTMENTS",
+  "Zonkezonke",
 ];
 
 export function MarqueeTicker() {
   const doubled = [...clients, ...clients, ...clients];
 
   return (
-    <div className="relative overflow-hidden py-8 border-y border-border/30">
-      {/* Edge fades */}
-      <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-32 bg-gradient-to-r from-background to-transparent" />
-      <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-32 bg-gradient-to-l from-background to-transparent" />
+    <section className="py-20 md:py-28 overflow-hidden">
+      <div className="mx-auto max-w-[1200px] px-6 text-center mb-10">
+        {/* Centered small eyebrow in mono, muted: format "— 01 · PARTNERS & CLIENTS" */}
+        <div className="inline-flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.12em] text-[#5F5A55] dark:text-[#A09A93]">
+          <span className="w-4 h-[1.5px] bg-[#D4693A] inline-block" />
+          <span>01 · PARTNERS &amp; CLIENTS</span>
+        </div>
+      </div>
 
-      <motion.div
-        className="flex gap-8 w-max"
-        animate={{ x: ["0%", "-50%"] }}
-        transition={{
-          duration: 35,
-          ease: "linear",
-          repeat: Infinity,
-        }}
-      >
-        {doubled.map((client, i) => (
-          <div
-            key={i}
-            className="flex items-center gap-3 px-6 py-2.5 rounded-full border border-border/50 bg-foreground/[0.02] hover:bg-foreground/5 hover:border-foreground/20 transition-all duration-300 shrink-0 group"
-          >
-            <span className="text-base grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100">
-              {client.icon}
-            </span>
-            <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground whitespace-nowrap transition-colors duration-300">
-              {client.name}
-            </span>
-          </div>
-        ))}
-      </motion.div>
-    </div>
+      <div className="relative overflow-hidden w-full">
+        {/* Soft edge fades */}
+        <div className="pointer-events-none absolute left-0 top-0 bottom-0 z-10 w-28 bg-gradient-to-r from-[#FAF7F4] dark:from-[#141210] to-transparent" />
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 z-10 w-28 bg-gradient-to-l from-[#FAF7F4] dark:from-[#141210] to-transparent" />
+
+        <motion.div
+          className="flex gap-4 w-max items-center"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{
+            duration: 55,
+            ease: "linear",
+            repeat: Infinity,
+          }}
+        >
+          {doubled.map((client, i) => (
+            <div
+              key={i}
+              className="flex items-center justify-center px-7 h-13 rounded-full border border-[#EAE4DE] dark:border-[#2B2724] bg-[#FFFFFF] dark:bg-[#1D1A17] shrink-0 transition-colors duration-150"
+            >
+              <span className="text-sm font-medium tracking-tight text-[#5F5A55] dark:text-[#A09A93] grayscale hover:text-[#141210] dark:hover:text-[#FAF7F4] transition-colors whitespace-nowrap">
+                {client}
+              </span>
+            </div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
   );
 }

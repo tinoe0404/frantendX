@@ -1,162 +1,142 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, ExternalLink } from "lucide-react";
-import { staggerContainer, scaleIn } from "@/lib/motion-variants";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { staggerContainer, fadeUp } from "@/lib/motion-variants";
 
 const projects = [
   {
+    id: "gowild",
     title: "Eco-Tourism Booking Platform",
     client: "Gowild Tours & Nomadic Trails",
-    industry: "Tourism",
+    industry: "Tourism & Logistics",
     description:
-      "A high-performance booking platform with real-time availability, integrated payments, and seamless mobile experience.",
+      "A high-performance booking engine with real-time multi-currency availability, automated guide dispatch, and integrated payment processing.",
     metrics: [
-      { label: "Bookings", value: "+45%" },
-      { label: "Load Time", value: "0.8s" },
+      { label: "Direct Bookings", value: "+45%" },
+      { label: "Page Speed", value: "0.8s" },
     ],
-    tags: ["Next.js", "PostgreSQL", "Stripe"],
-    gradient: "from-brand/20 to-blue-500/20",
-    accentColor: "hsl(173 58% 39%)",
+    tags: ["Next.js", "PostgreSQL", "Stripe Core"],
   },
   {
-    title: "Corporate Management System",
+    id: "havichem",
+    title: "Corporate Operations Core",
     client: "HaviChem Cleaning Services",
-    industry: "B2B Services",
+    industry: "Industrial & Chemical",
     description:
-      "Custom internal operations platform automating scheduling, invoicing, and real-time client dashboards.",
+      "Custom internal operations software automating multi-facility cleaning crew shifts, inventory buffers, and client self-service portals.",
     metrics: [
-      { label: "Time Saved", value: "60%" },
-      { label: "Efficiency", value: "+3x" },
+      { label: "Admin Time Saved", value: "60%" },
+      { label: "Operational Speed", value: "3x" },
     ],
-    tags: ["React", "Node.js", "Tailwind"],
-    gradient: "from-blue-500/20 to-purple-500/20",
-    accentColor: "hsl(220 70% 55%)",
+    tags: ["React Core", "Node.js", "Tailwind"],
   },
   {
-    title: "Community Outreach Portal",
-    client: "Educating Rural Girl Child of Zimbabwe",
-    industry: "NGO",
+    id: "rural-girl",
+    title: "Outreach & Impact Portal",
+    client: "Educating Rural Girl Child",
+    industry: "NGO & Education",
     description:
-      "An accessible, optimized web presence driving donor engagement and showcasing community impact across regions.",
+      "An accessible, optimized web platform driving international donor engagement, scholarship verification, and community impact tracking.",
     metrics: [
-      { label: "Visibility", value: "10K+" },
-      { label: "Engagement", value: "+120%" },
+      { label: "Donor Reach", value: "10K+" },
+      { label: "Engagement Rate", value: "+120%" },
     ],
-    tags: ["Next.js", "CMS", "Accessibility"],
-    gradient: "from-purple-500/20 to-pink-500/20",
-    accentColor: "hsl(262 60% 60%)",
+    tags: ["Next.js", "Headless CMS", "A11y"],
   },
 ];
 
 export function FeaturedWork() {
   return (
-    <section className="py-24 md:py-32 relative">
-      {/* Section gradient divider at top */}
-      <div className="section-gradient-divider absolute top-0 left-0 right-0" />
+    <section className="py-20 md:py-28">
+      <div className="mx-auto max-w-[1200px] px-6">
+        {/* Eyebrow */}
+        <div className="flex items-center gap-2 mb-4 font-mono text-[12px] uppercase tracking-[0.12em] text-[#5F5A55] dark:text-[#A09A93]">
+          <span className="w-4 h-[1.5px] bg-[#D4693A] inline-block" />
+          <span>01 · CASE STUDIES</span>
+        </div>
 
-      <div className="mx-auto max-w-6xl px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mb-14 text-center"
-        >
-          <p className="mb-3 text-sm font-medium text-brand tracking-widest uppercase">
-            Our Work
-          </p>
-          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
-            Projects that deliver real results
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-muted-foreground leading-relaxed">
-            We don&apos;t just build software — we build systems that drive measurable business outcomes.
-          </p>
-        </motion.div>
+        {/* Big 2-line headline */}
+        <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#141210] dark:text-[#FAF7F4] font-headline mb-4">
+          Software Projects That
+          <br />
+          <span className="text-[#D4693A]">Deliver Real Results.</span>
+        </h2>
 
+        <p className="body-calm text-base sm:text-lg mb-14 max-w-[60ch]">
+          We don&apos;t just build software — we engineer platforms that drive measurable commercial and operational outcomes.
+        </p>
+
+        {/* 3-column Grid of White 24px Cards */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-3 gap-7 md:gap-8"
           variants={staggerContainer}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.1 }}
         >
-          {projects.map((project, i) => (
-            <motion.div key={i} variants={scaleIn}>
-              <div className="glass-card gradient-border rounded-xl overflow-hidden group h-full flex flex-col">
-                {/* Project image placeholder with gradient */}
-                <div
-                  className={`h-44 bg-gradient-to-br ${project.gradient} relative overflow-hidden`}
-                >
-                  {/* Decorative grid */}
-                  <div
-                    className="absolute inset-0 opacity-20"
-                    style={{
-                      backgroundImage:
-                        "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
-                      backgroundSize: "24px 24px",
-                    }}
-                  />
-                  {/* Floating label */}
-                  <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 text-xs font-medium rounded-full bg-background/80 backdrop-blur-sm text-foreground border border-border/50">
-                      {project.industry}
-                    </span>
-                  </div>
-                  {/* Hover icon */}
-                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="w-8 h-8 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center">
-                      <ArrowUpRight className="h-4 w-4 text-foreground" />
-                    </div>
-                  </div>
+          {projects.map((project) => (
+            <motion.div
+              key={project.id}
+              variants={fadeUp}
+              className="rounded-[24px] border border-[#EAE4DE] dark:border-[#2B2724] bg-[#FFFFFF] dark:bg-[#1D1A17] p-8 flex flex-col justify-between hover:border-[#D4693A]/50 transition-colors duration-200"
+            >
+              <div>
+                {/* Industry Tag */}
+                <div className="mb-4">
+                  <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[#FAF7F4] dark:bg-[#2B2724] text-[#5F5A55] dark:text-[#A09A93] border border-[#EAE4DE] dark:border-[#2B2724]">
+                    {project.industry}
+                  </span>
                 </div>
 
-                {/* Content */}
-                <div className="p-6 flex flex-col flex-1">
-                  <h3 className="text-lg font-semibold mb-1 group-hover:text-brand transition-colors">
-                    {project.title}
-                  </h3>
-                  <div className="flex items-center gap-1.5 mb-3">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
-                      Built for:
-                    </span>
-                    <span className="text-xs font-medium text-foreground">
-                      {project.client}
-                    </span>
-                  </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    {project.description}
-                  </p>
+                <h3 className="text-2xl font-bold tracking-tight text-[#141210] dark:text-[#FAF7F4] font-headline mb-2">
+                  {project.title}
+                </h3>
 
-                  {/* Metrics */}
-                  <div className="flex gap-4 mb-4">
-                    {project.metrics.map((metric, j) => (
-                      <div key={j}>
-                        <div
-                          className="text-xl font-bold"
-                          style={{ color: project.accentColor }}
-                        >
-                          {metric.value}
-                        </div>
-                        <div className="text-xs text-muted-foreground">
-                          {metric.label}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+                <p className="text-xs font-medium text-[#D4693A] mb-4">
+                  Built for: {project.client}
+                </p>
 
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mt-auto">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-2.5 py-1 text-xs rounded-md bg-muted/50 text-muted-foreground"
-                      >
-                        {tag}
+                <p className="text-sm text-[#5F5A55] dark:text-[#A09A93] leading-relaxed mb-8">
+                  {project.description}
+                </p>
+
+                {/* Metrics */}
+                <div className="grid grid-cols-2 gap-4 py-4 mb-6 border-y border-[#EAE4DE] dark:border-[#2B2724]">
+                  {project.metrics.map((metric, j) => (
+                    <div key={j}>
+                      <span className="text-2xl font-extrabold font-headline text-[#141210] dark:text-[#FAF7F4] block mb-0.5">
+                        {metric.value}
                       </span>
-                    ))}
-                  </div>
+                      <span className="text-xs text-[#5F5A55] dark:text-[#A09A93]">
+                        {metric.label}
+                      </span>
+                    </div>
+                  ))}
                 </div>
+
+                {/* Tech Tags */}
+                <div className="flex flex-wrap gap-1.5 mb-8">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-2.5 py-0.5 text-xs rounded-full bg-[#FAF7F4] dark:bg-[#2B2724] text-[#5F5A55] dark:text-[#A09A93]"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#141210] dark:text-[#FAF7F4] hover:text-[#D4693A] dark:hover:text-[#D4693A] transition-colors group"
+                >
+                  <span>Discuss a similar project</span>
+                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
               </div>
             </motion.div>
           ))}

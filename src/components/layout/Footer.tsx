@@ -1,26 +1,24 @@
-// Server Component — no hooks or event handlers needed
-
 import Link from "next/link";
-import { Facebook, Mail, MapPin, Linkedin, Twitter, Github } from "lucide-react";
+import { Mail, MapPin, Linkedin, Twitter, Github } from "lucide-react";
 
 const footerLinks = {
-  products: [
-    { name: "Zonkezonke App", href: "/#innovation" },
-    { name: "Gowild Tours Platform", href: "/#innovation" },
-    { name: "HaviChem System", href: "/#innovation" },
-    { name: "Platform API", href: "/contact" },
-  ],
-  solutions: [
-    { name: "AI Agents", href: "/services" },
+  capabilities: [
+    { name: "Autonomous AI Agents", href: "/services" },
     { name: "Business Automation", href: "/services" },
-    { name: "SaaS Platforms", href: "/services" },
-    { name: "Enterprise Systems", href: "/services" },
+    { name: "Cloud & SaaS Platforms", href: "/services" },
+    { name: "Enterprise Custom Systems", href: "/services" },
+  ],
+  innovation: [
+    { name: "Zonkezonke Platform", href: "/products/zonkezonke" },
+    { name: "Gowild Architecture", href: "/products/gowild" },
+    { name: "HaviChem Operations", href: "/products/havichem" },
+    { name: "Custom Engagements", href: "/contact" },
   ],
   company: [
-    { name: "About Us", href: "/about" },
-    { name: "Case Studies", href: "/case-studies" },
-    { name: "Careers", href: "/about" },
-    { name: "Contact", href: "/contact" },
+    { name: "About us", href: "/about" },
+    { name: "Case studies", href: "/case-studies" },
+    { name: "Services overview", href: "/services" },
+    { name: "Contact & demo", href: "/contact" },
   ],
 };
 
@@ -32,44 +30,37 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="relative border-t border-border/30 bg-background overflow-hidden">
-      <div className="section-gradient-divider absolute top-0 left-0 right-0" />
-      
-      {/* Subtle bottom glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-foreground/20 to-transparent opacity-50" />
-      <div className="absolute -bottom-24 left-1/2 -translate-x-1/2 w-full max-w-md h-32 bg-foreground/5 rounded-full blur-[80px]" />
-
-      <div className="mx-auto max-w-6xl px-6 pt-24 pb-12 relative z-10">
-        <div className="grid grid-cols-2 gap-x-8 gap-y-12 md:grid-cols-6 lg:gap-12">
-          {/* Brand */}
-          <div className="col-span-2 md:col-span-2">
-            <Link href="/" className="inline-block mb-6">
-              <span className="flex flex-col leading-none">
-                <span className="text-xl font-semibold tracking-tighter text-foreground">
-                  Frantiva Technologies
-                </span>
-                <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-muted-foreground mt-1">
-                  (Private) Limited
-                </span>
+    <footer className="border-t border-[#EAE4DE] dark:border-[#2B2724] bg-[#FAF7F4] dark:bg-[#141210] py-20">
+      <div className="mx-auto max-w-[1200px] px-6">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-16 pb-16 border-b border-[#EAE4DE] dark:border-[#2B2724]">
+          
+          {/* Brand Identity Column */}
+          <div className="md:col-span-5 space-y-5">
+            <Link href="/" className="inline-flex items-baseline gap-1.5">
+              <span className="text-2xl font-extrabold tracking-tight text-[#141210] dark:text-[#FAF7F4] font-headline">
+                Frantiva
+              </span>
+              <span className="text-xs font-medium text-[#5F5A55] dark:text-[#A09A93]">
+                Technologies
               </span>
             </Link>
-            <p className="text-sm text-muted-foreground leading-relaxed max-w-[280px] mb-8 font-light">
-              Engineering sophisticated AI agents and enterprise software systems that accelerate business growth and transform operations.
+
+            <p className="body-calm text-sm leading-relaxed max-w-sm">
+              We engineer intelligent AI solutions, custom software and automated systems that help businesses solve complex problems, operate efficiently and scale with confidence.
             </p>
 
-            {/* Location */}
-            <div className="flex items-center gap-2 text-sm text-muted-foreground mb-6 font-light">
-              <MapPin className="h-4 w-4" />
-              <span>Harare, Zimbabwe &bull; Global Remote</span>
+            <div className="flex items-center gap-2 text-xs text-[#5F5A55] dark:text-[#A09A93]">
+              <MapPin className="h-3.5 w-3.5 text-[#D4693A]" />
+              <span>Harare, Zimbabwe · Global Remote</span>
             </div>
 
-            {/* Social links */}
-            <div className="flex items-center gap-4">
+            {/* Social Icons */}
+            <div className="flex items-center gap-2.5 pt-2">
               {socialLinks.map((social) => (
                 <Link
                   key={social.name}
                   href={social.href}
-                  className="text-muted-foreground hover:text-foreground transition-colors duration-300"
+                  className="w-9 h-9 rounded-full border border-[#EAE4DE] dark:border-[#2B2724] flex items-center justify-center text-[#5F5A55] hover:text-[#141210] dark:text-[#A09A93] dark:hover:text-[#FAF7F4] hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
                   aria-label={social.name}
                 >
                   <social.icon className="h-4 w-4" />
@@ -78,17 +69,17 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Products */}
-          <div className="col-span-1 md:col-span-1">
-            <h4 className="text-sm font-semibold text-foreground mb-6">
-              Products
+          {/* Capabilities */}
+          <div className="md:col-span-2">
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-[#141210] dark:text-[#FAF7F4] mb-5">
+              Capabilities
             </h4>
-            <ul className="space-y-4">
-              {footerLinks.products.map((link) => (
+            <ul className="space-y-3">
+              {footerLinks.capabilities.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors font-light"
+                    className="text-sm text-[#5F5A55] hover:text-[#D4693A] dark:text-[#A09A93] dark:hover:text-[#D4693A] transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -97,17 +88,17 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Solutions */}
-          <div className="col-span-1 md:col-span-1">
-            <h4 className="text-sm font-semibold text-foreground mb-6">
-              Solutions
+          {/* Products & Innovation */}
+          <div className="md:col-span-2">
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-[#141210] dark:text-[#FAF7F4] mb-5">
+              Innovation
             </h4>
-            <ul className="space-y-4">
-              {footerLinks.solutions.map((link) => (
+            <ul className="space-y-3">
+              {footerLinks.innovation.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors font-light"
+                    className="text-sm text-[#5F5A55] hover:text-[#D4693A] dark:text-[#A09A93] dark:hover:text-[#D4693A] transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -116,72 +107,54 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Company */}
-          <div className="col-span-1 md:col-span-1">
-            <h4 className="text-sm font-semibold text-foreground mb-6">
-              Company
+          {/* Newsletter Column */}
+          <div className="md:col-span-3 space-y-4">
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-[#141210] dark:text-[#FAF7F4]">
+              Stay informed
             </h4>
-            <ul className="space-y-4">
-              {footerLinks.company.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors font-light"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Newsletter */}
-          <div className="col-span-2 md:col-span-1">
-            <h4 className="text-sm font-semibold text-foreground mb-6">
-              Updates
-            </h4>
-            <p className="text-xs text-muted-foreground mb-4 font-light leading-relaxed">
-              Subscribe for insights on AI and enterprise software engineering.
+            <p className="text-xs text-[#5F5A55] dark:text-[#A09A93] leading-relaxed">
+              Receive periodic engineering insights and system updates.
             </p>
             <div className="flex gap-2">
               <input
                 type="email"
-                placeholder="Email address"
-                className="flex-1 h-9 rounded-md px-3 text-sm bg-foreground/[0.03] border border-border/50 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground/30 transition-colors"
+                placeholder="your@email.com"
+                className="flex-1 h-10 rounded-full px-4 text-xs bg-[#FFFFFF] dark:bg-[#1D1A17] border border-[#EAE4DE] dark:border-[#2B2724] text-[#141210] dark:text-[#FAF7F4] placeholder:text-[#5F5A55] focus:outline-none focus:border-[#D4693A] transition-colors"
               />
-              <button className="h-9 px-3 rounded-md bg-foreground text-background text-sm font-medium hover:bg-foreground/90 transition-colors">
+              <button
+                className="h-10 px-4 rounded-full bg-[#141210] dark:bg-[#FAF7F4] text-[#FAF7F4] dark:text-[#141210] hover:bg-[#D4693A] dark:hover:bg-[#D4693A] dark:hover:text-white transition-colors"
+                aria-label="Subscribe"
+              >
                 <Mail className="h-4 w-4" />
               </button>
             </div>
 
-            {/* Status indicator */}
-            <div className="flex items-center gap-2 mt-6 text-xs text-muted-foreground font-light">
-              <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              <span>Systems Operational</span>
+            {/* Operational Status Readout */}
+            <div className="flex items-center gap-2 pt-2 text-xs text-[#5F5A55] dark:text-[#A09A93]">
+              <span className="relative flex h-2 w-2">
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#D4693A]" />
+              </span>
+              <span>All production systems operational</span>
             </div>
           </div>
+
         </div>
 
-        {/* Bottom */}
-        <div className="mt-20 pt-8 border-t border-border/30 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-muted-foreground font-light">
-            {`\u00A9 ${new Date().getFullYear()} Frantiva Technologies (Private) Limited. All rights reserved.`}
+        {/* Bottom Legal Strip */}
+        <div className="mt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[#5F5A55] dark:text-[#A09A93]">
+          <p>
+            {`\u00A9 ${new Date().getFullYear()} Frantiva Technologies (Pvt) Ltd. All rights reserved.`}
           </p>
-          <div className="flex items-center gap-8">
-            <Link
-              href="#"
-              className="text-xs text-muted-foreground hover:text-foreground transition-colors font-light"
-            >
+          <div className="flex items-center gap-6">
+            <Link href="/privacy" className="hover:text-[#141210] dark:hover:text-[#FAF7F4] transition-colors">
               Privacy Policy
             </Link>
-            <Link
-              href="#"
-              className="text-xs text-muted-foreground hover:text-foreground transition-colors font-light"
-            >
+            <Link href="/terms" className="hover:text-[#141210] dark:hover:text-[#FAF7F4] transition-colors">
               Terms of Service
             </Link>
           </div>
         </div>
+
       </div>
     </footer>
   );

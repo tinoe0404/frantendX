@@ -29,7 +29,11 @@ function ThemeSwitch() {
 
   if (!mounted) {
     return (
-      <button className="h-8 w-8 inline-flex items-center justify-center rounded-full" disabled aria-label="Toggle theme">
+      <button
+        className="h-9 w-9 inline-flex items-center justify-center rounded-full text-[#5F5A55] transition-colors"
+        disabled
+        aria-label="Toggle theme"
+      >
         <span className="sr-only">Toggle theme</span>
       </button>
     );
@@ -37,12 +41,12 @@ function ThemeSwitch() {
 
   return (
     <button
-      className="h-8 w-8 inline-flex items-center justify-center rounded-full text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+      className="h-9 w-9 inline-flex items-center justify-center rounded-full text-[#5F5A55] hover:text-[#141210] dark:text-[#A09A93] dark:hover:text-[#FAF7F4] hover:bg-black/5 dark:hover:bg-white/5 transition-all cursor-pointer"
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
       aria-label="Toggle theme"
     >
-      <Sun className="h-[16px] w-[16px] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-      <Moon className="absolute h-[16px] w-[16px] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+      <Sun className="h-[17px] w-[17px] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+      <Moon className="absolute h-[17px] w-[17px] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
     </button>
   );
 }
@@ -60,50 +64,64 @@ export function Navbar() {
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 flex justify-center w-full px-6 py-4 pointer-events-none">
-      <header
-        className={cn(
-          "pointer-events-auto flex items-center justify-between w-full max-w-5xl h-14 px-5 mx-auto rounded-full transition-all duration-500",
-          scrolled
-            ? "bg-background/70 backdrop-blur-xl border border-border/50 shadow-[0_4px_24px_rgba(0,0,0,0.02)]"
-            : "bg-transparent border-transparent"
-        )}
-      >
+    <header
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300",
+        scrolled
+          ? "bg-[#FAF7F4]/90 dark:bg-[#141210]/90 backdrop-blur-md border-b border-[#EAE4DE] dark:border-[#2B2724]"
+          : "bg-transparent border-b border-transparent"
+      )}
+    >
+      <div className="mx-auto max-w-[1200px] px-6 h-20 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group shrink-0">
-          <div className="flex flex-col leading-none">
-            <span className="text-base font-semibold tracking-tight text-foreground">
+          <div className="flex items-baseline gap-1.5">
+            <span className="text-[21px] font-extrabold tracking-tight text-[#141210] dark:text-[#FAF7F4] font-headline">
               Frantiva
             </span>
-            <span className="text-[9px] font-medium tracking-[0.2em] uppercase text-muted-foreground mt-0.5">
+            <span className="text-[12px] font-medium text-[#5F5A55] dark:text-[#A09A93]">
               Technologies
             </span>
           </div>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className={cn(
-                "px-4 py-1.5 text-sm transition-colors rounded-full",
-                pathname === link.href
-                  ? "text-foreground font-medium bg-foreground/5"
-                  : "text-muted-foreground hover:text-foreground hover:bg-foreground/5"
-              )}
-            >
-              {link.name}
-            </Link>
-          ))}
+        <nav
+          className="hidden md:flex items-center gap-8"
+          aria-label="Main navigation"
+        >
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={cn(
+                  "relative py-1 text-[15px] font-medium transition-colors duration-150",
+                  isActive
+                    ? "text-[#141210] dark:text-[#FAF7F4]"
+                    : "text-[#5F5A55] hover:text-[#141210] dark:text-[#A09A93] dark:hover:text-[#FAF7F4]"
+                )}
+              >
+                <span>{link.name}</span>
+                {/* Subtle active-link underline */}
+                {isActive && (
+                  <span className="absolute -bottom-1 left-0 right-0 h-[1.5px] bg-[#D4693A] rounded-full" />
+                )}
+              </Link>
+            );
+          })}
         </nav>
 
-        {/* Desktop Actions */}
+        {/* Desktop Actions: Theme Toggle + Single Rounded Pill CTA */}
         <div className="hidden md:flex items-center gap-4">
           <ThemeSwitch />
-          <Button size="sm" className="h-8 rounded-full px-4 text-xs font-medium bg-foreground text-background hover:bg-foreground/90 transition-all" asChild>
-            <Link href="/contact">Book Demo</Link>
+          <Button
+            size="sm"
+            className="h-10 px-5 text-sm font-semibold rounded-full bg-[#D4693A] text-white hover:bg-[#c35c30] active:bg-[#b55227] transition-all duration-200 shadow-[0_2px_8px_rgba(212,105,58,0.18)]"
+            asChild
+          >
+            <Link href="/contact">Book a demo</Link>
           </Button>
         </div>
 
@@ -112,54 +130,71 @@ export function Navbar() {
           <ThemeSwitch />
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="h-8 w-8 rounded-full">
-                <Menu className="h-4 w-4" />
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-9 w-9 rounded-full text-[#141210] dark:text-[#FAF7F4] hover:bg-black/5 dark:hover:bg-white/5"
+              >
+                <Menu className="h-5 w-5" />
                 <span className="sr-only">Toggle Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-72 bg-background/95 backdrop-blur-xl border-border/50">
-              <SheetHeader className="px-1 text-left">
-                <SheetTitle>
-                  <span className="flex flex-col leading-none">
-                    <span className="text-base font-semibold tracking-tight text-foreground">
-                      Frantiva
-                    </span>
-                    <span className="text-[9px] font-medium tracking-[0.2em] uppercase text-muted-foreground mt-1">
-                      Technologies
-                    </span>
-                  </span>
-                </SheetTitle>
-              </SheetHeader>
-              <nav className="flex flex-col gap-2 mt-10 px-1">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    className={cn(
-                      "block py-3 px-4 text-sm rounded-xl transition-colors",
-                      pathname === link.href
-                        ? "text-foreground font-medium bg-foreground/5"
-                        : "text-muted-foreground hover:text-foreground hover:bg-foreground/5"
-                    )}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {link.name}
-                  </Link>
-                ))}
-                <div className="pt-8">
-                  <Button
-                    className="w-full h-12 rounded-xl font-medium bg-foreground text-background hover:bg-foreground/90 transition-all"
-                    onClick={() => setIsOpen(false)}
-                    asChild
-                  >
-                    <Link href="/contact">Book Demo</Link>
-                  </Button>
-                </div>
-              </nav>
+            <SheetContent
+              side="right"
+              className="w-80 bg-[#FAF7F4] dark:bg-[#141210] border-l border-[#EAE4DE] dark:border-[#2B2724] p-6 flex flex-col justify-between rounded-l-[24px]"
+            >
+              <div>
+                <SheetHeader className="text-left pb-6 border-b border-[#EAE4DE] dark:border-[#2B2724]">
+                  <SheetTitle>
+                    <div className="flex items-baseline gap-1.5">
+                      <span className="text-xl font-extrabold tracking-tight text-[#141210] dark:text-[#FAF7F4] font-headline">
+                        Frantiva
+                      </span>
+                      <span className="text-xs font-medium text-[#5F5A55] dark:text-[#A09A93]">
+                        Technologies
+                      </span>
+                    </div>
+                  </SheetTitle>
+                </SheetHeader>
+
+                <nav className="flex flex-col gap-2 mt-8">
+                  {navLinks.map((link) => {
+                    const isActive = pathname === link.href;
+                    return (
+                      <Link
+                        key={link.name}
+                        href={link.href}
+                        className={cn(
+                          "flex items-center justify-between py-3 px-4 text-base font-medium rounded-full transition-colors",
+                          isActive
+                            ? "bg-[#EAE4DE]/60 dark:bg-[#2B2724]/60 text-[#141210] dark:text-[#FAF7F4]"
+                            : "text-[#5F5A55] hover:text-[#141210] dark:text-[#A09A93] dark:hover:text-[#FAF7F4]"
+                        )}
+                        onClick={() => setIsOpen(false)}
+                      >
+                        <span>{link.name}</span>
+                        {isActive && (
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#D4693A]" />
+                        )}
+                      </Link>
+                    );
+                  })}
+                </nav>
+              </div>
+
+              <div className="pt-6 border-t border-[#EAE4DE] dark:border-[#2B2724]">
+                <Button
+                  className="w-full h-11 rounded-full text-sm font-semibold bg-[#D4693A] text-white hover:bg-[#c35c30] transition-colors shadow-sm"
+                  onClick={() => setIsOpen(false)}
+                  asChild
+                >
+                  <Link href="/contact">Book a demo</Link>
+                </Button>
+              </div>
             </SheetContent>
           </Sheet>
         </div>
-      </header>
-    </div>
+      </div>
+    </header>
   );
 }

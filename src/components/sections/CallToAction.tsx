@@ -1,70 +1,55 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { ArrowRight, Terminal } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function CallToAction() {
   return (
-    <section className="py-32 relative overflow-hidden">
-      <div className="section-gradient-divider absolute top-0 left-0 right-0" />
-
-      {/* Subtle glowing orb */}
-      <div className="absolute inset-0 pointer-events-none flex justify-center items-center" aria-hidden="true">
-        <div className="w-[600px] h-[600px] bg-foreground/[0.03] rounded-full blur-[100px]" />
-      </div>
-
-      <div className="mx-auto max-w-5xl px-6 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mx-auto flex flex-col items-center text-center"
-        >
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
-            className="mb-8"
-          >
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium border border-border/50 bg-foreground/5 text-foreground">
-              <Terminal className="h-3.5 w-3.5" />
-              Ready for deployment
-            </span>
-          </motion.div>
-
-          <h2 className="text-4xl font-semibold tracking-tighter text-foreground sm:text-5xl md:text-6xl text-balance">
-            Build Your Next <br/><span className="hero-gradient-text">Intelligent System.</span>
-          </h2>
-          <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground font-light tracking-tight">
-            Partner with Frantiva Technologies to design, engineer, and deploy scalable AI products and custom enterprise software.
-          </p>
-
-          <div className="mt-12 flex items-center justify-center gap-4 flex-col sm:flex-row">
-            <Button
-              size="lg"
-              className="h-12 rounded-full px-8 text-base font-medium bg-foreground text-background hover:bg-foreground/90 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-foreground/10 transition-all duration-300 group"
-              asChild
-            >
-              <Link href="/contact">
-                Start a Conversation
-                <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-0.5 transition-transform" />
-              </Link>
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="h-12 rounded-full px-8 text-base font-medium border-border/50 hover:bg-foreground/5 transition-all duration-300"
-              asChild
-            >
-              <Link href="/services">View documentation</Link>
-            </Button>
+    <section className="py-28 md:py-36">
+      <div className="mx-auto max-w-[1200px] px-6">
+        <div className="rounded-[24px] border border-[#EAE4DE] dark:border-[#2B2724] bg-[#FFFFFF] dark:bg-[#1D1A17] p-10 sm:p-14 md:p-20">
+          
+          {/* Eyebrow: Mono format "— 05 · START A CONVERSATION" */}
+          <div className="flex items-center gap-2 mb-6 font-mono text-[12px] uppercase tracking-[0.12em] text-[#5F5A55] dark:text-[#A09A93]">
+            <span className="w-4 h-[1.5px] bg-[#D4693A] inline-block" />
+            <span>05 · START A CONVERSATION</span>
           </div>
-        </motion.div>
+
+          <div className="max-w-3xl">
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#141210] dark:text-[#FAF7F4] font-headline leading-[1.06] mb-6">
+              Software That Solves Real Problems.
+              <br />
+              <span className="text-[#D4693A]">AI That Creates Real Possibilities.</span>
+            </h2>
+
+            <p className="body-calm text-base sm:text-lg mb-10 max-w-[60ch]">
+              Partner with Frantiva Technologies to design, engineer, and deploy scalable software platforms and intelligent automated systems.
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+              <Button
+                size="lg"
+                className="h-13 px-8 rounded-full text-base font-semibold bg-[#D4693A] text-white hover:bg-[#c35c30] active:bg-[#b55227] transition-all duration-200 shadow-[0_2px_10px_rgba(212,105,58,0.22)] inline-flex items-center gap-2"
+                asChild
+              >
+                <Link href="/contact">
+                  <span>Start a project</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+
+              <Link
+                href="/services"
+                className="text-base font-medium text-[#141210] dark:text-[#FAF7F4] hover:text-[#D4693A] dark:hover:text-[#D4693A] transition-colors duration-200 inline-flex items-center gap-1.5 group py-2"
+              >
+                <span>Explore our work</span>
+                <span className="group-hover:translate-x-0.5 transition-transform duration-200">→</span>
+              </Link>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
   );

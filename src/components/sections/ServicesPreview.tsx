@@ -1,104 +1,80 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Database, Workflow, ShieldCheck, Cpu } from "lucide-react";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import { staggerContainer, scaleIn } from "@/lib/motion-variants";
+import { motion } from "framer-motion";
 
-const solutions = [
+const services = [
   {
-    icon: Cpu,
-    title: "AI Agents",
-    description: "Autonomous AI assistants that automate business workflows.",
-    featured: false,
+    title: "Autonomous AI Agents",
+    description: "Custom agent workflows that automate complex multi-step business operations.",
+    href: "/services",
   },
   {
-    icon: Workflow,
     title: "Business Automation",
-    description: "Intelligent systems that reduce repetitive manual work.",
-    featured: false,
+    description: "End-to-end process synchronization eliminating repetitive operational friction.",
+    href: "/services",
   },
   {
-    icon: Database,
-    title: "SaaS Platforms",
-    description: "Scalable cloud applications designed for modern businesses.",
-    featured: false,
-  },
-  {
-    icon: ShieldCheck,
-    title: "Enterprise Systems",
-    description: "Secure custom software solutions for organizations.",
-    featured: false,
+    title: "Cloud & SaaS Platforms",
+    description: "High-performance distributed web applications built for reliability and scale.",
+    href: "/services",
   },
 ];
 
 export function ServicesPreview() {
   return (
-    <section className="py-32 relative">
-      <div className="section-gradient-divider absolute top-0 left-0 right-0" />
+    <section className="py-24 md:py-36">
+      <div className="mx-auto max-w-[1200px] px-6">
+        {/* Eyebrow: Mono format "— 02 · WHAT WE BUILD" */}
+        <div className="flex items-center gap-2 mb-4 font-mono text-[12px] uppercase tracking-[0.12em] text-[#5F5A55] dark:text-[#A09A93]">
+          <span className="w-4 h-[1.5px] bg-[#D4693A] inline-block" />
+          <span>02 · WHAT WE BUILD</span>
+        </div>
 
-      <div className="mx-auto max-w-5xl px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mb-16 text-center max-w-2xl mx-auto"
-        >
-          <h2 className="text-3xl font-semibold tracking-tighter text-foreground sm:text-4xl lg:text-5xl">
-            Solutions We Build
-          </h2>
-          <p className="mt-6 text-lg text-muted-foreground leading-relaxed font-light">
-            We deliver sophisticated digital infrastructure, blending artificial intelligence with modern software engineering.
-          </p>
-        </motion.div>
+        {/* Big 2-line headline */}
+        <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#141210] dark:text-[#FAF7F4] font-headline mb-4">
+          Intelligent Solutions.
+          <br />
+          <span className="text-[#D4693A]">Engineered to Scale.</span>
+        </h2>
 
-        {/* 2x2 Grid */}
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          {solutions.map((s, i) => (
+        {/* Optional one-line subtext */}
+        <p className="body-calm text-base sm:text-lg mb-14 max-w-[60ch]">
+          We design and build reliable AI agents, custom web platforms and automated infrastructure.
+        </p>
+
+        {/* 3-column grid on desktop, gaps ~28-32px, 1 column on mobile */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-7 md:gap-8">
+          {services.map((service, i) => (
             <motion.div
               key={i}
-              variants={scaleIn}
-              className="flex flex-col group p-8 rounded-2xl border border-border/50 bg-foreground/[0.02] hover:bg-foreground/[0.03] hover:-translate-y-1 hover:shadow-2xl hover:shadow-foreground/5 hover:border-border/80 transition-all duration-500 relative overflow-hidden"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.45, delay: i * 0.1 }}
+              className="rounded-[24px] border border-[#EAE4DE] dark:border-[#2B2724] bg-[#FFFFFF] dark:bg-[#1D1A17] p-8 flex flex-col justify-between hover:border-[#D4693A]/50 transition-colors duration-200"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-foreground/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-              
-              <div className="h-12 w-12 rounded-xl bg-background border border-border/50 flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-500">
-                <s.icon className="h-6 w-6 text-foreground opacity-80" />
+              <div>
+                <h3 className="text-2xl font-bold tracking-tight text-[#141210] dark:text-[#FAF7F4] font-headline mb-3">
+                  {service.title}
+                </h3>
+                <p className="text-base text-[#5F5A55] dark:text-[#A09A93] leading-relaxed mb-8">
+                  {service.description}
+                </p>
               </div>
-              
-              <h3 className="text-xl font-semibold text-foreground tracking-tight mb-3">
-                {s.title}
-              </h3>
-              <p className="text-muted-foreground leading-relaxed font-light">
-                {s.description}
-              </p>
+
+              <div>
+                <Link
+                  href={service.href}
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#141210] dark:text-[#FAF7F4] hover:text-[#D4693A] dark:hover:text-[#D4693A] transition-colors group"
+                >
+                  <span>Explore</span>
+                  <span className="group-hover:translate-x-1 transition-transform duration-150">→</span>
+                </Link>
+              </div>
             </motion.div>
           ))}
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-16 text-center"
-        >
-          <Link
-            href="/services"
-            className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors group"
-          >
-            Explore all capabilities
-            <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-          </Link>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

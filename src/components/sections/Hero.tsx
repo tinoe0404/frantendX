@@ -2,181 +2,79 @@
 
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
-import { ArrowRight, Sparkles, Terminal, Activity, Cpu } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ConstellationBackground } from "@/components/ConstellationBackground";
 
 const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
 };
 
 const staggerContainer: Variants = {
   hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { staggerChildren: 0.15 } },
-};
-
-const floatingElement: Variants = {
-  animate: {
-    y: [0, -15, 0],
-    transition: {
-      duration: 6,
-      repeat: Infinity,
-      ease: "easeInOut",
-    },
-  },
+  show: { opacity: 1, transition: { staggerChildren: 0.12, delayChildren: 0.05 } },
 };
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden min-h-[100dvh] flex flex-col justify-center items-center bg-background">
-      {/* Subtle glowing ambient gradient */}
-      <div
-        className="pointer-events-none absolute inset-0 flex items-center justify-center"
-        aria-hidden="true"
-      >
-        <div className="w-[800px] h-[500px] bg-foreground/[0.03] rounded-[100%] blur-[120px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
-        <div className="w-[600px] h-[300px] bg-foreground/[0.02] rounded-[100%] blur-[80px] absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 animate-pulse duration-10000" />
-      </div>
+    <section className="relative min-h-screen min-h-[100dvh] w-full flex flex-col justify-center pt-20 pb-12 overflow-hidden hero-peach-gradient hero-faint-grid">
+      {/* Very faint, sparse constellation background */}
+      <ConstellationBackground />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-24 pb-8 text-center w-full flex flex-col items-center justify-center flex-1">
-        {/* Floating Background Interface Elements */}
-        <div className="hidden lg:block absolute inset-0 pointer-events-none" aria-hidden="true">
-          <motion.div
-            variants={floatingElement}
-            initial="animate"
-            animate="animate"
-            className="absolute top-[20%] left-[10%] flex items-center gap-3 px-4 py-3 rounded-2xl border border-border/40 bg-background/40 backdrop-blur-md opacity-60"
-          >
-            <Activity className="h-4 w-4 text-muted-foreground" />
-            <div className="flex flex-col gap-1.5">
-              <div className="h-1.5 w-12 bg-foreground/20 rounded-full" />
-              <div className="h-1.5 w-8 bg-foreground/10 rounded-full" />
-            </div>
-          </motion.div>
-          
-          <motion.div
-            variants={floatingElement}
-            initial="animate"
-            animate="animate"
-            className="absolute top-[35%] right-[10%] flex items-center gap-3 px-4 py-3 rounded-2xl border border-border/40 bg-background/40 backdrop-blur-md opacity-60"
-            style={{ animationDelay: "-2s" }}
-          >
-            <Terminal className="h-4 w-4 text-muted-foreground" />
-            <div className="flex flex-col gap-1.5">
-              <div className="h-1.5 w-16 bg-foreground/20 rounded-full" />
-              <div className="h-1.5 w-10 bg-foreground/10 rounded-full" />
-            </div>
-          </motion.div>
-          
-          <motion.div
-            variants={floatingElement}
-            initial="animate"
-            animate="animate"
-            className="absolute bottom-[25%] left-[15%] flex items-center gap-3 px-4 py-3 rounded-2xl border border-border/40 bg-background/40 backdrop-blur-md opacity-60"
-            style={{ animationDelay: "-4s" }}
-          >
-            <Cpu className="h-4 w-4 text-muted-foreground" />
-            <div className="flex flex-col gap-1.5">
-              <div className="h-1.5 w-10 bg-foreground/20 rounded-full" />
-              <div className="h-1.5 w-14 bg-foreground/10 rounded-full" />
-            </div>
-          </motion.div>
-        </div>
-
+      <div className="mx-auto max-w-[1200px] px-6 w-full relative z-10 my-auto">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           animate="show"
-          className="mx-auto flex flex-col items-center justify-center max-w-5xl relative z-20 w-full"
+          className="max-w-[960px] flex flex-col items-start text-left"
         >
-          {/* Minimal Badge */}
-          <motion.div
-            variants={fadeUp}
-            className="inline-flex items-center gap-2 mb-6 px-3 py-1 rounded-full text-[11px] font-medium tracking-[0.2em] uppercase border border-border/40 bg-foreground/[0.03] text-muted-foreground backdrop-blur-md"
-          >
-            <Sparkles className="h-3 w-3" />
-            <span>AI SOFTWARE COMPANY</span>
-          </motion.div>
-
-          {/* Headline - Cinematic Typography */}
+          {/* Headline: Heavy-weight (700/800), tight negative letter-spacing (-0.03em), clamp(48px, 7vw, 96px), max 2 lines */}
           <motion.h1
             variants={fadeUp}
-            className="text-5xl font-medium tracking-tighter text-foreground sm:text-6xl md:text-7xl lg:text-[80px] leading-[0.95] text-balance mb-6"
+            className="hero-headline-clamp font-headline font-bold text-[#141210] dark:text-[#FAF7F4] mb-8"
           >
-            AI Agents & Custom Software Built for African Scale
+            Intelligent Software.
+            <br />
+            <span className="text-[#D4693A]">Built to Move Business Forward.</span>
           </motion.h1>
 
-          {/* Subtext */}
+          {/* Body: Inter, 18-20px, muted, max-width ~60ch, line-height 1.6 */}
           <motion.p
             variants={fadeUp}
-            className="mx-auto max-w-2xl text-lg text-muted-foreground leading-relaxed font-light tracking-tight mb-8"
+            className="body-calm text-base sm:text-lg md:text-[19px] leading-[1.6] mb-10"
           >
-            We engineer offline-capable platforms and automated systems with native WhatsApp and EcoCash integrations, helping Zimbabwean businesses operate smarter and faster.
+            We engineer intelligent AI solutions, custom software and automated systems
+            that help businesses solve complex problems, operate efficiently and scale
+            with confidence.
           </motion.p>
 
-          {/* Trust Badge */}
-          <motion.div variants={fadeUp} className="mb-8 flex items-center justify-center gap-2">
-            <div className="flex -space-x-2">
-              <div className="w-7 h-7 rounded-full border-2 border-background bg-muted/30 flex items-center justify-center text-[9px] font-bold">1</div>
-              <div className="w-7 h-7 rounded-full border-2 border-background bg-muted/50 flex items-center justify-center text-[9px] font-bold">2</div>
-              <div className="w-7 h-7 rounded-full border-2 border-background bg-muted/80 flex items-center justify-center text-[9px] font-bold">3</div>
-            </div>
-            <span className="text-sm font-medium text-muted-foreground ml-2">Trusted by 10+ businesses across Zimbabwe</span>
-          </motion.div>
-
-          {/* CTAs */}
+          {/* Two Actions: Primary Pill and Plain Text Link (No Box, No Border) */}
           <motion.div
             variants={fadeUp}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
+            className="flex flex-col sm:flex-row items-start sm:items-center gap-6"
           >
+            {/* Primary Pill */}
             <Button
               size="lg"
-              className="h-12 rounded-full px-8 text-base font-medium bg-foreground text-background hover:bg-foreground/90 transition-all duration-300 group shadow-lg shadow-foreground/10 hover:-translate-y-0.5 hover:shadow-xl"
+              className="h-13 px-8 rounded-full text-base font-semibold bg-[#D4693A] text-white hover:bg-[#c35c30] active:bg-[#b55227] transition-all duration-200 shadow-[0_2px_10px_rgba(212,105,58,0.22)] inline-flex items-center gap-2"
               asChild
             >
-              <Link href="/contact" className="flex items-center gap-2">
-                Start a project
-                <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
+              <Link href="/contact">
+                <span>Start a project</span>
+                <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>
 
-            <Button
-              size="lg"
-              variant="outline"
-              className="h-12 rounded-full px-8 text-base font-medium border-border/30 hover:border-foreground/30 hover:bg-transparent transition-all duration-300 bg-transparent text-foreground/80 hover:text-foreground"
-              asChild
+            {/* Plain Text Link (No Box, No Border) */}
+            <Link
+              href="/services"
+              className="text-base font-medium text-[#141210] dark:text-[#FAF7F4] hover:text-[#D4693A] dark:hover:text-[#D4693A] transition-colors duration-200 inline-flex items-center gap-1.5 group py-2"
             >
-              <Link href="/services">
-                Explore services
-              </Link>
-            </Button>
+              <span>Explore our work</span>
+              <span className="group-hover:translate-x-0.5 transition-transform duration-200">→</span>
+            </Link>
           </motion.div>
-
-          {/* Client Logos Strip */}
-          <motion.div 
-            variants={fadeUp}
-            className="w-full max-w-4xl border-t border-border/30 pt-8"
-          >
-            <p className="text-xs font-medium tracking-[0.1em] uppercase text-muted-foreground mb-8 text-center">
-              Powering innovation for leading brands
-            </p>
-            <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-700">
-              {/* SVG Text Logos to avoid emoji */}
-              <div className="text-xl font-black tracking-tighter text-foreground/80 hover:text-foreground transition-colors">
-                Gowild Tours
-              </div>
-              <div className="text-xl font-serif italic text-foreground/80 hover:text-foreground transition-colors">
-                HaviChem
-              </div>
-              <div className="text-xl font-bold uppercase tracking-widest text-foreground/80 hover:text-foreground transition-colors">
-                Educating Rural Girl Child
-              </div>
-              <div className="text-xl font-extrabold tracking-tight text-foreground/80 hover:text-foreground transition-colors">
-                Zonkezonke
-              </div>
-            </div>
-          </motion.div>
-
         </motion.div>
       </div>
     </section>

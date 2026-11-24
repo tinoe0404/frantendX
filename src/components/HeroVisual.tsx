@@ -22,21 +22,21 @@ export function HeroVisual() {
     >
       {/* Browser mockup */}
       <div className="relative rounded-xl border border-border/50 bg-card/80 backdrop-blur-xl overflow-hidden shadow-2xl shadow-black/20">
-        {/* Gradient glow behind the card */}
+        {/* Subtle glow behind the card */}
         <div
-          className="absolute -inset-1 rounded-xl opacity-30 blur-xl -z-10"
+          className="absolute -inset-1 rounded-xl opacity-20 blur-xl -z-10"
           style={{
             background:
-              "linear-gradient(135deg, hsl(173 58% 39% / 0.4), hsl(220 70% 50% / 0.2), hsl(280 65% 60% / 0.2))",
+              "linear-gradient(135deg, rgba(242, 106, 56, 0.2), rgba(17, 17, 17, 0.1))",
           }}
         />
 
         {/* Browser toolbar */}
         <div className="flex items-center gap-2 px-4 py-3 border-b border-border/30 bg-card/50">
           <div className="flex gap-1.5">
-            <div className="w-3 h-3 rounded-full bg-red-500/70" />
-            <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
-            <div className="w-3 h-3 rounded-full bg-green-500/70" />
+            <div className="w-2.5 h-2.5 rounded-full bg-[#111111]/30 dark:bg-[#FAF6F2]/30" />
+            <div className="w-2.5 h-2.5 rounded-full bg-[#111111]/20 dark:bg-[#FAF6F2]/20" />
+            <div className="w-2.5 h-2.5 rounded-full bg-[#F26A38]" />
           </div>
           <div className="flex-1 mx-4">
             <div className="h-6 rounded-md bg-muted/50 flex items-center px-3 text-xs text-muted-foreground font-mono">

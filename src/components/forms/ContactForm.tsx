@@ -54,7 +54,7 @@ export function ContactForm() {
             } else {
                 toast.error(result.message);
             }
-        } catch (error) {
+        } catch {
             toast.error("An unexpected error occurred. Please try again.");
         } finally {
             setIsPending(false);
@@ -182,7 +182,11 @@ export function ContactForm() {
                     {...form.register("website_url")}
                 />
 
-                <Button type="submit" className="w-full bg-brand text-brand-foreground hover:bg-brand/90" disabled={isPending}>
+                <Button
+                    type="submit"
+                    className="w-full h-12 rounded-full bg-[#D4693A] text-white hover:bg-[#c35c30] text-sm font-semibold transition-colors shadow-sm"
+                    disabled={isPending}
+                >
                     {isPending ? (
                         <>
                             <Loader2 className="mr-2 h-4 w-4 animate-spin" />

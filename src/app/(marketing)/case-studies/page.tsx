@@ -8,17 +8,9 @@ export const metadata = {
 
 export default function CaseStudiesPage() {
   return (
-    <>
-      <div className="pt-32 pb-10 px-6 text-center">
-        <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-          Case Studies
-        </h1>
-        <p className="mt-4 text-lg text-muted-foreground">
-          Discover how we build scalable software that drives real business results.
-        </p>
-      </div>
+    <div className="pt-20 md:pt-28">
       <FeaturedWork />
       <CallToAction />
-    </>
+    </div>
   );
 }

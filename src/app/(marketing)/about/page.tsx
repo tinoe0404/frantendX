@@ -1,113 +1,149 @@
 import { Metadata } from "next";
-import { CheckCircle2, Zap, Scaling } from "lucide-react";
-import { GradientMesh } from "@/components/GradientMesh";
-import { GridPattern } from "@/components/GridPattern";
+import Link from "next/link";
+import { CheckCircle2, Zap, Scaling, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
-  title: "About Us",
-  description: "Learn about Frantiva Technologies, a leading digital technology company specializing in AI solutions and high-performance software engineering.",
+  title: "About Us | Frantiva Technologies",
+  description:
+    "Learn about Frantiva Technologies, a leading digital technology company specializing in AI solutions and high-performance software engineering.",
 };
 
 const values = [
   {
+    step: "01",
     icon: CheckCircle2,
     title: "Transparency",
-    description: "No hidden costs. Clear communication. We keep you in the loop at every stage of the project lifecycle.",
+    description:
+      "No hidden costs and zero ambiguity. We maintain open communication and architectural visibility across every stage of the lifecycle.",
   },
   {
+    step: "02",
     icon: Zap,
-    title: "Speed",
-    description: "We build fast, and our sites load faster. Performance is not an afterthought; it is a priority.",
+    title: "Engineering Speed",
+    description:
+      "We iterate rapidly without sacrificing technical rigor. Fast loading, optimized runtimes, and immediate business value are non-negotiable.",
   },
   {
+    step: "03",
     icon: Scaling,
     title: "Scalability",
-    description: "Solutions that grow with you. We design architectures that handle increased traffic and new features effortlessly.",
+    description:
+      "We design resilient architectures that handle exponential data traffic, concurrent user loads, and continuous feature expansion seamlessly.",
   },
 ];
 
 export default function AboutPage() {
   return (
-    <>
-      {/* Hero */}
-      <section className="relative py-24 md:py-32 overflow-hidden min-h-[60vh] flex flex-col justify-center">
-        <GradientMesh />
-        <GridPattern />
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_30%,_hsl(var(--background))_80%)]" aria-hidden="true" />
-        <div className="relative mx-auto max-w-6xl px-6 text-center z-10">
-          <p className="mb-4 text-sm font-medium text-brand tracking-widest uppercase">
-            About us
-          </p>
-          <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl text-balance mb-6">
-            Building the Future of <span className="hero-gradient-text">Digital Experiences.</span>
-          </h1>
-          <p className="mx-auto max-w-2xl text-lg text-muted-foreground leading-relaxed">
-            We are more than just developers. We are your strategic partners in the digital age, driven by innovation and grounded in quality.
-          </p>
-        </div>
-      </section>
+    <div className="py-20 md:py-32">
+      <div className="mx-auto max-w-[1200px] px-6">
+        
+        {/* Page Hero */}
+        <section className="mb-24 md:mb-32">
+          {/* Eyebrow */}
+          <div className="flex items-center gap-2 mb-4 font-mono text-[12px] uppercase tracking-[0.12em] text-[#5F5A55] dark:text-[#A09A93]">
+            <span className="w-4 h-[1.5px] bg-[#D4693A] inline-block" />
+            <span>01 · ABOUT FRANTIVA</span>
+          </div>
 
-      {/* Mission */}
-      <section className="py-24 md:py-32 relative">
-        <div className="section-gradient-divider absolute top-0 left-0 right-0" />
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="mx-auto max-w-3xl text-center glass-card rounded-2xl p-8 md:p-12 relative overflow-hidden group">
-            <div className="absolute inset-0 bg-brand/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="relative z-10 space-y-6">
-              <p className="text-sm font-medium text-brand tracking-widest uppercase">
-                Our mission
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#141210] dark:text-[#FAF7F4] font-headline mb-6 max-w-4xl">
+            Building the Future of
+            <br />
+            <span className="text-[#D4693A]">Digital Experiences.</span>
+          </h1>
+
+          <p className="body-calm text-lg sm:text-xl max-w-[60ch] mb-10">
+            We are more than just developers. We are strategic product engineers and AI architects,
+            building reliable digital infrastructure that drives measurable commercial growth.
+          </p>
+
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <Button
+              size="lg"
+              className="h-12 px-8 rounded-full text-sm font-semibold bg-[#D4693A] text-white hover:bg-[#c35c30] transition-colors shadow-sm"
+              asChild
+            >
+              <Link href="/contact" className="inline-flex items-center gap-2">
+                <span>Start a project</span>
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+            <Link
+              href="/services"
+              className="text-sm font-medium text-[#141210] dark:text-[#FAF7F4] hover:text-[#D4693A] dark:hover:text-[#D4693A] transition-colors py-2 px-3 inline-flex items-center gap-1 group"
+            >
+              <span>Explore services</span>
+              <span className="group-hover:translate-x-0.5 transition-transform">→</span>
+            </Link>
+          </div>
+        </section>
+
+        {/* Mission Section */}
+        <section className="mb-24 md:mb-32">
+          <div className="rounded-[24px] border border-[#EAE4DE] dark:border-[#2B2724] bg-[#FFFFFF] dark:bg-[#1D1A17] p-8 sm:p-12 md:p-16">
+            <div className="flex items-center gap-2 mb-4 font-mono text-[12px] uppercase tracking-[0.12em] text-[#5F5A55] dark:text-[#A09A93]">
+              <span className="w-4 h-[1.5px] bg-[#D4693A] inline-block" />
+              <span>02 · OUR MISSION</span>
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#141210] dark:text-[#FAF7F4] font-headline mb-6 max-w-2xl">
+              Bridging Technology and Business Goals.
+            </h2>
+
+            <div className="space-y-4 body-calm text-base sm:text-lg max-w-3xl">
+              <p>
+                Frantiva Technologies was founded to bridge the gap between complex software engineering and tangible business outcomes.
+                We believe that every modern enterprise deserves digital systems that are not only elegant, but fundamentally robust,
+                secure, and engineered to scale.
               </p>
-              <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
-                Bridging technology and business goals
-              </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Frantiva Technologies was founded to bridge the gap between complex technology and business goals.
-                We believe that every business deserves a digital presence that is not only beautiful but also
-                fundamentally robust, secure, and scalable.
+              <p>
+                Our engineering team leverages cutting-edge software paradigms, autonomous AI agents, and cloud computing architectures
+                to deliver platforms that stand the test of time, high concurrency, and changing market conditions.
               </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Our team leverages cutting-edge technologies, AI, and Cloud Computing
-                to deliver solutions that stand the test of time and market shifts.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                We build smart digital solutions — from websites (static & dynamic) to mobile apps and custom software.
-                Empowering businesses with reliable tech tailored to their goals.
-                <span className="block mt-4 font-medium text-foreground">Innovate. Build. Grow with Frantiva Technologies.</span>
+              <p className="font-semibold text-[#141210] dark:text-[#FAF7F4] pt-2">
+                Innovate. Build. Scale with Frantiva Technologies.
               </p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Core Values */}
-      <section className="py-24 md:py-32 relative">
-        <div className="section-gradient-divider absolute top-0 left-0 right-0" />
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="text-center mb-14">
-            <p className="mb-3 text-sm font-medium text-brand tracking-widest uppercase">
-              What drives us
-            </p>
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
-              Our Core Values
-            </h2>
-            <p className="mx-auto mt-4 max-w-xl text-muted-foreground leading-relaxed">
-              The principles that guide every line of code we write.
-            </p>
+        {/* Core Values Section */}
+        <section className="mb-24 md:mb-32">
+          <div className="flex items-center gap-2 mb-4 font-mono text-[12px] uppercase tracking-[0.12em] text-[#5F5A55] dark:text-[#A09A93]">
+            <span className="w-4 h-[1.5px] bg-[#D4693A] inline-block" />
+            <span>03 · GUIDING VALUES</span>
           </div>
 
-          <div className="bento-grid">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#141210] dark:text-[#FAF7F4] font-headline mb-4">
+            Our Core Principles.
+          </h2>
+          <p className="body-calm text-base sm:text-lg mb-12 max-w-[60ch]">
+            The engineering tenets that guide every line of code, architectural review, and client engagement.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-7 md:gap-8">
             {values.map((v) => (
-              <div key={v.title} className="glass-card gradient-border rounded-xl p-6 group">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand/10 text-brand group-hover:bg-brand/20 transition-colors">
-                  <v.icon className="h-6 w-6" />
+              <div
+                key={v.title}
+                className="rounded-[24px] border border-[#EAE4DE] dark:border-[#2B2724] bg-[#FFFFFF] dark:bg-[#1D1A17] p-8 flex flex-col justify-between"
+              >
+                <div>
+                  <div className="w-11 h-11 rounded-full border-2 border-[#D4693A] flex items-center justify-center font-headline font-bold text-sm text-[#D4693A] mb-6">
+                    {v.step}
+                  </div>
+                  <h3 className="text-xl font-bold tracking-tight text-[#141210] dark:text-[#FAF7F4] font-headline mb-3">
+                    {v.title}
+                  </h3>
+                  <p className="text-sm text-[#5F5A55] dark:text-[#A09A93] leading-relaxed">
+                    {v.description}
+                  </p>
                 </div>
-                <h3 className="text-lg font-semibold mb-2 group-hover:text-brand transition-colors">{v.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{v.description}</p>
               </div>
             ))}
           </div>
-        </div>
-      </section>
-    </>
+        </section>
+
+      </div>
+    </div>
   );
 }
