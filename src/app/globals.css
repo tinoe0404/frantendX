@@ -171,8 +171,10 @@
 
 /* Hero clamp size */
 .hero-headline-clamp {
-  font-size: clamp(48px, 7vw, 96px);
-  line-height: 1.04;
+  font-size: clamp(44px, 6vw, 80px);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  word-spacing: 0.04em;
 }
 
 /* Body typography */

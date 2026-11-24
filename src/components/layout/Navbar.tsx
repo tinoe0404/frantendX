@@ -74,12 +74,15 @@ export function Navbar() {
     >
       <div className="mx-auto max-w-[1200px] px-6 h-20 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group shrink-0">
+        <Link href="/" className="flex items-center gap-2.5 group shrink-0">
+          <div className="w-[30px] h-[30px] rounded-[7px] bg-[#141210] dark:bg-[#FAF7F4] text-[#FAF7F4] dark:text-[#141210] flex items-center justify-center font-display font-extrabold text-[15px] leading-none select-none transition-transform group-hover:scale-105">
+            <span>F</span>
+          </div>
           <div className="flex items-baseline gap-1.5">
-            <span className="text-[21px] font-extrabold tracking-tight text-[#141210] dark:text-[#FAF7F4] font-headline">
+            <span className="font-display text-[22px] font-extrabold tracking-tight text-[#141210] dark:text-[#FAF7F4] leading-none">
               Frantiva
             </span>
-            <span className="text-[12px] font-medium text-[#5F5A55] dark:text-[#A09A93]">
+            <span className="font-sans text-[13px] font-normal text-[#5F5A55] dark:text-[#A09A93] tracking-[0.02em] leading-none">
               Technologies
             </span>
           </div>
@@ -146,13 +149,18 @@ export function Navbar() {
               <div>
                 <SheetHeader className="text-left pb-6 border-b border-[#EAE4DE] dark:border-[#2B2724]">
                   <SheetTitle>
-                    <div className="flex items-baseline gap-1.5">
-                      <span className="text-xl font-extrabold tracking-tight text-[#141210] dark:text-[#FAF7F4] font-headline">
-                        Frantiva
-                      </span>
-                      <span className="text-xs font-medium text-[#5F5A55] dark:text-[#A09A93]">
-                        Technologies
-                      </span>
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-[28px] h-[28px] rounded-[6px] bg-[#141210] dark:bg-[#FAF7F4] text-[#FAF7F4] dark:text-[#141210] flex items-center justify-center font-display font-extrabold text-[14px] leading-none select-none">
+                        <span>F</span>
+                      </div>
+                      <div className="flex items-baseline gap-1.5">
+                        <span className="font-display text-[20px] font-extrabold tracking-tight text-[#141210] dark:text-[#FAF7F4] leading-none">
+                          Frantiva
+                        </span>
+                        <span className="font-sans text-[12px] font-normal text-[#5F5A55] dark:text-[#A09A93] tracking-[0.02em] leading-none">
+                          Technologies
+                        </span>
+                      </div>
                     </div>
                   </SheetTitle>
                 </SheetHeader>

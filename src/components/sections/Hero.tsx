@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef } from "react";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 import { ArrowRight } from "lucide-react";
@@ -17,32 +18,57 @@ const staggerContainer: Variants = {
 };
 
 export function Hero() {
+  const headlineRef = useRef<HTMLHeadingElement>(null);
+  const paragraphRef = useRef<HTMLParagraphElement>(null);
+  const buttonsRef = useRef<HTMLDivElement>(null);
+
   return (
     <section className="relative min-h-screen min-h-[100dvh] w-full flex flex-col justify-center pt-20 pb-12 overflow-hidden hero-peach-gradient hero-faint-grid">
-      {/* Very faint, sparse constellation background */}
-      <ConstellationBackground />
+      {/* Network background with 24px no-render exclusion zone around headline, paragraph & buttons */}
+      <ConstellationBackground exclusionRefs={[headlineRef, paragraphRef, buttonsRef]} />
 
       <div className="mx-auto max-w-[1200px] px-6 w-full relative z-10 my-auto">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           animate="show"
-          className="max-w-[960px] flex flex-col items-start text-left"
+          className="max-w-[1050px] w-full flex flex-col items-start text-left"
         >
-          {/* Headline: Heavy-weight (700/800), tight negative letter-spacing (-0.03em), clamp(48px, 7vw, 96px), max 2 lines */}
+          {/* Headline:
+              font-size clamp(44px, 6vw, 80px);
+              letter-spacing -0.025em;
+              word-spacing +0.04em;
+              line-height 1.02.
+              Two lines: "Intelligent software." (dark) / "Built to move business." (orange), each on its own single line at 1280px+.
+          */}
           <motion.h1
+            ref={headlineRef}
             variants={fadeUp}
-            className="hero-headline-clamp font-headline font-bold text-[#141210] dark:text-[#FAF7F4] mb-8"
+            className="font-headline font-bold text-[#141210] dark:text-[#FAF7F4] mb-8 text-[clamp(44px,6vw,80px)] tracking-[-0.025em] [word-spacing:0.04em] leading-[1.02]"
+            style={{
+              fontSize: "clamp(44px, 6vw, 80px)",
+              letterSpacing: "-0.025em",
+              wordSpacing: "0.04em",
+              lineHeight: 1.02,
+            }}
           >
-            Intelligent Software.
-            <br />
-            <span className="text-[#D4693A]">Built to Move Business Forward.</span>
+            <span className="block xl:whitespace-nowrap">Intelligent software.</span>
+            <span className="block xl:whitespace-nowrap text-[#D4693A]">Built to move business.</span>
           </motion.h1>
 
-          {/* Body: Inter, 18-20px, muted, max-width ~60ch, line-height 1.6 */}
+          {/* Paragraph:
+              max-width 58ch, text-wrap: balance, font-size 18px, line-height 1.6.
+          */}
           <motion.p
+            ref={paragraphRef}
             variants={fadeUp}
-            className="body-calm text-base sm:text-lg md:text-[19px] leading-[1.6] mb-10"
+            className="font-sans text-[18px] leading-[1.6] max-w-[58ch] [text-wrap:balance] text-[#5F5A55] dark:text-[#A09A93] mb-10"
+            style={{
+              maxWidth: "58ch",
+              textWrap: "balance",
+              fontSize: "18px",
+              lineHeight: 1.6,
+            }}
           >
             We engineer intelligent AI solutions, custom software and automated systems
             that help businesses solve complex problems, operate efficiently and scale
@@ -51,6 +77,7 @@ export function Hero() {
 
           {/* Two Actions: Primary Pill and Plain Text Link (No Box, No Border) */}
           <motion.div
+            ref={buttonsRef}
             variants={fadeUp}
             className="flex flex-col sm:flex-row items-start sm:items-center gap-6"
           >
