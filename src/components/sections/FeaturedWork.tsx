@@ -5,6 +5,10 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { staggerContainer, fadeUp } from "@/lib/motion-variants";
 
+interface FeaturedWorkProps {
+  headingLevel?: "h1" | "h2";
+}
+
 const projects = [
   {
     id: "gowild",
@@ -47,7 +51,9 @@ const projects = [
   },
 ];
 
-export function FeaturedWork() {
+export function FeaturedWork({ headingLevel = "h2" }: FeaturedWorkProps) {
+  const HeadingTag = headingLevel;
+
   return (
     <section className="py-24 md:py-36">
       <div className="mx-auto max-w-[1200px] px-6">
@@ -58,11 +64,11 @@ export function FeaturedWork() {
         </div>
 
         {/* Big 2-line headline */}
-        <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-[-0.02em] [word-spacing:0.08em] [text-wrap:balance] text-[#141210] dark:text-[#FAF7F4] font-headline mb-4">
+        <HeadingTag className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-[-0.02em] [word-spacing:0.08em] [text-wrap:balance] text-[#141210] dark:text-[#FAF7F4] font-headline mb-4">
           Software projects that
           <br />
           <span className="text-[#D4693A]">deliver real results.</span>
-        </h2>
+        </HeadingTag>
 
         <p className="font-sans text-[#5F5A55] dark:text-[#A09A93] text-base sm:text-lg mb-14 max-w-[56ch] [text-wrap:pretty]">
           We don&apos;t just build software — we engineer platforms that drive measurable commercial and operational outcomes.
@@ -79,8 +85,9 @@ export function FeaturedWork() {
           {projects.map((project) => (
             <motion.div
               key={project.id}
+              id={project.id}
               variants={fadeUp}
-              className="rounded-[24px] border border-[#EAE4DE] dark:border-[#2B2724] bg-[#FFFFFF] dark:bg-[#1D1A17] p-8 flex flex-col justify-between hover:border-[#D4693A]/50 transition-colors duration-200"
+              className="rounded-[24px] border border-[#EAE4DE] dark:border-[#2B2724] bg-[#FFFFFF] dark:bg-[#1D1A17] p-8 flex flex-col justify-between hover:border-[#D4693A]/50 transition-colors duration-200 scroll-mt-28"
             >
               <div>
                 {/* Industry Tag */}

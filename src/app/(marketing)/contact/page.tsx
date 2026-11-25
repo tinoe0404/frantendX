@@ -1,11 +1,21 @@
-import { Metadata } from "next";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { ContactForm } from "@/components/forms/ContactForm";
+import { buildPageMetadata, buildBreadcrumbs } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Contact Us | Frantiva Technologies",
-  description: "Get in touch with Frantiva Technologies for your next digital engineering project.",
-};
+export const metadata = buildPageMetadata({
+  title: "Contact us",
+  description:
+    "Get in touch with Frantiva Technologies for your next software project. We build custom web apps, mobile apps, AI agents, and enterprise software from Harare, Zimbabwe. Response within 24 hours.",
+  path: "/contact",
+  ogTitle: "Contact Frantiva Technologies — Start Your Next Project",
+  ogDescription:
+    "Ready to build? Contact Frantiva Technologies for custom software, AI agents, and digital products. Based in Harare, delivering across Africa.",
+});
+
+const breadcrumbs = buildBreadcrumbs([
+  { name: "Home", path: "/" },
+  { name: "Contact", path: "/contact" },
+]);
 
 const trustedClients = [
   "HaviChem Cleaning Services",
@@ -20,6 +30,11 @@ const trustedClients = [
 export default function ContactPage() {
   return (
     <div className="py-24 md:py-36">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
+      />
+
       <div className="mx-auto max-w-[1200px] px-6">
         
         {/* Eyebrow */}
@@ -44,59 +59,64 @@ export default function ContactPage() {
               </p>
             </div>
 
-            {/* Direct Contact Cards */}
-            <div className="space-y-4">
-              <div className="rounded-[24px] border border-[#EAE4DE] dark:border-[#2B2724] bg-[#FFFFFF] dark:bg-[#1D1A17] p-6 flex items-start gap-4 hover:border-[#D4693A]/50 transition-colors duration-200">
-                <div className="w-10 h-10 rounded-full border border-[#EAE4DE] dark:border-[#2B2724] flex items-center justify-center text-[#D4693A] shrink-0">
-                  <Mail className="h-4 w-4" />
+            {/* Direct Contact Channels */}
+            <div>
+              <h2 className="text-sm font-mono uppercase tracking-[0.1em] text-[#5F5A55] dark:text-[#A09A93] mb-4">
+                Direct channels
+              </h2>
+              <div className="space-y-4">
+                <div className="rounded-[24px] border border-[#EAE4DE] dark:border-[#2B2724] bg-[#FFFFFF] dark:bg-[#1D1A17] p-6 flex items-start gap-4 hover:border-[#D4693A]/50 transition-colors duration-200">
+                  <div className="w-10 h-10 rounded-full border border-[#EAE4DE] dark:border-[#2B2724] flex items-center justify-center text-[#D4693A] shrink-0">
+                    <Mail className="h-4 w-4" />
+                  </div>
+                  <div>
+                    <h3 className="font-headline font-bold text-base tracking-[-0.005em] [word-spacing:0.08em] text-[#141210] dark:text-[#FAF7F4] mb-1">
+                      Email inquiries
+                    </h3>
+                    <a
+                      href="mailto:info@frantendxsolutions.co.zw"
+                      className="block text-sm text-[#5F5A55] dark:text-[#A09A93] hover:text-[#141210] dark:hover:text-[#FAF7F4] transition-colors"
+                    >
+                      info@frantendxsolutions.co.zw
+                    </a>
+                    <a
+                      href="mailto:billing@frantendxsolutions.co.zw"
+                      className="block text-sm text-[#5F5A55] dark:text-[#A09A93] hover:text-[#141210] dark:hover:text-[#FAF7F4] transition-colors mt-0.5"
+                    >
+                      billing@frantendxsolutions.co.zw
+                    </a>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-headline font-bold text-base tracking-[-0.005em] [word-spacing:0.08em] text-[#141210] dark:text-[#FAF7F4] mb-1">
-                    Email inquiries
-                  </h3>
-                  <a
-                    href="mailto:info@frantendxsolutions.co.zw"
-                    className="block text-sm text-[#5F5A55] dark:text-[#A09A93] hover:text-[#141210] dark:hover:text-[#FAF7F4] transition-colors"
-                  >
-                    info@frantendxsolutions.co.zw
-                  </a>
-                  <a
-                    href="mailto:billing@frantendxsolutions.co.zw"
-                    className="block text-sm text-[#5F5A55] dark:text-[#A09A93] hover:text-[#141210] dark:hover:text-[#FAF7F4] transition-colors mt-0.5"
-                  >
-                    billing@frantendxsolutions.co.zw
-                  </a>
-                </div>
-              </div>
 
-              <div className="rounded-[24px] border border-[#EAE4DE] dark:border-[#2B2724] bg-[#FFFFFF] dark:bg-[#1D1A17] p-6 flex items-start gap-4 hover:border-[#D4693A]/50 transition-colors duration-200">
-                <div className="w-10 h-10 rounded-full border border-[#EAE4DE] dark:border-[#2B2724] flex items-center justify-center text-[#D4693A] shrink-0">
-                  <Phone className="h-4 w-4" />
+                <div className="rounded-[24px] border border-[#EAE4DE] dark:border-[#2B2724] bg-[#FFFFFF] dark:bg-[#1D1A17] p-6 flex items-start gap-4 hover:border-[#D4693A]/50 transition-colors duration-200">
+                  <div className="w-10 h-10 rounded-full border border-[#EAE4DE] dark:border-[#2B2724] flex items-center justify-center text-[#D4693A] shrink-0">
+                    <Phone className="h-4 w-4" />
+                  </div>
+                  <div>
+                    <h3 className="font-headline font-bold text-base tracking-[-0.005em] [word-spacing:0.08em] text-[#141210] dark:text-[#FAF7F4] mb-1">
+                      Direct phone &amp; WhatsApp
+                    </h3>
+                    <a
+                      href="tel:+263780885780"
+                      className="text-sm text-[#5F5A55] dark:text-[#A09A93] hover:text-[#141210] dark:hover:text-[#FAF7F4] transition-colors"
+                    >
+                      +263 78 088 5780
+                    </a>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-headline font-bold text-base tracking-[-0.005em] [word-spacing:0.08em] text-[#141210] dark:text-[#FAF7F4] mb-1">
-                    Direct phone &amp; WhatsApp
-                  </h3>
-                  <a
-                    href="tel:+2630780885780"
-                    className="text-sm text-[#5F5A55] dark:text-[#A09A93] hover:text-[#141210] dark:hover:text-[#FAF7F4] transition-colors"
-                  >
-                    +263 78 088 5780
-                  </a>
-                </div>
-              </div>
 
-              <div className="rounded-[24px] border border-[#EAE4DE] dark:border-[#2B2724] bg-[#FFFFFF] dark:bg-[#1D1A17] p-6 flex items-start gap-4 hover:border-[#D4693A]/50 transition-colors duration-200">
-                <div className="w-10 h-10 rounded-full border border-[#EAE4DE] dark:border-[#2B2724] flex items-center justify-center text-[#D4693A] shrink-0">
-                  <MapPin className="h-4 w-4" />
-                </div>
-                <div>
-                  <h3 className="font-headline font-bold text-base tracking-[-0.005em] [word-spacing:0.08em] text-[#141210] dark:text-[#FAF7F4] mb-1">
-                    Location &amp; delivery
-                  </h3>
-                  <p className="text-sm text-[#5F5A55] dark:text-[#A09A93] max-w-[56ch] [text-wrap:pretty]">
-                    Harare, Zimbabwe · Global Remote Delivery
-                  </p>
+                <div className="rounded-[24px] border border-[#EAE4DE] dark:border-[#2B2724] bg-[#FFFFFF] dark:bg-[#1D1A17] p-6 flex items-start gap-4 hover:border-[#D4693A]/50 transition-colors duration-200">
+                  <div className="w-10 h-10 rounded-full border border-[#EAE4DE] dark:border-[#2B2724] flex items-center justify-center text-[#D4693A] shrink-0">
+                    <MapPin className="h-4 w-4" />
+                  </div>
+                  <div>
+                    <h3 className="font-headline font-bold text-base tracking-[-0.005em] [word-spacing:0.08em] text-[#141210] dark:text-[#FAF7F4] mb-1">
+                      Location &amp; delivery
+                    </h3>
+                    <p className="text-sm text-[#5F5A55] dark:text-[#A09A93] max-w-[56ch] [text-wrap:pretty]">
+                      Harare, Zimbabwe · Global Remote Delivery
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

@@ -1,4 +1,3 @@
-import { Metadata } from "next";
 import Link from "next/link";
 import {
     Check,
@@ -11,11 +10,7 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion";
-
-export const metadata: Metadata = {
-    title: "Services & Pricing | Frantiva Technologies",
-    description: "Comprehensive software and digital solutions for modern businesses. From intelligent AI agents to custom web applications, with transparent pricing and real ROI.",
-};
+import { buildPageMetadata, buildBreadcrumbs, buildFaqSchema } from "@/lib/seo";
 
 interface WebsiteFeature {
     text: string;
@@ -211,9 +206,36 @@ const faqs: FAQ[] = [
     },
 ];
 
+export const metadata = buildPageMetadata({
+  title: "Services & pricing",
+  description:
+    "Explore Frantiva Technologies software development packages and transparent pricing. From AI agents and custom web apps to mobile apps and e-commerce, with services starting at $150.",
+  path: "/services",
+  ogTitle: "Services & Pricing — Frantiva Technologies",
+  ogDescription:
+    "AI agents, custom web apps, mobile apps, e-commerce, and enterprise software. Transparent pricing from $150. Based in Harare, Zimbabwe.",
+});
+
+const breadcrumbs = buildBreadcrumbs([
+  { name: "Home", path: "/" },
+  { name: "Services & Pricing", path: "/services" },
+]);
+
+const faqSchema = buildFaqSchema(faqs);
+
 export default function ServicesPage() {
     return (
         <div className="py-20 md:py-32">
+            {/* Structured data */}
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
+            />
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            />
+
             <div className="mx-auto max-w-[1200px] px-6">
                 
                 {/* Hero */}

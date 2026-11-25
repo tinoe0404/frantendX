@@ -9,9 +9,9 @@ const footerLinks = {
     { name: "Enterprise custom systems", href: "/services" },
   ],
   innovation: [
-    { name: "Zonkezonke Platform", href: "/products/zonkezonke" },
-    { name: "Gowild Architecture", href: "/products/gowild" },
-    { name: "HaviChem Operations", href: "/products/havichem" },
+    { name: "Zonkezonke Platform", href: "/contact" },
+    { name: "Gowild Architecture", href: "/case-studies#gowild" },
+    { name: "HaviChem Operations", href: "/case-studies#havichem" },
     { name: "Custom Engagements", href: "/contact" },
   ],
   company: [
@@ -62,14 +62,16 @@ export function Footer() {
             {/* Social Icons */}
             <div className="flex items-center gap-2.5 pt-2">
               {socialLinks.map((social) => (
-                <Link
+                <a
                   key={social.name}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-9 h-9 rounded-full border border-[#EAE4DE] dark:border-[#2B2724] flex items-center justify-center text-[#5F5A55] hover:text-[#141210] dark:text-[#A09A93] dark:hover:text-[#FAF7F4] hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
                   aria-label={social.name}
                 >
                   <social.icon className="h-4 w-4" />
-                </Link>
+                </a>
               ))}
             </div>
           </div>

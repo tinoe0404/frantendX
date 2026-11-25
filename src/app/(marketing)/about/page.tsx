@@ -1,13 +1,20 @@
-import { Metadata } from "next";
 import Link from "next/link";
 import { CheckCircle2, Zap, Scaling, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { buildPageMetadata, buildBreadcrumbs } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "About Us | Frantiva Technologies",
+export const metadata = buildPageMetadata({
+  title: "About us",
   description:
-    "Learn about Frantiva Technologies, a leading digital technology company specializing in AI solutions and high-performance software engineering.",
-};
+    "Learn about Frantiva Technologies, a leading Harare-based digital technology company specializing in AI solutions, custom software, and high-performance product engineering for businesses across Africa.",
+  path: "/about",
+  ogTitle: "About Frantiva Technologies — Engineering the Future of Digital Experiences",
+});
+
+const breadcrumbs = buildBreadcrumbs([
+  { name: "Home", path: "/" },
+  { name: "About", path: "/about" },
+]);
 
 const values = [
   {
@@ -36,6 +43,12 @@ const values = [
 export default function AboutPage() {
   return (
     <div className="py-20 md:py-32">
+      {/* Breadcrumb JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
+      />
+
       <div className="mx-auto max-w-[1200px] px-6">
         
         {/* Page Hero */}

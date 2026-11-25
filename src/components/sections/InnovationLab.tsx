@@ -8,19 +8,19 @@ const products = [
     id: "zonkezonke",
     title: "Zonkezonke Platform",
     description: "A distributed platform unifying on-demand services, inventory synchronization and mobile transactions.",
-    href: "/products/zonkezonke",
+    href: "/contact",
   },
   {
     id: "gowild",
     title: "Gowild Architecture",
     description: "High-speed tourism booking and logistics engine with real-time multi-currency settlement.",
-    href: "/products/gowild",
+    href: "/case-studies#gowild",
   },
   {
     id: "havichem",
     title: "HaviChem Operations",
     description: "Corporate management and dispatch software automating workforce shifts and client workflows.",
-    href: "/products/havichem",
+    href: "/case-studies#havichem",
   },
 ];
 
