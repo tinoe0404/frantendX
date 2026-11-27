@@ -36,18 +36,21 @@ export function Footer() {
           
           {/* Brand Identity Column */}
           <div className="md:col-span-5 space-y-5">
-            <Link href="/" className="inline-flex items-center gap-2.5 group shrink-0">
-              <div className="w-[30px] h-[30px] rounded-[7px] bg-[#141210] dark:bg-[#FAF7F4] text-[#FAF7F4] dark:text-[#141210] flex items-center justify-center font-display font-extrabold text-[15px] leading-none select-none transition-transform group-hover:scale-105">
-                <span>F</span>
-              </div>
-              <div className="flex items-baseline gap-1.5">
-                <span className="font-display text-[22px] font-extrabold tracking-tight text-[#141210] dark:text-[#FAF7F4]">
-                  Frantiva
-                </span>
-                <span className="font-sans text-[13px] font-normal text-[#5F5A55] dark:text-[#A09A93] tracking-[0.02em]">
-                  Technologies
-                </span>
-              </div>
+            <Link href="/" className="inline-flex items-center group shrink-0 transition-transform hover:scale-[1.02]" aria-label="Frantiva Technologies — Home">
+              <img
+                src="/images/logo-full.png"
+                alt="Frantiva Technologies"
+                width={180}
+                height={38}
+                className="h-[34px] w-auto dark:hidden select-none"
+              />
+              <img
+                src="/images/logo-full-dark.png"
+                alt="Frantiva Technologies"
+                width={180}
+                height={38}
+                className="h-[34px] w-auto hidden dark:block select-none"
+              />
             </Link>
 
             <p className="text-sm text-[#5F5A55] dark:text-[#A09A93] leading-relaxed max-w-[56ch] [text-wrap:pretty]">
